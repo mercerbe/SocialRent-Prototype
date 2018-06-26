@@ -1,0 +1,203 @@
+<nav class="navbar is-white topNav">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../">
+        <img src="http://icons.iconarchive.com/icons/graphicloads/flat-finance/256/flow-market-icon.png" width="25" height="100">
+      </a>
+      <div class="navbar-burger burger" data-target="topNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div id="topNav" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="index.html">Market</a>
+        <!-- redirect to user/advertiser dashboard with id -->
+        <a class="navbar-item" href="user.html">Dashboard</a>
+        <!-- api call for all advertisers -->
+        <a class="navbar-item" href="user.html">All Advertisers</a>
+        <!-- api call for all users -->
+        <a class="navbar-item" href="user.html">All Users</a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="button is-small">
+                <span class="icon">
+                  <i class="fa fa-user-plus"></i>
+                </span>
+                <span>
+                  Register
+                </span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-small is-info is-outlined" href="login.html">
+                <span class="icon">
+                  <i class="fa fa-user"></i>
+                </span>
+                <span>Login</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<nav class="navbar is-white">
+  <div class="container">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <input class="input" type="search" placeholder="Search ads...">
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="container">
+  <div class="columns">
+    <div class="column is-3">
+      <a class="button is-primary is-block is-alt is-large" href="#">New Ad</a>
+      <aside class="menu">
+        <p class="menu-label">
+          Colors
+        </p>
+        <ul class="menu-list">
+          <li><span class="tag is-primary is-medium ">primary</span></li>
+          <li><span class="tag is-link is-medium ">link</span></li>
+          <li><span class="tag is-light is-danger is-medium ">danger</span></li>
+          <li><span class="tag is-dark is-medium ">dark</span></li>
+          <li><span class="tag is-success is-medium ">success</span></li>
+          <li><span class="tag is-warning is-medium ">warning</span></li>
+        </ul>
+      </aside>
+    </div>
+    <div class="column is-9">
+      <h1>Current Offers</h1>
+      <div class="box content">
+        <!-- articles should be added with handlebars dynamically, these are example layouts -->
+        <article class="post">
+          <h4>Work for us!</h4>
+          <div class="media">
+            <div class="media-left">
+              <p class="image is-64x64">
+                <img src="http://bulma.io/images/placeholders/128x128.png">
+              </p>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <a href="#">companyA</a> posted 34 minutes ago &nbsp;
+                  <span class="tag">ad</span>
+                </p>
+              </div>
+            </div>
+            <div class="media-right">
+              <a href="/posts/postid" class="has-text-grey-light"><i class="fas fa-pencil-alt"></i></a>
+            </div>
+          </div>
+        </article>
+        <article class="post">
+          <h4>Post on Twitter!</h4>
+          <div class="media">
+            <div class="media-left">
+              <p class="image is-64x64">
+                <img src="http://bulma.io/images/placeholders/128x128.png">
+              </p>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <a href="#">companyB</a> posted 40 minutes ago &nbsp;
+                  <span class="tag">ad</span>
+                </p>
+              </div>
+            </div>
+            <div class="media-right">
+              <a href="/posts/postid" class="has-text-grey-light"><i class="fas fa-pencil-alt"></i></a>
+            </div>
+          </div>
+        </article>
+        <article class="post">
+          <h4>Get .25 per like!</h4>
+          <div class="media">
+            <div class="media-left">
+              <p class="image is-64x64">
+                <img src="http://bulma.io/images/placeholders/128x128.png">
+              </p>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <a href="#">companyC</a> posted 53 minutes ago &nbsp;
+                  <span class="tag">ad</span>
+                </p>
+              </div>
+            </div>
+            <div class="media-right">
+              <a href="/posts/postid" class="has-text-grey-light"><i class="fas fa-pencil-alt"></i></a>
+            </div>
+          </div>
+        </article>
+        <article class="post">
+          <h4>Follow us</h4>
+          <div class="media">
+            <div class="media-left">
+              <p class="image is-64x64">
+                <img src="http://bulma.io/images/placeholders/128x128.png">
+              </p>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <a href="#">companyD</a> posted 3 hours ago &nbsp;
+                  <span class="tag">ad</span>
+                </p>
+              </div>
+            </div>
+            <div class="media-right">
+              <a href="/posts/postid" class="has-text-grey-light"><i class="fas fa-pencil-alt"></i></a>
+            </div>
+          </div>
+        </article>
+        <article class="post">
+          <h4>Test Posting...</h4>
+          <div class="media">
+            <div class="media-left">
+              <p class="image is-64x64">
+                <img src="http://bulma.io/images/placeholders/128x128.png">
+              </p>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <a href="#">companyE</a> posted 5 hours ago &nbsp;
+                  <span class="tag">ad</span>
+                </p>
+              </div>
+            </div>
+            <div class="media-right">
+              <a href="/posts/postid" class="has-text-grey-light"><i class="fas fa-pencil-alt"></i></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <div class="columns is-mobile is-centered">
+        <div class="field is-grouped is-grouped-multiline">
+          <div class="control">
+            <p>this is where the footer goes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
