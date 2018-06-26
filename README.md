@@ -50,8 +50,8 @@ $ npm install
 ## Team
 
 | <a href="http://github.com/mercerbe" target="_blank">**Ben Mercer**</a> | <a href="http://github.com/RomeoKilo125" target="_blank">**Ross King**</a> | <a href="http://github.com/mjtedder" target="_blank">**Matt Tedder**</a> | <a href="http://github.com/holder" target="_blank">**Loren Fouts**</a> |
-| :---: |:---:| :---:|
-| [![Ben Mercer](https://avatars3.githubusercontent.com/u/35779366?s=200&v=3)](http://github.com/mercerbe) | [![Ross King](https://avatars0.githubusercontent.com/u/17191914?s=200&v=3)](http://github.com/RomeoKilo125) | [![Matt Tedder](https://avatars3.githubusercontent.com/u/36042608?s=200&v=3)](http://github.com/mjtedder)  | [![Loren Fouts](https://avatars3.githubusercontent.com/u/36042608?s=200&v=3)](http://github.com/holder)  |
+| :---: |:---:|:---:| :---: |
+| [![Ben Mercer](https://avatars3.githubusercontent.com/u/35779366?s=150&v=3)](http://github.com/mercerbe) | [![Ross King](https://avatars0.githubusercontent.com/u/17191914?s=150&v=3)](http://github.com/RomeoKilo125) | [![Matt Tedder](https://avatars3.githubusercontent.com/u/36042608?s=150&v=3)](http://github.com/mjtedder)  | [![Loren Fouts](https://avatars3.githubusercontent.com/u/36042608?s=150&v=3)](http://github.com/holder)  |
 | <a href="http://github.com/mercerbe" target="_blank">`github.com/mercerbe`</a> | <a href="http://github.com/RomeoKilo125" target="_blank">`github.com/RomeoKilo125`</a> | <a href="http://github.com/mjtedder" target="_blank">`github.com/mjtedder`</a> | <a href="http://github.com/holder" target="_blank">`github.com/holder`</a> |
 
 
