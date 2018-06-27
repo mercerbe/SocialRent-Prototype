@@ -2,7 +2,7 @@
   <link rel="stylesheet" href="./css/dashboard.css">
 </head>
 <!-- START NAV -->
-<nav class="navbar is-white">
+<nav class="navbar is-white" id="top">
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item brand-text" href="./index">Social Rent</a>
@@ -38,14 +38,14 @@
             <aside class="menu">
                 <p class="menu-label">General</p>
                 <ul class="menu-list">
-                    <li><a class="is-active">Dashboard</a></li>
-                    <li><a>Posts</a></li>
+                    <li><a class="is-active" href="#top">Dashboard</a></li>
+                    <li><a href="#manage">Manage Ads</a></li>
                 </ul>
                 <p class="menu-label">
                     Administration
                 </p>
                 <ul class="menu-list">
-                  <li><a>Messages</a></li>
+                  <li><a href="#messages">Messages</a></li>
                 </ul>
                 <p class="menu-label">
                     Transactions
@@ -158,22 +158,22 @@
                             <p class="card-header-title">Messages</p>
                             <a href="#" class="card-header-icon" aria-label="more options"></a>
                         </header>
-                        <div class="card-table">
+                        <div class="card-table" id="messages">
                             <div class="content">
                                 <table class="table is-fullwidth is-striped">
                                     <tbody>
                                         <tr>
-                                            <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                            <td width="5%"><i data-vi="message" data-vi-size="28"></i></td>
                                             <td>Lorum ipsum dolem aire</td>
                                             <td><a class="button is-small is-primary" href="#">Reply</a></td>
                                         </tr>
                                         <tr>
-                                            <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                            <td width="5%"><i data-vi="message" data-vi-size="28"></i></td>
                                             <td>Lorum ipsum dolem aire</td>
                                             <td><a class="button is-small is-primary" href="#">Reply</a></td>
                                         </tr>
                                         <tr>
-                                            <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                            <td width="5%"><i data-vi="message" data-vi-size="28"></i></td>
                                             <td>Lorum ipsum dolem aire</td>
                                             <td><a class="button is-small is-primary" href="#">Reply</a></td>
                                         </tr>
@@ -206,26 +206,26 @@
                 </div>
             </div>
             <!-- manage ads -->
-            <section>
+            <section id="manage">
               <p class="title">Manage Ads</p>
               <div class="columns is-variable is-1">
               <div class="column is-6">
-              <div class="card-table">
+              <div class="card">
                 <div class="content">
                   <table class="table is-fullwidth is-striped">
-                    <thead>
+                    <p class="card-header-title">
                       Open Ads
-                    </thead>
+                    </p>
                       <tbody>
                           <tr>
-                              <td width="5%"><i class="fa fa-bell-o"></i></td>
+                              <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
                               <td>Ad 3</td>
                               <td># left</td>
                               <td><a class="button is-small is-primary" href="#">edit</a></td>
                               <td><a class="button is-small is-danger" href="#">delete</a></td>
                           </tr>
                           <tr>
-                              <td width="5%"><i class="fa fa-bell-o"></i></td>
+                              <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
                               <td>Ad 4</td>
                               <td># left</td>
                               <td><a class="button is-small is-primary" href="#">edit</a></td>
@@ -237,21 +237,21 @@
               </div>
               </div>
               <div class="column is-6">
-              <div class="card-table">
+              <div class="card">
                 <div class="content">
                   <table class="table is-fullwidth is-striped">
-                    <thead>
+                    <p class="card-header-title">
                       Taken Ads
-                    </thead>
+                    </p>
                       <tbody>
                           <tr>
-                              <td width="5%"><i class="fa fa-bell-o"></i></td>
+                              <td width="5%"><i data-vi="check" data-vi-size="28"></i></td>
                               <td>Ad 1</td>
                               <td><a class="is-small is-primary" href="#">Link to user</a></td>
                               <td><a class="button is-small is-danger" href="#">delete</a></td>
                           </tr>
                           <tr>
-                              <td width="5%"><i class="fa fa-bell-o"></i></td>
+                              <td width="5%"><i data-vi="check" data-vi-size="28"></i></td>
                               <td>Ad 2</td>
                               <td><a class="is-small is-primary" href="#">Link to user</a></td>
                               <td><a class="button is-small is-danger" href="#">delete</a></td>
