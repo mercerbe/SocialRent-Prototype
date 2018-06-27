@@ -3,82 +3,122 @@
 </head>
 
 <section class="hero is-success is-fullheight">
-    <div class="hero-body">
-        <div class="container has-text-centered">
-            <div class="column is-4 is-offset-4">
-                <h3 class="title has-text-grey">Signup</h3>
-                <p class="subtitle has-text-grey">Please Sign Up</p>
-                <div class="box">
-                    <figure class="avatar">
-                        <img src="./images/login-icon.png">
-                    </figure>
-                    <form>
-                        <div class="field">
-                            <div class="control">
-                                <i data-vi="envelope"></i>
-                                <input class="input is-large" type="email" id="email_input" placeholder="Your Email" autofocus="">
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <div class="control">
-                              <i data-vi="lock"></i>
-                                <input class="input is-large" id="password" type="password_input" placeholder="Your Password">
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                              <i data-vi="lock"></i>
-                                <input class="input is-large" id="repeat_password" type="password" placeholder="Repeat Password">
-                            </div>
-                        </div>
-                        <div class="field">
-                          <div class="control">
-                            <div class="select is-large is-primary">
-                              <select>
-                                <option>Select Role</option>
-                                <option>User</option>
-                                <option>Advertiser</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- company/advertiser options -->
-                        <div class="field">
-                            <div class="control">
-                                <input class="input is-large" id="company_name" type="text" placeholder="Company Name">
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <input class="input is-large" id="description" type="text" placeholder="Description">
-                            </div>
-                        </div>
-                        <!-- user options -->
-                        <div class="field">
-                            <div class="control">
-                                <input class="input is-large" id="twitter_handle" type="text" placeholder="Twitter Handle">
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="control">
-                                <input class="input is-large" id="insta_handle" type="text" placeholder="Instagram Handle">
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="checkbox">
-              <input type="checkbox">
-              Remember me
-            </label>
-                        </div>
-                        <button style="background-color:rgb(48,169,152);"class="button is-block is-info is-large is-fullwidth">Login</button>
-                    </form>
-                </div>
-                <p class="has-text-grey">
-                    &nbsp;·&nbsp; <a href="./">Need Help?</a> &nbsp;·&nbsp;
-                </p>
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-4 is-offset-4">
+        <h3 class="title has-text-grey">Signup</h3>
+        <p class="subtitle has-text-grey">Fill out all required fields to continue</p>
+        <div class="box">
+          <figure class="avatar">
+            <img src="./signup-icon.png">
+          </figure>
+          <form>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input is-large" type="email" id="email_input" placeholder="123@gmail.com" autofocus="">
+              </div>
             </div>
+
+            <div class="field">
+              <label class="label">Password</label>
+              <div class="control">
+                <input class="input is-large" id="password" type="password_input" placeholder="··········">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Repeat Password</label>
+              <div class="control">
+                <input class="input is-large" id="repeat_password" type="password" placeholder="··········">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Select Role</label>
+              <div class="control">
+                <div class="select is-large is-link">
+                  <select id=roleSelect onchange="showFields()">
+                    <option diabled>Select Role</option>
+                    <option>User</option>
+                    <option>Advertiser</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- company/advertiser options -->
+            <div class="is-invisible" id="advertiserFields">
+            <div class="field">
+              <label class="label">Company Name</label>
+              <div class="control">
+                <input class="input is-large" id="company_name" type="text" placeholder="Company Name">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Description</label>
+              <div class="control">
+                <textarea class="textarea is-large" type="text" placeholder="Tell everyone a little about your company..."></textarea>
+              </div>
+            </div>
+            </div>
+            <!-- user options -->
+            <div class="is-invisible" id="userFields">
+              <div class="field">
+                <label class="label">Twitter Handle</label>
+                <div class="control">
+                  <input class="input is-large" id="twitter_handle" type="text" placeholder="@Social_Rent">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Instagram Handle</label>
+                <div class="control">
+                  <input class="input is-large" id="insta_handle" type="text" placeholder="@SocialRent">
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+                <label class="checkbox">
+                  <input type="checkbox">
+                  I agree to the <a href="#" class="has-text-link">terms and conditions</a>
+                </label>
+            </div>
+
+            <div class="field">
+              <label class="checkbox">
+                <input type="checkbox">Remember me
+              </label>
+            </div>
+            <button style="background-color:rgb(80,207,127);" class="button is-block is-info is-large is-fullwidth">Signup</button>
+          </form>
         </div>
+        <p class="has-text-grey">
+          <a href="./">Need Help?</a> &nbsp;·&nbsp; <a href="./index">Market</a>
+        </p>
+      </div>
     </div>
+  </div>
 </section>
+
+
+<script type="text/javascript">
+//toggle available fields
+function showFields() {
+  const userFields = document.getElementById('userFields');
+  const advertiserFields = document.getElementById('advertiserFields');
+  const roleSelect = document.querySelector('#roleSelect');
+  const selected = roleSelect.options[roleSelect.selectedIndex].value;
+  console.log(selected);
+  if(selected === 'User') {
+    userFields.classList.remove('is-invisible');
+    advertiserFields.classList.add('is-invisible')
+  }
+  if(selected === 'Advertiser') {
+    advertiserFields.classList.remove('is-invisible')
+    userFields.classList.add('is-invisible')
+  }
+  if(selected === 'Select Role') {
+    userFields.classList.add('is-invisible');
+    advertiserFields.classList.add('is-invisible')
+  }
+}
+
+</script>
