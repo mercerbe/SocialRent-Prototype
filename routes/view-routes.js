@@ -19,5 +19,14 @@ module.exports = (app) => {
     res.render('login')
   })
 
+  //test static routes
+  app.get('/user', (req, res) => {
+    res.render('userDashboard');
+  })
+
+  app.get('/advertiser', (req, res) => {
+    res.render('advertiserDashboard');
+  })
+
 
 }
