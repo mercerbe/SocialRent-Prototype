@@ -2,10 +2,10 @@
   <link rel="stylesheet" href="./css/dashboard.css">
 </head>
 <!-- START NAV -->
-<nav class="navbar is-white">
+<nav class="navbar is-white" id="top">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item brand-text" href="./index">Main Page</a>
+            <a class="navbar-item brand-text" href="./index">Social Rent</a>
             <div class="navbar-burger burger" data-target="navMenu">
                 <span></span>
                 <span></span>
@@ -14,11 +14,20 @@
         </div>
         <div id="navMenu" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="admin.html">Home</a>
-                <a class="navbar-item" href="admin.html">Posts</a>
-                <a class="navbar-item" href="admin.html">Payments</a>
+                <a class="navbar-item" href="admin.html">Placeholder</a>
             </div>
-
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <p class="control">
+                  <a class="button is-primary is-outlined" href="./index">
+                    <span class="icon">
+                      <i class="fa fa-user"></i>
+                    </span>
+                    <span>Logout</span>
+                  </a>
+                </p>
+              </div>
+            </div>
         </div>
     </div>
 </nav>
@@ -29,14 +38,14 @@
             <aside class="menu">
                 <p class="menu-label">General</p>
                 <ul class="menu-list">
-                    <li><a class="is-active">Dashboard</a></li>
-                    <li><a>Posts</a></li>
+                    <li><a class="is-active" href="#top">Dashboard</a></li>
+                    <li><a href="#manage">Manage Ads</a></li>
                 </ul>
                 <p class="menu-label">
                     Administration
                 </p>
                 <ul class="menu-list">
-                  <li><a>Messages</a></li>
+                  <li><a href="#messages">Messages</a></li>
                 </ul>
                 <p class="menu-label">
                     Transactions
@@ -59,20 +68,22 @@
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title">
-                            Hello, 'user/advertiser'
+                            Hello, 'Advertiser.title'
                         </h1>
                         <h2 class="subtitle">
-                            Check your activity!
+                            Manage your activity!
                         </h2>
                     </div>
                 </div>
             </section>
+
+            <!-- info from user printed to tiles -->
             <section class="info-tiles">
                 <div class="tile is-ancestor has-text-centered">
                     <div class="tile is-parent">
                         <article class="tile is-child box">
                             <p class="title">35</p>
-                            <p class="subtitle">Users</p>
+                            <p class="subtitle">Ads Posted</p>
                         </article>
                     </div>
                     <div class="tile is-parent">
@@ -89,33 +100,80 @@
                     </div>
                 </div>
             </section>
-            <div class="columns">
+
+            <!-- make new post/ad -->
+            <section>
+
+              <div class="card">
+                <p class="card-header-title">Create New Ad</p>
+                <div class="column is-9">
+                <div class="field">
+                  <label class="label">Ad Title</label>
+                  <p class="control">
+                    <input class="input" type="tesxt" placeholder="Title">
+                  </p>
+                </div>
+                <div class="field">
+                  <label class="label">Category</label>
+                  <div class="control">
+                    <div class="select">
+                      <select>
+                        <option diabled>Select A Category</option>
+                        <option>Finance</option>
+                        <option>Entertainment</option>
+                        <option>Events</option>
+                        <option>Music</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">Ad Body</label>
+                  <p class="control">
+                    <textarea class="textarea" type="text" placeholder="The body of the ad you want users to post..."></textarea>
+                  </p>
+                </div>
+                <div class="field">
+                  <label class="label"># Of Users</label>
+                  <p class="control">
+                    <input class="input" type="tesxt" placeholder="eg. '100'">
+                  </p>
+                </div>
+                <div class="field">
+                  <p class="control">
+                    <button class="button is-primary">
+                      Create Ad
+                    </button>
+                  </p>
+                </div>
+                </div>
+              </div>
+            </section>
+
+          <!-- show messages/ user search option (maybe by location?) -->
+            <div class="columns is-variable is-1">
                 <div class="column is-6">
                     <div class="card events-card">
                         <header class="card-header">
                             <p class="card-header-title">Messages</p>
-                            <a href="#" class="card-header-icon" aria-label="more options">
-              <span class="icon">
-                <i class="fa fa-angle-down" aria-hidden="true"></i>
-              </span>
-            </a>
+                            <a href="#" class="card-header-icon" aria-label="more options"></a>
                         </header>
-                        <div class="card-table">
+                        <div class="card-table" id="messages">
                             <div class="content">
                                 <table class="table is-fullwidth is-striped">
                                     <tbody>
                                         <tr>
-                                            <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                            <td width="5%"><i data-vi="message" data-vi-size="28"></i></td>
                                             <td>Lorum ipsum dolem aire</td>
                                             <td><a class="button is-small is-primary" href="#">Reply</a></td>
                                         </tr>
                                         <tr>
-                                            <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                            <td width="5%"><i data-vi="message" data-vi-size="28"></i></td>
                                             <td>Lorum ipsum dolem aire</td>
                                             <td><a class="button is-small is-primary" href="#">Reply</a></td>
                                         </tr>
                                         <tr>
-                                            <td width="5%"><i class="fa fa-bell-o"></i></td>
+                                            <td width="5%"><i data-vi="message" data-vi-size="28"></i></td>
                                             <td>Lorum ipsum dolem aire</td>
                                             <td><a class="button is-small is-primary" href="#">Reply</a></td>
                                         </tr>
@@ -132,28 +190,79 @@
                     <div class="card">
                         <header class="card-header">
                             <p class="card-header-title">User Search</p>
-                            <a href="#" class="card-header-icon" aria-label="more options">
-              <span class="icon">
-                <i class="fa fa-angle-down" aria-hidden="true"></i>
-              </span>
-            </a>
+                            <a href="#" class="card-header-icon" aria-label="more options"></a>
                         </header>
                         <div class="card-content">
                             <div class="content">
                                 <div class="control has-icons-left has-icons-right">
                                     <input class="input is-large" type="text" placeholder="">
                                     <span class="icon is-medium is-left">
-                  <i class="fa fa-search"></i>
-                </span>
-                                    <span class="icon is-medium is-right">
-                  <i class="fa fa-check"></i>
-                </span>
+                                      <i class="fa fa-search"></i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- manage ads -->
+            <section id="manage">
+              <p class="title">Manage Ads</p>
+              <div class="columns is-variable is-1">
+              <div class="column is-6">
+              <div class="card">
+                <div class="content">
+                  <table class="table is-fullwidth is-striped">
+                    <p class="card-header-title">
+                      Open Ads
+                    </p>
+                      <tbody>
+                          <tr>
+                              <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
+                              <td>Ad 3</td>
+                              <td># left</td>
+                              <td><a class="button is-small is-primary" href="#">edit</a></td>
+                              <td><a class="button is-small is-danger" href="#">delete</a></td>
+                          </tr>
+                          <tr>
+                              <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
+                              <td>Ad 4</td>
+                              <td># left</td>
+                              <td><a class="button is-small is-primary" href="#">edit</a></td>
+                              <td><a class="button is-small is-danger" href="#">delete</a></td>
+                          </tr>
+                      </tbody>
+                  </table>
+            </div>
+              </div>
+              </div>
+              <div class="column is-6">
+              <div class="card">
+                <div class="content">
+                  <table class="table is-fullwidth is-striped">
+                    <p class="card-header-title">
+                      Taken Ads
+                    </p>
+                      <tbody>
+                          <tr>
+                              <td width="5%"><i data-vi="check" data-vi-size="28"></i></td>
+                              <td>Ad 1</td>
+                              <td><a class="is-small is-primary" href="#">Link to user</a></td>
+                              <td><a class="button is-small is-danger" href="#">delete</a></td>
+                          </tr>
+                          <tr>
+                              <td width="5%"><i data-vi="check" data-vi-size="28"></i></td>
+                              <td>Ad 2</td>
+                              <td><a class="is-small is-primary" href="#">Link to user</a></td>
+                              <td><a class="button is-small is-danger" href="#">delete</a></td>
+                          </tr>
+                      </tbody>
+                  </table>
+            </div>
+              </div>
+              </div>
+              </div>
+            </section>
         </div>
     </div>
 </div>

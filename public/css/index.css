@@ -1,15 +1,14 @@
+/*
+FONTS
+font-family: 'Concert One', cursive;
+font-family: 'Bowlby One SC', cursive;
+font-family: 'Reem Kufi', sans-serif;
+font-family: 'Rubik', sans-serif;
+*/
+
 html,body {
   font-family: 'Open Sans', serif;
   background: #F2F6FA;
-}
-footer {
-  background-color: #F2F6FA !important;
-}
-.topNav {
-  border-top: 5px solid #3498DB;
-}
-.topNav .container {
-  border-bottom: 1px solid #E6EAEE;
 }
 .container .columns {
   margin: 3rem 0;
@@ -56,4 +55,7 @@ article.post:last-child {
 }
 .menu-list li{
   padding: 5px;
+}
+#copy{
+  color:white;
 }

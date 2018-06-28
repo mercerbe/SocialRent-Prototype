@@ -1,84 +1,73 @@
-<nav class="navbar is-white topNav">
-  <div class="container">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="../">
-        <img src="http://icons.iconarchive.com/icons/graphicloads/flat-finance/256/flow-market-icon.png" width="25" height="100">
-      </a>
-      <div class="navbar-burger burger" data-target="topNav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+<section class="hero is-info is-medium is-bold" style="background-image: linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/">
+                        Social Rent
+                    </a>
+                    <span class="navbar-burger burger" data-target="navbarMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="tabs is-right">
+                            <ul>
+                                <li><a href="">Market</a></li>
+                                <li><a href="">Dashboard</a></li>
+                                <li><a href="">All Advertisers</a></li>
+                                <li><a href="">All Users</a></li>
+                                <li><a href="">Help</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-item logButtons">
+              <div class="field is-grouped">
+                <p class="control">
+                  <a class="button is-outlined is-white" href="/signup">
+                    <span class="icon">
+                      <i class="fa fa-user-plus"></i>
+                    </span>
+                    <span>
+                      Sign Up
+                    </span>
+                  </a>
+                </p>
+                <p class="control">
+                  <a class="button is-white is-outlined" href="/login">
+                    <span class="icon">
+                      <i class="fa fa-user"></i>
+                    </span>
+                    <span>Login</span>
+                  </a>
+                </p>
+              </div>
+            </div>
+        </nav>
     </div>
-    <div id="topNav" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="index.html">Market</a>
-        <!-- redirect to user/advertiser dashboard with id -->
-        <a class="navbar-item" href="user.html">Dashboard</a>
-        <!-- api call for all advertisers -->
-        <a class="navbar-item" href="user.html">All Advertisers</a>
-        <!-- api call for all users -->
-        <a class="navbar-item" href="user.html">All Users</a>
-      </div>
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="field is-grouped">
-            <p class="control">
-              <a class="button is-small">
-                <span class="icon">
-                  <i class="fa fa-user-plus"></i>
-                </span>
-                <span>
-                  Register
-                </span>
-              </a>
-            </p>
-            <p class="control">
-              <a class="button is-small is-info is-outlined" href="login.html">
-                <span class="icon">
-                  <i class="fa fa-user"></i>
-                </span>
-                <span>Login</span>
-              </a>
-            </p>
-          </div>
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title">
+            Social Rent
+            </h1>
+            <h2 class="subtitle">
+            Businesses: Hire social media users to share your ads <br>
+            Users: Get paid to share ads from the companies you support
+            </h2>
         </div>
-      </div>
     </div>
-  </div>
-</nav>
-<nav class="navbar is-white">
-  <div class="container">
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <input class="input" type="search" placeholder="Search ads...">
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
+</section>
+<br>
 <section class="container">
   <div class="columns">
-    <div class="column is-3">
-      <a class="button is-primary is-block is-alt is-large" href="#">New Ad</a>
-      <aside class="menu">
-        <p class="menu-label">
-          Colors
-        </p>
-        <ul class="menu-list">
-          <li><span class="tag is-primary is-medium ">primary</span></li>
-          <li><span class="tag is-link is-medium ">link</span></li>
-          <li><span class="tag is-light is-danger is-medium ">danger</span></li>
-          <li><span class="tag is-dark is-medium ">dark</span></li>
-          <li><span class="tag is-success is-medium ">success</span></li>
-          <li><span class="tag is-warning is-medium ">warning</span></li>
-        </ul>
-      </aside>
-    </div>
-    <div class="column is-9">
-      <h1>Current Offers</h1>
+    <div class="column is-12">
+      <h1>Current Available Ads</h1>
       <div class="box content">
-        <!-- articles should be added with handlebars dynamically, these are example layouts -->
         <article class="post">
           <h4>Work for us!</h4>
           <div class="media">
@@ -96,7 +85,7 @@
               </div>
             </div>
             <div class="media-right">
-              <a href="/posts/postid" class="has-text-grey-light"><i class="fas fa-pencil-alt"></i></a>
+              <a href="/posts/postid" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
             </div>
           </div>
         </article>
@@ -117,7 +106,7 @@
               </div>
             </div>
             <div class="media-right">
-              <a href="/posts/postid" class="has-text-grey-light"><i class="fas fa-pencil-alt"></i></a>
+              <a href="/posts/postid" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
             </div>
           </div>
         </article>
@@ -138,7 +127,7 @@
               </div>
             </div>
             <div class="media-right">
-              <a href="/posts/postid" class="has-text-grey-light"><i class="fas fa-pencil-alt"></i></a>
+              <a href="/posts/postid" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
             </div>
           </div>
         </article>
@@ -159,28 +148,7 @@
               </div>
             </div>
             <div class="media-right">
-              <a href="/posts/postid" class="has-text-grey-light"><i class="fas fa-pencil-alt"></i></a>
-            </div>
-          </div>
-        </article>
-        <article class="post">
-          <h4>Test Posting...</h4>
-          <div class="media">
-            <div class="media-left">
-              <p class="image is-64x64">
-                <img src="http://bulma.io/images/placeholders/128x128.png">
-              </p>
-            </div>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <a href="#">companyE</a> posted 5 hours ago &nbsp;
-                  <span class="tag">ad</span>
-                </p>
-              </div>
-            </div>
-            <div class="media-right">
-              <a href="/posts/postid" class="has-text-grey-light"><i class="fas fa-pencil-alt"></i></a>
+              <a href="/posts/postid" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
             </div>
           </div>
         </article>
@@ -188,16 +156,5 @@
     </div>
   </div>
 </section>
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <div class="columns is-mobile is-centered">
-        <div class="field is-grouped is-grouped-multiline">
-          <div class="control">
-            <p>this is where the footer goes</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+
+<br>

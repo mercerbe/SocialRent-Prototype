@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "1125mt!Sql",
+=======
+    "password": "root",
+>>>>>>> 6c0c5752c8dacf37b13ef49156331d99797e4f8c
     "database": "socialrent_db",
     "host": "localhost",
     "port": 3306,
