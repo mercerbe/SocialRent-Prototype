@@ -9,6 +9,10 @@ nav.navbar {
   border-top: 4px solid #43e97b;
   margin-bottom: 1rem;
 }
+nav.userNav {
+  border-top: 4px solid #005bea;
+  margin-bottom: 1rem;
+}
 .navbar-item.brand-text {
   font-weight: 300;
 }
@@ -18,7 +22,7 @@ nav.navbar {
 }
 .columns {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 .menu-label {
   color: #8F99A3;
@@ -56,6 +60,9 @@ nav.navbar {
 }
 .hero.welcome.is-info {
 background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+}
+#userHero {
+  background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
 }
 .hero.welcome .title, .hero.welcome .subtitle {
   color: hsl(192, 17%, 99%);
