@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-let router = require('express').Router()
-
-router.get("/", function(req, res) {
-    res.render('index')
-})
-
-module.exports = router
-=======
 //dependencies
 const path = require('path');
 
@@ -39,4 +30,3 @@ module.exports = (app) => {
 
 
 }
->>>>>>> 6c0c5752c8dacf37b13ef49156331d99797e4f8c
