@@ -19,8 +19,6 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 //-------------routes------------------//
-
-//static routes
 require("./routes/view-routes.js")(app);
 require("./routes/ad-routes.js")(app);
 require("./routes/advertiser-routes.js")(app);
