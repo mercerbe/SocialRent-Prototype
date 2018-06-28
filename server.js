@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 
 //static route
 app.use(express.static('public'));
@@ -18,12 +18,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-//routes
+//-------------routes------------------//
+
+//static routes
 require("./routes/view-routes.js")(app);
 require("./routes/ad-routes.js")(app);
 require("./routes/advertiser-routes.js")(app);
 require("./routes/user-routes.js")(app);
-
 
 //-----Listening and sync with db -------//
 db.sequelize.sync()
