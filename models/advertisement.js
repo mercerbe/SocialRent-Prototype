@@ -1,34 +1,26 @@
-module.exports = (sequelize, DataTypes) => {
+let User = require('./user')
+module.exports = (Sequelize, DataTypes) => {
 
-  let Ad = sequelize.define("ad", {
-      title: Sequelize.STRING, //validation needed
-      category: Sequelize.STRING,
-      body: Sequelize.TEXT,
-      updated_at: Sequelize.DATE,
-      taken: Sequelize.BOOLEAN,
-      public: Sequelize.BOOLEAN,
-      created_at: Sequelize.DATE
-  })
+  let Ad = Sequelize.define("ad", {
+      title: DataTypes.STRING, //validation needed
+      category: DataTypes.STRING,
+      body: DataTypes.TEXT,
+      taken: DataTypes.BOOLEAN,
+      public: DataTypes.BOOLEAN,
+    })
 
-  // TEST THIS!
-  let ad = Ad.build({
-      title: 'This is a title.',
-      category: 'I am a cateogry.',
-      body: 'I am a body',
-      updated_at: DATE,
+  // TEST THIS! //build
+  let ad = Ad.create({
+      title: 'ls 2020.',
+      category: 'Personal Items.',
+      body: '',
       taken: false,
       public: true,
-      created_at: DATE
     })
 
-    ad.save().catch(error => {
-      console.log('ERROR')
-    })
-
-  Ad.associate = (models) => {
-    Ad.hasOne(User)
-  }
+  //Ad.associate = (models) => {
+    //Ad.hasOne(User)
+  //}
 
   return Ad
 }
-

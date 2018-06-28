@@ -1,23 +1,19 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = (Sequelize, DataTypes) => {
 
-    let User = sequelize.define('user', {
-        user: Sequelize.STRING,
-        role: Sequelize.STRING,
-        email: Sequelize.STRING,
-        password: Sequelize.STRING,
-        instagram: Sequelize.STRING,
-        twitter: Sequelize.STRING,
-        company_name: Sequelize.STRING,
-        created_at: Sequelize.DATE,
-        updated_at: Sequelize.DATE
+    let User = Sequelize.define('user', {
+        user: DataTypes.STRING,
+        role: DataTypes.STRING,
+        email: DataTypes.STRING,
+        password: DataTypes.STRING,
+        instagram: DataTypes.STRING,
+        twitter: DataTypes.STRING,
+        company_name: DataTypes.STRING,
     })
 
-    User.associate = (models) => {
-        User.hasMany(models.Ad, {
-            onDelete: 'cascade'
-        })
-    }
-
+    // User.associate = (models) => {
+    //     User.hasMany(models.Ad, {
+    //         onDelete: 'cascade'
+    //     })
     return User
-
 }
+
