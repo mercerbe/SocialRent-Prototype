@@ -3,6 +3,7 @@ const express = require('express');
 const db = require('./models');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 8081;

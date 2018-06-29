@@ -48,6 +48,7 @@ module.exports = (Sequelize, DataTypes) => {
       }
     })
 
+
   //create seed data
 let ad = Ad.create(
       {
@@ -96,7 +97,6 @@ let ad = Ad.create(
         taken: false,
         public: true,
         payment: 0.10
-      })
 
   //association
   //Ad.associate = (models) => {
