@@ -1,13 +1,12 @@
 $(document).ready(function() {
-  let emailInput = $('#email')
-  let passwordInput = $('#password')
+  let emailInput = $('#emailInput')
+  let passwordInput = $('#passwordInput')
   let btnLogin = $('#btnLogin')
 
   let cbxRememberMe = $('#cbxRememberMe')
 
   btnLogin.on('click', (event) => {
     event.preventDefault()
-
     if (!emailInput.val().trim()) {
       return
     }
@@ -15,10 +14,9 @@ $(document).ready(function() {
       email: emailInput.val().trim(),
       password: passwordInput.val()
     }
-    console.log(loginData)
-    $.get('/api/users/', loginData).then(
-
-    )
+    $.post('/api/users/', loginData, (info) => {
+      console.log("user found: " + info.id);
+    })
 
   })
 
