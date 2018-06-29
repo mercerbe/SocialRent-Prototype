@@ -53,7 +53,7 @@ module.exports = (Sequelize, DataTypes) => {
 let ad = Ad.create(
       {
         title: 'This is a title.',
-        category: 'I am a cateogry.',
+        category: 'Technology',
         body: 'I am a body',
         taken: false,
         public: true,
@@ -63,7 +63,7 @@ let ad = Ad.create(
   Ad.create(
       {
         title: 'This is a title 2.',
-        category: 'I am a cateogry 2.',
+        category: 'Entertainment',
         body: 'I am a body 2',
         taken: false,
         public: true,
@@ -73,7 +73,7 @@ let ad = Ad.create(
   Ad.create(
       {
         title: 'This is a title 3.',
-        category: 'I am a cateogry 3.',
+        category: 'Products',
         body: 'I am a body 3',
         taken: false,
         public: true,
@@ -83,7 +83,7 @@ let ad = Ad.create(
   Ad.create(
       {
         title: 'This is a title 4.',
-        category: 'I am a cateogry 4.',
+        category: 'Finance',
         body: 'I am a body 4',
         taken: false,
         public: true,
@@ -92,16 +92,29 @@ let ad = Ad.create(
   Ad.create(
       {
         title: 'This is a title 5.',
-        category: 'I am a cateogry 5.',
+        category: 'Music',
         body: 'I am a body 5',
         taken: false,
         public: true,
         payment: 0.10
+      })
 
-  //association
-  //Ad.associate = (models) => {
-    //Ad.hasOne(User)
-  //}
+//association
+  //need to identify and associate each ad with an owner/advertiser and a sharer/user...
+
+  // Ad.associate = (models) => {
+  //
+  //   Ad.hasOne(models.User, {
+  //     as: 'Ad_Owner',
+  //     foreignKey: 'OwnerId'
+  //   })
+  //
+  //   Ad.hasOne(models.User, {
+  //     as: 'Ad_Sharer',
+  //     foreignKey: 'SharerId'
+  //   })
+  //
+  // }
 
   return Ad
 }

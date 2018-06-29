@@ -19,92 +19,95 @@ module.exports = (Sequelize, DataTypes) => {
           type: DataTypes.STRING,
           allowNull: false,
           validate: {
-            len: [1,100]
+            len: [8,32]
           }
         },
         instagram: {
           type: DataTypes.STRING,
-          allowNull: false,
+          allowNull: true,
           validate: {
-            len: [1,100]
+            len: [0,100]
           }
         },
         twitter: {
           type: DataTypes.STRING,
-          allowNull: false,
+          allowNull: true,
           validate: {
-            len: [1,100]
+            len: [0,100]
           }
         },
         company_name: {
           type: DataTypes.STRING,
-          allowNull: false,
+          allowNull: true,
           validate: {
-            len: [1, 100]
+            len: [0, 100]
+          }
+        },
+        description: {
+          type: DataTypes.STRING,
+          allowNull: true,
+          validate: {
+            len: [0,280]
           }
         }
     })
 
     //create seed data
-    let user = User.create(
+    let user =
+    User.create(
       {
         email: 'jerkface1@gmail.com',
-        role: 'to be a jerkface 1',
+        role: 'User',
         password: 'trumpisajerk1',
         instagram: 'therealdonald1',
-        twitter: 'therealdonaldtrump1',
-        company_name: 'MERICA1'
+        twitter: 'therealdonaldtrump1'
       }
     )
     User.create(
       {
         email: 'jerkface2@gmail.com',
-        role: 'to be a jerkface2',
+        role: 'User',
         password: 'trumpisajerk2',
         instagram: 'therealdonald2',
-        twitter: 'therealdonaldtrump2',
-        company_name: 'MERICA2'
+        twitter: 'therealdonaldtrump2'
       }
     )
 
     User.create(
       {
         email: 'jerkface3@gmail.com',
-        role: 'to be a jerkface3',
+        role: 'Advertiser',
         password: 'trumpisajerk3',
-        instagram: 'therealdonald3',
-        twitter: 'therealdonaldtrump3',
-        company_name: 'MERICA3'
+        company_name: 'MERICA3',
+        description: 'make murica great1.'
       }
       )
 
     User.create(
       {
         email: 'jerkface4@gmail.com',
-        role: 'to be a jerkface4',
+        role: 'Advertiser',
         password: 'trumpisajerk4',
-        instagram: 'therealdonald4',
-        twitter: 'therealdonaldtrump4',
-        company_name: 'MERICA4'
+        company_name: 'MERICA4',
+        description: 'make murica great2.'
       }
     )
 
     User.create(
       {
         email: 'jerkface5@gmail.com',
-        role: 'to be a jerkface5',
+        role: 'Advertiser',
         password: 'trumpisajerk5',
-        instagram: 'therealdonald5',
-        twitter: 'therealdonaldtrump5',
-        company_name: 'MERICA5'
+        company_name: 'MERICA5',
+        description: 'make murica great3.'
       }
     )
 
 
     //associations
     // User.associate = (models) => {
-    //     User.hasMany(models.Ad, {
-    //         onDelete: 'cascade'
-    //     })
+    //     User.hasMany(models.Ad)
+    //   }
+
     return User
 }
