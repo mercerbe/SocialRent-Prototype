@@ -1,11 +1,11 @@
 module.exports = (Sequelize, DataTypes) => {
 
     let User = Sequelize.define('user', {
-        user: {
+        email: {
           type: DataTypes.STRING,
           allowNull: false,
           validate: {
-            len: [1,50]
+            isEmail: true
           }
         },
         role: {
@@ -13,13 +13,6 @@ module.exports = (Sequelize, DataTypes) => {
           allowNull: false,
           validate: {
             len: [1, 20]
-          }
-        },
-        email: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          validate: {
-            isEmail: true
           }
         },
         password: {
@@ -55,60 +48,55 @@ module.exports = (Sequelize, DataTypes) => {
     //create seed data
     let user = User.create(
       {
-        user: 'jerkface',
-        role: 'to be a jerkface',
-        email: 'jerkface@gmail.com',
-        password: 'trumpisajerk',
-        instagram: 'therealdonald',
-        twitter: 'therealdonaldtrump',
-        company_name: 'MERICA'
+        email: 'jerkface1@gmail.com',
+        role: 'to be a jerkface 1',
+        password: 'trumpisajerk1',
+        instagram: 'therealdonald1',
+        twitter: 'therealdonaldtrump1',
+        company_name: 'MERICA1'
       }
     )
     User.create(
       {
-        user: 'jerkface1',
-        role: 'to be a jerkface',
-        email: 'jerkface@gmail.com',
-        password: 'trumpisajerk',
-        instagram: 'therealdonald',
-        twitter: 'therealdonaldtrump',
-        company_name: 'MERICA'
+        email: 'jerkface2@gmail.com',
+        role: 'to be a jerkface2',
+        password: 'trumpisajerk2',
+        instagram: 'therealdonald2',
+        twitter: 'therealdonaldtrump2',
+        company_name: 'MERICA2'
       }
     )
 
     User.create(
       {
-        user: 'jerkface2',
-        role: 'to be a jerkface',
-        email: 'jerkface@gmail.com',
-        password: 'trumpisajerk',
-        instagram: 'therealdonald',
-        twitter: 'therealdonaldtrump',
-        company_name: 'MERICA'
+        email: 'jerkface3@gmail.com',
+        role: 'to be a jerkface3',
+        password: 'trumpisajerk3',
+        instagram: 'therealdonald3',
+        twitter: 'therealdonaldtrump3',
+        company_name: 'MERICA3'
       }
       )
 
     User.create(
       {
-        user: 'jerkface3',
-        role: 'to be a jerkface',
-        email: 'jerkface@gmail.com',
-        password: 'trumpisajerk',
-        instagram: 'therealdonald',
-        twitter: 'therealdonaldtrump',
-        company_name: 'MERICA'
+        email: 'jerkface4@gmail.com',
+        role: 'to be a jerkface4',
+        password: 'trumpisajerk4',
+        instagram: 'therealdonald4',
+        twitter: 'therealdonaldtrump4',
+        company_name: 'MERICA4'
       }
     )
 
     User.create(
       {
-        user: 'jerkface4',
-        role: 'to be a jerkface',
-        email: 'jerkface@gmail.com',
-        password: 'trumpisajerk',
-        instagram: 'therealdonald',
-        twitter: 'therealdonaldtrump',
-        company_name: 'MERICA'
+        email: 'jerkface5@gmail.com',
+        role: 'to be a jerkface5',
+        password: 'trumpisajerk5',
+        instagram: 'therealdonald5',
+        twitter: 'therealdonaldtrump5',
+        company_name: 'MERICA5'
       }
     )
 
