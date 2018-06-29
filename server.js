@@ -3,6 +3,7 @@ const express = require('express');
 const db = require('./models');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 8081;
@@ -19,8 +20,6 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 //-------------routes------------------//
-
-//static routes
 require("./routes/view-routes.js")(app);
 require("./routes/ad-routes.js")(app);
 require("./routes/advertiser-routes.js")(app);
