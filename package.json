@@ -30,6 +30,7 @@
     "nightmare": "^3.0.1",
     "path": "^0.12.7",
     "sequelize": "^4.38.0",
-    "vivid-icons": "^1.0.8"
+    "vivid-icons": "^1.0.8",
+    "seedquelize": "^1.0.1"
   }
 }
