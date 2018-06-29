@@ -11,13 +11,13 @@ module.exports = (Sequelize, DataTypes) => {
     })
 
   //create
-  let ad = Ad.create({
-      title: 'This is a title.',
-      category: 'I am a cateogry.',
-      body: 'I am a body',
-      taken: false,
-      public: true,
-    })
+  // let ad = Ad.create({
+  //     title: 'This is a title.',
+  //     category: 'I am a cateogry.',
+  //     body: 'I am a body',
+  //     taken: false,
+  //     public: true,
+  //   })
 
   //Ad.associate = (models) => {
     //Ad.hasOne(User)

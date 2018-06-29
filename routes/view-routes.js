@@ -1,6 +1,8 @@
 //dependencies
 const path = require('path');
 
+const db = require('../models')
+
 //export all handlebars routes
 module.exports = (app) => {
 
@@ -28,5 +30,13 @@ module.exports = (app) => {
     res.render('advertiserDashboard');
   })
 
+  app.get('/api/users/', (req, res) => {
+    console.log(req.body);
+    db.User.findOne({
+      where: {
+
+      }
+    })
+  })
 
 }
