@@ -1,6 +1,6 @@
 module.exports = (Sequelize, DataTypes) => {
 
-  let User = Sequelize.define('user', {
+  var User = Sequelize.define('User', {
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -49,49 +49,16 @@ module.exports = (Sequelize, DataTypes) => {
       validate: {
         len: [0, 280]
       }
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW()
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW()
     }
   })
-
-  //create seed data
-  User.create({
-    email: 'jerkface1@gmail.com',
-    role: 'User',
-    password: 'trumpisajerk1',
-    instagram: 'therealdonald1',
-    twitter: 'therealdonaldtrump1'
-  })
-  User.create({
-    email: 'jerkface2@gmail.com',
-    role: 'User',
-    password: 'trumpisajerk2',
-    instagram: 'therealdonald2',
-    twitter: 'therealdonaldtrump2'
-  })
-
-  User.create({
-    email: 'jerkface3@gmail.com',
-    role: 'Advertiser',
-    password: 'trumpisajerk3',
-    company_name: 'MERICA3',
-    description: 'make murica great1.'
-  })
-
-  User.create({
-    email: 'jerkface4@gmail.com',
-    role: 'Advertiser',
-    password: 'trumpisajerk4',
-    company_name: 'MERICA4',
-    description: 'make murica great2.'
-  })
-
-  User.create({
-    email: 'jerkface5@gmail.com',
-    role: 'Advertiser',
-    password: 'trumpisajerk5',
-    company_name: 'MERICA5',
-    description: 'make murica great3.'
-  })
-
 
   //associations
   // User.associate = (models) => {
