@@ -2,6 +2,7 @@ let User = require('./user')
 
 module.exports = (Sequelize, DataTypes) => {
 
+<<<<<<< HEAD
   let Ad = Sequelize.define("Ad", {
       title: {
         type: DataTypes.STRING,
@@ -46,9 +47,26 @@ module.exports = (Sequelize, DataTypes) => {
           isDecimal: true
         }
       }
+=======
+  let Ad = Sequelize.define("ad", {
+      title: DataTypes.STRING, //validation needed
+      category: DataTypes.STRING,
+      body: DataTypes.TEXT,
+      taken: DataTypes.BOOLEAN,
+      public: DataTypes.BOOLEAN,
+>>>>>>> loren
     })
 
+  //create
+  let ad = Ad.create({
+      title: 'This is a title.',
+      category: 'I am a cateogry.',
+      body: 'I am a body',
+      taken: false,
+      public: true,
+    })
 
+<<<<<<< HEAD
   //create seed data
 let ad = Ad.create(
       {
@@ -99,6 +117,8 @@ let ad = Ad.create(
         payment: 0.10
       })
   //association
+=======
+>>>>>>> loren
   //Ad.associate = (models) => {
     //Ad.hasOne(User)
   //}

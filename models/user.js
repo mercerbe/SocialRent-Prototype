@@ -1,11 +1,11 @@
 module.exports = (Sequelize, DataTypes) => {
 
-    let User = Sequelize.define('Ugit ser', {
-        user: {
+    let User = Sequelize.define('user', {
+        email: {
           type: DataTypes.STRING,
           allowNull: false,
           validate: {
-            len: [1,50]
+            isEmail: true
           }
         },
         role: {
@@ -15,108 +15,99 @@ module.exports = (Sequelize, DataTypes) => {
             len: [1, 20]
           }
         },
-        email: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          validate: {
-            isEmail: true
-          }
-        },
         password: {
           type: DataTypes.STRING,
           allowNull: false,
           validate: {
-            len: [1,100]
+            len: [8,32]
           }
         },
         instagram: {
           type: DataTypes.STRING,
-          allowNull: false,
+          allowNull: true,
           validate: {
-            len: [1,100]
+            len: [0,100]
           }
         },
         twitter: {
           type: DataTypes.STRING,
-          allowNull: false,
+          allowNull: true,
           validate: {
-            len: [1,100]
+            len: [0,100]
           }
         },
         company_name: {
           type: DataTypes.STRING,
-          allowNull: false,
+          allowNull: true,
           validate: {
-            len: [1, 100]
+            len: [0, 100]
+          }
+        },
+        description: {
+          type: DataTypes.STRING,
+          allowNull: true,
+          validate: {
+            len: [0,280]
           }
         }
     })
 
     //create seed data
-    let user = User.create(
+    let user =
+    User.create(
       {
-        user: 'jerkface',
-        role: 'to be a jerkface',
-        email: 'jerkface@gmail.com',
-        password: 'trumpisajerk',
-        instagram: 'therealdonald',
-        twitter: 'therealdonaldtrump',
-        company_name: 'MERICA'
+        email: 'jerkface1@gmail.com',
+        role: 'User',
+        password: 'trumpisajerk1',
+        instagram: 'therealdonald1',
+        twitter: 'therealdonaldtrump1'
       }
     )
     User.create(
       {
-        user: 'jerkface1',
-        role: 'to be a jerkface',
-        email: 'jerkface@gmail.com',
-        password: 'trumpisajerk',
-        instagram: 'therealdonald',
-        twitter: 'therealdonaldtrump',
-        company_name: 'MERICA'
+        email: 'jerkface2@gmail.com',
+        role: 'User',
+        password: 'trumpisajerk2',
+        instagram: 'therealdonald2',
+        twitter: 'therealdonaldtrump2'
       }
     )
 
     User.create(
       {
-        user: 'jerkface2',
-        role: 'to be a jerkface',
-        email: 'jerkface@gmail.com',
-        password: 'trumpisajerk',
-        instagram: 'therealdonald',
-        twitter: 'therealdonaldtrump',
-        company_name: 'MERICA'
+        email: 'jerkface3@gmail.com',
+        role: 'Advertiser',
+        password: 'trumpisajerk3',
+        company_name: 'MERICA3',
+        description: 'make murica great1.'
       }
       )
 
     User.create(
       {
-        user: 'jerkface3',
-        role: 'to be a jerkface',
-        email: 'jerkface@gmail.com',
-        password: 'trumpisajerk',
-        instagram: 'therealdonald',
-        twitter: 'therealdonaldtrump',
-        company_name: 'MERICA'
+        email: 'jerkface4@gmail.com',
+        role: 'Advertiser',
+        password: 'trumpisajerk4',
+        company_name: 'MERICA4',
+        description: 'make murica great2.'
       }
     )
 
     User.create(
       {
-        user: 'jerkface4',
-        role: 'to be a jerkface',
-        email: 'jerkface@gmail.com',
-        password: 'trumpisajerk',
-        instagram: 'therealdonald',
-        twitter: 'therealdonaldtrump',
-        company_name: 'MERICA'
+        email: 'jerkface5@gmail.com',
+        role: 'Advertiser',
+        password: 'trumpisajerk5',
+        company_name: 'MERICA5',
+        description: 'make murica great3.'
       }
     )
 
 
     //associations
     // User.associate = (models) => {
-    //     User.hasMany(models.Ad, {
-    //         onDelete: 'cascade'
-    //     })
+    //     User.hasMany(models.Ad)
+    //   }
+
     return User
 }
