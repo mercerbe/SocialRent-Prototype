@@ -2,7 +2,7 @@ let User = require('./user')
 
 module.exports = (Sequelize, DataTypes) => {
 
-  let Ad = Sequelize.define("ad", {
+  let Ad = Sequelize.define("Ad", {
       title: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -97,7 +97,7 @@ let ad = Ad.create(
         taken: false,
         public: true,
         payment: 0.10
-
+      })
   //association
   //Ad.associate = (models) => {
     //Ad.hasOne(User)
