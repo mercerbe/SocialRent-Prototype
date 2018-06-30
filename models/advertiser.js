@@ -1,6 +1,6 @@
 module.exports = (Sequelize, DataTypes) => {
 
-    let User = Sequelize.define('user', {
+    let Advertiser = Sequelize.define('advertiser', {
         email: {
           type: DataTypes.STRING,
           allowNull: false,
@@ -15,28 +15,27 @@ module.exports = (Sequelize, DataTypes) => {
             len: [8,32]
           }
         },
-        instagram: {
+        company_name: {
           type: DataTypes.STRING,
-          allowNull: true,
+          allowNull: false,
           validate: {
-            len: [0,100]
+            len: [0, 100]
           }
         },
-        twitter: {
+        description: {
           type: DataTypes.STRING,
-          allowNull: true,
+          allowNull: false,
           validate: {
-            len: [0,100]
+            len: [0,280]
           }
         }
     })
 
 
+    //associations
+    // Advertiser.associate = (models) => {
+    //     Advertiser.hasMany(models.Ad)
+    //   }
 
-  //associations
-  // User.associate = (models) => {
-  //     User.hasMany(models.Ad)
-  //   }
-
-  return User
+    return Advertiser
 }

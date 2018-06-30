@@ -13,45 +13,46 @@ module.exports = {
       }], {});
     */
 
-    return queryInterface.bulkInsert('users', [
+    return queryInterface.bulkInsert('advertisers', [
+      //create seed data
 
         {
           email: 'jerkface1@gmail.com',
           password: 'trumpisajerk1',
-          instagram: 'therealdonald1',
-          twitter: 'therealdonaldtrump1',
+          company_name: 'MERICA10',
+          description: 'make murica great10.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           email: 'jerkface2@gmail.com',
           password: 'trumpisajerk2',
-          instagram: 'therealdonald2',
-          twitter: 'therealdonaldtrump2',
+          company_name: 'MERICA30',
+          description: 'make murica great30.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           email: 'jerkface3@gmail.com',
           password: 'trumpisajerk3',
-          instagram: 'therealdonald20',
-          twitter: 'therealdonaldtrump20',
+          company_name: 'MERICA3',
+          description: 'make murica great1.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           email: 'jerkface4@gmail.com',
           password: 'trumpisajerk4',
-          instagram: 'therealdonald30',
-          twitter: 'therealdonaldtrump30',
+          company_name: 'MERICA4',
+          description: 'make murica great2.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           email: 'jerkface5@gmail.com',
           password: 'trumpisajerk5',
-          instagram: 'therealdonald40',
-          twitter: 'therealdonaldtrump40',
+          company_name: 'MERICA5',
+          description: 'make murica great3.',
           createdAt: new Date(),
           updatedAt: new Date()
         }
@@ -67,6 +68,6 @@ module.exports = {
       return queryInterface.bulkDelete('Person', null, {});
     */
 
-    return queryInterface.bulkDelete('User', null, {})
+    return queryInterface.bulkDelete('Advertiser', null, {});
   }
 };

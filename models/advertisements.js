@@ -39,39 +39,23 @@ module.exports = (Sequelize, DataTypes) => {
           return (typeof(val) == 'boolean')
         }
       }
-    },
-    payment: {
-      type: DataTypes.DECIMAL(5, 2),
-      validate: {
-        isDecimal: true
-      }
-    },
-    createdAt: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW()
-    },
-    updatedAt: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW()
-    }
-  })
+    })
 
-
-  // create seed data
-
-  //association
+//association
   //need to identify and associate each ad with an owner/advertiser and a sharer/user...
 
   // Ad.associate = (models) => {
   //
   //   Ad.hasOne(models.User, {
-  //     as: 'Ad_Owner',
-  //     foreignKey: 'OwnerId'
+  //     foreignKey: {
+  //       allowNull: true
+  //     }
   //   })
   //
-  //   Ad.hasOne(models.User, {
-  //     as: 'Ad_Sharer',
-  //     foreignKey: 'SharerId'
+  //   Ad.hasOne(models.Advertiser, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
   //   })
   //
   // }
