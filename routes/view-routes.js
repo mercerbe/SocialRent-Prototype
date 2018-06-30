@@ -40,21 +40,22 @@ module.exports = (app) => {
       }
     }).then((data) => {
       if (!data) {
-        res.send("User not found")
-      }
-      switch (data.role) {
-        case 'User':
-        console.log("user");
-          res.send('/user')
-          break;
-        case 'Advertiser':
-        console.log("advertiser");
+        db.Advertiser.findOne({
+          where: {
+            email: req.body.email,
+            password: req.body.password
+          }
+        }).then((data) => {
+          if (!data) {
+            res.send("User not found")
+          }
+          console.log("advertiser");
           res.send('/advertiser')
-          break;
-        default:
-          console.log(data.role);
+        })
+      } else {
+        console.log("user");
+        res.send('/user')
       }
     })
   })
-
 }
