@@ -1,6 +1,6 @@
 module.exports = (Sequelize, DataTypes) => {
 
-    let User = Sequelize.define('User', {
+    let User = Sequelize.define('Ugit ser', {
         user: {
           type: DataTypes.STRING,
           allowNull: false,
