@@ -11,6 +11,10 @@ module.exports = (app) => {
     res.render('index')
   })
 
+  //reroute for index
+  app.get('/index', (req, res) => {
+    res.render('index')
+  })
   //signup page
   app.get('/signup', (req, res) => {
     res.render('signup')
@@ -30,13 +34,5 @@ module.exports = (app) => {
     res.render('advertiserDashboard');
   })
 
-  app.get('/api/users/', (req, res) => {
-    console.log(req.body);
-    db.User.findOne({
-      where: {
-
-      }
-    })
-  })
 
 }
