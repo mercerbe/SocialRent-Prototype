@@ -31,6 +31,7 @@
     "path": "^0.12.7",
     "seedquelize": "^1.0.1",
     "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.0.0",
     "vivid-icons": "^1.0.8"
   }
 }
