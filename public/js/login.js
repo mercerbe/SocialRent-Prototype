@@ -15,7 +15,7 @@ $(document).ready(function() {
       password: passwordInput.val()
     }
     $.post('/api/users/', loginData, (info) => {
-      console.log("user found: " + info.id);
+      document.location.href = info
     })
 
   })

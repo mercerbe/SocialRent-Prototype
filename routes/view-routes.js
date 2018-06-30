@@ -24,6 +24,7 @@ module.exports = (app) => {
 
   //test static routes
   app.get('/user', (req, res) => {
+    console.log("redirect user");
     res.render('userDashboard');
   })
 
@@ -38,7 +39,21 @@ module.exports = (app) => {
         password: req.body.password
       }
     }).then((data) => {
-      res.json(data)
+      if (!data) {
+        res.send("User not found")
+      }
+      switch (data.role) {
+        case 'User':
+        console.log("user");
+          res.send('/user')
+          break;
+        case 'Advertiser':
+        console.log("advertiser");
+          res.send('/advertiser')
+          break;
+        default:
+          console.log(data.role);
+      }
     })
   })
 
