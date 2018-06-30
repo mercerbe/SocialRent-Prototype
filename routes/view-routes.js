@@ -32,7 +32,7 @@ module.exports = (app) => {
 
   app.post('/api/users/', (req, res) => {
     console.log(req.body);
-    db.User.findOne({
+    db.Users.findOne({
       where: {
         email: req.body.email,
         password: req.body.password

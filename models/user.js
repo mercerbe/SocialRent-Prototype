@@ -53,7 +53,7 @@ module.exports = (Sequelize, DataTypes) => {
     })
 
     //create seed data
-    let user = User.create(
+    User.create(
       {
         user: 'jerkface',
         role: 'to be a jerkface',
@@ -68,7 +68,7 @@ module.exports = (Sequelize, DataTypes) => {
       {
         user: 'jerkface1',
         role: 'to be a jerkface',
-        email: 'jerkface@gmail.com',
+        email: 'jerkface1@gmail.com',
         password: 'trumpisajerk',
         instagram: 'therealdonald',
         twitter: 'therealdonaldtrump',
@@ -80,7 +80,7 @@ module.exports = (Sequelize, DataTypes) => {
       {
         user: 'jerkface2',
         role: 'to be a jerkface',
-        email: 'jerkface@gmail.com',
+        email: 'jerkface2@gmail.com',
         password: 'trumpisajerk',
         instagram: 'therealdonald',
         twitter: 'therealdonaldtrump',
@@ -92,7 +92,7 @@ module.exports = (Sequelize, DataTypes) => {
       {
         user: 'jerkface3',
         role: 'to be a jerkface',
-        email: 'jerkface@gmail.com',
+        email: 'jerkface3@gmail.com',
         password: 'trumpisajerk',
         instagram: 'therealdonald',
         twitter: 'therealdonaldtrump',
@@ -104,7 +104,7 @@ module.exports = (Sequelize, DataTypes) => {
       {
         user: 'jerkface4',
         role: 'to be a jerkface',
-        email: 'jerkface@gmail.com',
+        email: 'jerkface4@gmail.com',
         password: 'trumpisajerk',
         instagram: 'therealdonald',
         twitter: 'therealdonaldtrump',
