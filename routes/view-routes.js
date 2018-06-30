@@ -1,7 +1,8 @@
 //dependencies
 const path = require('path');
 
-const db = require('../models')
+var db = require('../models')
+
 
 //export all handlebars routes
 module.exports = (app) => {
@@ -31,8 +32,7 @@ module.exports = (app) => {
   })
 
   app.post('/api/users/', (req, res) => {
-    console.log(req.body);
-    db.Users.findOne({
+    db.User.findOne({
       where: {
         email: req.body.email,
         password: req.body.password
