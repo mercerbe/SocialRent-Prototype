@@ -45,6 +45,14 @@ module.exports = (Sequelize, DataTypes) => {
         validate: {
           isDecimal: true
         }
+      },
+      createdAt:{
+        type: DataTypes.DATE,
+        allowNull: false
+      },
+      updatedAt:{
+        type: DataTypes.DATE,
+        allowNull: false
       }
     })
 
