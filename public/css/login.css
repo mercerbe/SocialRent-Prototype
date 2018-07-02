@@ -3,6 +3,23 @@ html,body {
   font-size: 14px;
   font-weight: 300;
 }
+.signupNav {
+  background-color: rgb(80,207,127);
+}
+.loginNav {
+  background-color: rgb(48,169,152);
+}
+.brand-text{
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+}
+.signupNav a {
+  color: white;
+}
+.loginNav a {
+  color: white;
+}
 .hero.is-success {
   background: #F2F6FA;
 }
@@ -32,4 +49,9 @@ p {
 }
 p.subtitle {
   padding-top: 1rem;
+}
+@media (max-width: 600px) {
+  .navbar-end a{
+    color: black;
+  }
 }

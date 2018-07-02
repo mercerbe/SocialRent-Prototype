@@ -28,6 +28,14 @@ module.exports = (Sequelize, DataTypes) => {
           validate: {
             len: [0,280]
           }
+        },
+        createdAt:{
+          type: DataTypes.DATE,
+          allowNull: false
+        },
+        updatedAt:{
+          type: DataTypes.DATE,
+          allowNull: false
         }
     })
 
