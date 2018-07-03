@@ -9,7 +9,15 @@ module.exports = (app) => {
 
   //index aka maketplace page
   app.get('/', (req, res) => {
-    res.render('index')
+    db.Ad.findAll({
+      where: {
+        taken: 0,
+        public: 1
+      }
+    }).then(data => {
+      res.json(data)
+    })
+    // res.redirect('/index')
   })
 
   //reroute for index
@@ -26,40 +34,4 @@ module.exports = (app) => {
     res.render('login')
   })
 
-  //test static routes
-  app.get('/user', (req, res) => {
-    console.log("redirect user");
-    res.render('userDashboard');
-  })
-
-  app.get('/advertiser', (req, res) => {
-    res.render('advertiserDashboard');
-  })
-
-  app.post('/api/users/', (req, res) => {
-    db.User.findOne({
-      where: {
-        email: req.body.email,
-        password: req.body.password
-      }
-    }).then((data) => {
-      if (!data) {
-        db.Advertiser.findOne({
-          where: {
-            email: req.body.email,
-            password: req.body.password
-          }
-        }).then((data) => {
-          if (!data) {
-            res.send("User not found")
-          }
-          console.log("advertiser");
-          res.send('/advertiser')
-        })
-      } else {
-        console.log("user");
-        res.send('/user')
-      }
-    })
-  })
 }

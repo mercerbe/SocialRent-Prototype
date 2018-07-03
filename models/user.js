@@ -1,6 +1,6 @@
 module.exports = (Sequelize, DataTypes) => {
 
-    let User = Sequelize.define('user', {
+    let User = Sequelize.define('User', {
         email: {
           type: DataTypes.STRING,
           allowNull: false,
@@ -17,17 +17,25 @@ module.exports = (Sequelize, DataTypes) => {
         },
         instagram: {
           type: DataTypes.STRING,
-          allowNull: true,
+          allowNull: false,
           validate: {
             len: [0,100]
           }
         },
         twitter: {
           type: DataTypes.STRING,
-          allowNull: true,
+          allowNull: false,
           validate: {
             len: [0,100]
           }
+        },
+        createdAt:{
+          type: DataTypes.DATE,
+          allowNull: false
+        },
+        updatedAt:{
+          type: DataTypes.DATE,
+          allowNull: false
         }
     })
 

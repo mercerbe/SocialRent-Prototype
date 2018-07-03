@@ -39,9 +39,19 @@ module.exports = (Sequelize, DataTypes) => {
           return (typeof(val) == 'boolean')
         }
       }
-    })
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false
+    }
 
-//association
+  })
+
+  //association
   //need to identify and associate each ad with an owner/advertiser and a sharer/user...
 
   // Ad.associate = (models) => {

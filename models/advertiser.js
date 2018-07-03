@@ -1,6 +1,6 @@
 module.exports = (Sequelize, DataTypes) => {
 
-    let Advertiser = Sequelize.define('advertiser', {
+    let Advertiser = Sequelize.define('Advertiser', {
         email: {
           type: DataTypes.STRING,
           allowNull: false,
@@ -28,6 +28,14 @@ module.exports = (Sequelize, DataTypes) => {
           validate: {
             len: [0,280]
           }
+        },
+        createdAt:{
+          type: DataTypes.DATE,
+          allowNull: false
+        },
+        updatedAt:{
+          type: DataTypes.DATE,
+          allowNull: false
         }
     })
 

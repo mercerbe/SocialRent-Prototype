@@ -17,40 +17,40 @@ module.exports = {
       //create seed data
 
         {
-          email: 'jerkface1@gmail.com',
-          password: 'trumpisajerk1',
+          email: 'jerkface6@gmail.com',
+          password: 'trumpisajerk6',
           company_name: 'MERICA10',
           description: 'make murica great10.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          email: 'jerkface2@gmail.com',
-          password: 'trumpisajerk2',
+          email: 'jerkface7@gmail.com',
+          password: 'trumpisajerk7',
           company_name: 'MERICA30',
           description: 'make murica great30.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          email: 'jerkface3@gmail.com',
-          password: 'trumpisajerk3',
+          email: 'jerkface8@gmail.com',
+          password: 'trumpisajerk8',
           company_name: 'MERICA3',
           description: 'make murica great1.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          email: 'jerkface4@gmail.com',
-          password: 'trumpisajerk4',
+          email: 'jerkface9@gmail.com',
+          password: 'trumpisajerk9',
           company_name: 'MERICA4',
           description: 'make murica great2.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          email: 'jerkface5@gmail.com',
-          password: 'trumpisajerk5',
+          email: 'jerkface10@gmail.com',
+          password: 'trumpisajerk10',
           company_name: 'MERICA5',
           description: 'make murica great3.',
           createdAt: new Date(),

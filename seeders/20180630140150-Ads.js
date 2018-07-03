@@ -22,7 +22,6 @@ module.exports = {
             body: 'I am a body',
             taken: false,
             public: true,
-            payment: 1.00,
             createdAt: new Date(),
             updatedAt: new Date()
             // include: [{
@@ -35,7 +34,6 @@ module.exports = {
             body: 'I am a body 2',
             taken: false,
             public: true,
-            payment: 1.25,
             createdAt: new Date(),
             updatedAt: new Date()
             // include: [{
@@ -48,7 +46,6 @@ module.exports = {
             body: 'I am a body 3',
             taken: false,
             public: true,
-            payment: 1.50,
             createdAt: new Date(),
             updatedAt: new Date()
             // include: [{
@@ -61,7 +58,6 @@ module.exports = {
             body: 'I am a body 4',
             taken: false,
             public: true,
-            payment: 0.50,
             createdAt: new Date(),
             updatedAt: new Date()
             // include: [{
@@ -74,7 +70,6 @@ module.exports = {
             body: 'I am a body 5',
             taken: false,
             public: true,
-            payment: 0.10,
             createdAt: new Date(),
             updatedAt: new Date()
             // include: [{
