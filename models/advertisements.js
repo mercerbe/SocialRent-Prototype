@@ -59,6 +59,7 @@ module.exports = (Sequelize, DataTypes) => {
       classMethods: {
         associate: function (models) {
         Ad.belongsTo(models.Advertiser)
+        Ad.hasOne(models.User)
       },
       tableName: 'Advertiser'
     }
