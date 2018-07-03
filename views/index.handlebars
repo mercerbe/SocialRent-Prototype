@@ -1,35 +1,35 @@
 <section class="hero is-info is-medium is-bold" style="background-image: linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);">
-    <div class="hero-head">
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="/">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
                         Social Rent
                     </a>
-                    <span class="navbar-burger burger" data-target="navbarMenu">
+          <span class="navbar-burger burger" data-target="navbarMenu">
                         <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </div>
-                <div id="navbarMenu" class="navbar-menu">
-                    <div class="navbar-end">
-                        <div class="tabs is-right">
-                            <ul>
-                                <li><a href="">Market</a></li>
-                                <li><a href="">Dashboard</a></li>
-                                <li><a href="">All Advertisers</a></li>
-                                <li><a href="">All Users</a></li>
-                                <li><a href="">Help</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+          <span></span>
+          <span></span>
+          </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="tabs is-right">
+              <ul>
+                <li><a href="">Market</a></li>
+                <li><a href="">Dashboard</a></li>
+                <li><a href="">All Advertisers</a></li>
+                <li><a href="">All Users</a></li>
+                <li><a href="">Help</a></li>
+              </ul>
             </div>
-            <div class="navbar-item logButtons">
-              <div class="field is-grouped">
-                <p class="control">
-                  <a class="button is-outlined is-white" href="/signup">
+          </div>
+        </div>
+      </div>
+      <div class="navbar-item logButtons">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="button is-outlined is-white" href="/signup">
                     <span class="icon">
                       <i class="fa fa-user-plus"></i>
                     </span>
@@ -37,30 +37,30 @@
                       Sign Up
                     </span>
                   </a>
-                </p>
-                <p class="control">
-                  <a class="button is-white is-outlined" href="/login">
+          </p>
+          <p class="control">
+            <a class="button is-white is-outlined" href="/login">
                     <span class="icon">
                       <i class="fa fa-user"></i>
                     </span>
                     <span>Login</span>
                   </a>
-                </p>
-              </div>
-            </div>
-        </nav>
-    </div>
-    <div class="hero-body">
-        <div class="container has-text-centered">
-            <h1 class="title">
+          </p>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
             Social Rent
             </h1>
-            <h2 class="subtitle">
+      <h2 class="subtitle">
             Businesses: Hire social media users to share your ads <br>
             Users: Get paid to share ads from the companies you support
             </h2>
-        </div>
     </div>
+  </div>
 </section>
 <br>
 <section class="container">
@@ -68,90 +68,29 @@
     <div class="column is-12">
       <h1>Current Available Ads</h1>
       <div class="box content">
-        <article class="post">
-          <h4>Work for us!</h4>
-          <div class="media">
-            <div class="media-left">
-              <p class="image is-64x64">
-                <img src="http://bulma.io/images/placeholders/128x128.png">
-              </p>
-            </div>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <a href="#">companyA</a> posted 34 minutes ago &nbsp;
-                  <span class="tag">ad</span>
+        {{#each Ads}}
+          <article class="post">
+            <h4>{{this.title}}</h4>
+            <div class="media">
+              <!-- <div class="media-left">
+                <p class="image is-64x64">
+                  <img src="http://bulma.io/images/placeholders/128x128.png">
                 </p>
+              </div> -->
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <a href="#">{{this.category}}</a> posted on {{this.createdAt}} &nbsp;
+                    <span class="tag">ad</span>
+                  </p>
+                </div>
+              </div>
+              <div class="media-right">
+                <a href="/posts/postid" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
               </div>
             </div>
-            <div class="media-right">
-              <a href="/posts/postid" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
-            </div>
-          </div>
-        </article>
-        <article class="post">
-          <h4>Post on Twitter!</h4>
-          <div class="media">
-            <div class="media-left">
-              <p class="image is-64x64">
-                <img src="http://bulma.io/images/placeholders/128x128.png">
-              </p>
-            </div>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <a href="#">companyB</a> posted 40 minutes ago &nbsp;
-                  <span class="tag">ad</span>
-                </p>
-              </div>
-            </div>
-            <div class="media-right">
-              <a href="/posts/postid" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
-            </div>
-          </div>
-        </article>
-        <article class="post">
-          <h4>Get .25 per like!</h4>
-          <div class="media">
-            <div class="media-left">
-              <p class="image is-64x64">
-                <img src="http://bulma.io/images/placeholders/128x128.png">
-              </p>
-            </div>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <a href="#">companyC</a> posted 53 minutes ago &nbsp;
-                  <span class="tag">ad</span>
-                </p>
-              </div>
-            </div>
-            <div class="media-right">
-              <a href="/posts/postid" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
-            </div>
-          </div>
-        </article>
-        <article class="post">
-          <h4>Follow us</h4>
-          <div class="media">
-            <div class="media-left">
-              <p class="image is-64x64">
-                <img src="http://bulma.io/images/placeholders/128x128.png">
-              </p>
-            </div>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <a href="#">companyD</a> posted 3 hours ago &nbsp;
-                  <span class="tag">ad</span>
-                </p>
-              </div>
-            </div>
-            <div class="media-right">
-              <a href="/posts/postid" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
-            </div>
-          </div>
-        </article>
+          </article>
+        {{/each}}
       </div>
     </div>
   </div>

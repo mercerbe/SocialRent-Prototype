@@ -15,14 +15,14 @@ module.exports = (app) => {
         public: 1
       }
     }).then(data => {
-      res.json(data)
+      res.render('index', { Ads: data })
     })
     // res.redirect('/index')
   })
 
   //reroute for index
   app.get('/index', (req, res) => {
-    res.render('index')
+    res.redirect('/')
   })
   //signup page
   app.get('/signup', (req, res) => {
