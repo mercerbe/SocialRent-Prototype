@@ -47,14 +47,5 @@ module.exports = (Sequelize, DataTypes) => {
       }
     })
 
-
-
-    //associations
-    // Advertiser.associate = (models) => {
-    //      Advertiser.hasMany(models.Ad, {
-    //       onDelete: 'cascade'
-    //      })
-    //    }
-
     return Advertiser
 }

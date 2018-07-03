@@ -16,11 +16,11 @@
                     <div class="navbar-end">
                         <div class="tabs is-right">
                             <ul>
-                                <li><a href="">Market</a></li>
-                                <li><a href="">Dashboard</a></li>
-                                <li><a href="">All Advertisers</a></li>
-                                <li><a href="">All Users</a></li>
-                                <li><a href="">Help</a></li>
+                                <li><a href="/">Market</a></li>
+                                <li><a href="/api/:role/:id">Dashboard</a></li>
+                                <li><a href="/api/advertisers">All Advertisers</a></li>
+                                <li><a href="/api/users">All Users</a></li>
+                                <li><a href="/help">Help</a></li>
                             </ul>
                         </div>
                     </div>
@@ -52,10 +52,10 @@
     </div>
     <div class="hero-body">
         <div class="container has-text-centered">
-            <h1 class="title">
+            <h1 class="title is-1">
             Social Rent
             </h1>
-            <h2 class="subtitle">
+            <h2 class="subtitle is-3">
             Businesses: Hire social media users to share your ads <br>
             Users: Get paid to share ads from the companies you support
             </h2>
@@ -66,93 +66,38 @@
 <section class="container">
   <div class="columns">
     <div class="column is-12">
-      <h1>Current Available Ads</h1>
-      <div class="box content">
+      <h1 class="subtitle is-3">Current Available Ads</h1>
+
+      <!-- this div if for one full ad -->
+      {{#each Ads}}
+      <div class="box content" id="displayAd">
         <article class="post">
-          <h4>Work for us!</h4>
+          <h4 id="adTitle">{{this.title}}</h4>
           <div class="media">
             <div class="media-left">
               <p class="image is-64x64">
-                <img src="http://bulma.io/images/placeholders/128x128.png">
+                <img src="http://bulma.io/images/placeholders/128x128.png" id="advertiserLogo">
               </p>
             </div>
             <div class="media-content">
               <div class="content">
                 <p>
-                  <a href="#">companyA</a> posted 34 minutes ago &nbsp;
-                  <span class="tag">ad</span>
+                  <a href="/api/advertisers/:id" id="advertiserName">Advertiser Name</a> posted on: {{this.createdAt}}&nbsp;
+                  <span class="tag is-light">{{this.category}}</span>
                 </p>
               </div>
             </div>
             <div class="media-right">
-              <a href="/posts/postid" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
+              <span id="adsRemaining"># remaining: ____</span>
+              <a href="/api/users/:id" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
             </div>
           </div>
         </article>
-        <article class="post">
-          <h4>Post on Twitter!</h4>
-          <div class="media">
-            <div class="media-left">
-              <p class="image is-64x64">
-                <img src="http://bulma.io/images/placeholders/128x128.png">
-              </p>
-            </div>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <a href="#">companyB</a> posted 40 minutes ago &nbsp;
-                  <span class="tag">ad</span>
-                </p>
-              </div>
-            </div>
-            <div class="media-right">
-              <a href="/posts/postid" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
-            </div>
-          </div>
-        </article>
-        <article class="post">
-          <h4>Get .25 per like!</h4>
-          <div class="media">
-            <div class="media-left">
-              <p class="image is-64x64">
-                <img src="http://bulma.io/images/placeholders/128x128.png">
-              </p>
-            </div>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <a href="#">companyC</a> posted 53 minutes ago &nbsp;
-                  <span class="tag">ad</span>
-                </p>
-              </div>
-            </div>
-            <div class="media-right">
-              <a href="/posts/postid" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
-            </div>
-          </div>
-        </article>
-        <article class="post">
-          <h4>Follow us</h4>
-          <div class="media">
-            <div class="media-left">
-              <p class="image is-64x64">
-                <img src="http://bulma.io/images/placeholders/128x128.png">
-              </p>
-            </div>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <a href="#">companyD</a> posted 3 hours ago &nbsp;
-                  <span class="tag">ad</span>
-                </p>
-              </div>
-            </div>
-            <div class="media-right">
-              <a href="/posts/postid" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
-            </div>
-          </div>
-        </article>
+        <hr>
+        <p id="adBody">{{this.body}}</p>
       </div>
+      <!-- end of Ad -->
+      {{/each}}
     </div>
   </div>
 </section>

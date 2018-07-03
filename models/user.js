@@ -48,11 +48,5 @@ module.exports = (Sequelize, DataTypes) => {
     })
 
 
-
-    //associations
-    // User.associate = (models) => {
-    //   User.hasMany(models.Ad)
-    //   }
-
     return User
 }

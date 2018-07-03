@@ -48,7 +48,7 @@ module.exports = (Sequelize, DataTypes) => {
     },
     createdAt: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: false,
     },
     updatedAt: {
       type: DataTypes.DATE,
@@ -64,32 +64,6 @@ module.exports = (Sequelize, DataTypes) => {
       tableName: 'Advertiser'
     }
   })
-
-
-
-//association
-//need to identify and associate each ad with an owner/advertiser and a sharer/user...
-
-// Ad.associate = (models) => {
-
-//   Ad.belongsTo(models.Advertiser, {
-//     foreignKey: {
-//       allowNull: false
-//     }
-//   })
-  // Ad.hasMany(models.User, {
-
-  //     allowNull: true
-  //   }
-  // })
-
-  // Ad.hasOne(models.Advertiser, {
-  //   foreignKey: {
-  //     allowNull: false
-  //   }
-  // })
-
-
 
 return Ad
 }
