@@ -1,6 +1,6 @@
 module.exports = (Sequelize, DataTypes) => {
 
-    let User = Sequelize.define('user', {
+    let Advertiser = Sequelize.define('advertiser', {
         email: {
           type: DataTypes.STRING,
           allowNull: false,
@@ -15,18 +15,18 @@ module.exports = (Sequelize, DataTypes) => {
             len: [8,32]
           }
         },
-        instagram: {
+        company_name: {
           type: DataTypes.STRING,
           allowNull: false,
           validate: {
-            len: [0,100]
+            len: [0, 100]
           }
         },
-        twitter: {
+        description: {
           type: DataTypes.STRING,
           allowNull: false,
           validate: {
-            len: [0,100]
+            len: [0,280]
           }
         },
         createdAt:{
@@ -41,12 +41,11 @@ module.exports = (Sequelize, DataTypes) => {
       {
         classMethods: {
           associate: function (models) {
-          User.hasMany(models.Ad)
+          Advertiser.hasMany(models.Ad)
         },
         tableName: 'Ad'
       }
     })
 
-
-    return User
+    return Advertiser
 }

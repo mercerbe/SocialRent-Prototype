@@ -8,9 +8,21 @@ module.exports = (app) => {
 
   //index aka maketplace page
   app.get('/', (req, res) => {
-    res.render('index')
+    console.log("returning.... " + db.ad);
+    db.ad.findAll({
+      where: {
+        taken: 0,
+        public: 1
+      }
+    }).then(data => {
+      res.render('index', { Ads: data })
+    })
   })
 
+  //reroute for index
+  app.get('/index', (req, res) => {
+    res.redirect('/')
+  })
   //signup page
   app.get('/signup', (req, res) => {
     res.render('signup')
@@ -21,22 +33,5 @@ module.exports = (app) => {
     res.render('login')
   })
 
-  //test static routes
-  app.get('/user', (req, res) => {
-    res.render('userDashboard');
-  })
-
-  app.get('/advertiser', (req, res) => {
-    res.render('advertiserDashboard');
-  })
-
-  app.get('/api/users/', (req, res) => {
-    console.log(req.body);
-    db.User.findOne({
-      where: {
-
-      }
-    })
-  })
 
 }

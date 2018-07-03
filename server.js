@@ -22,7 +22,6 @@ app.set('view engine', 'handlebars');
 //-------------routes------------------//
 require("./routes/view-routes.js")(app);
 require("./routes/ad-routes.js")(app);
-//require("./routes/person-routes.js")(app);
 require("./routes/person-routes.js")(app);
 
 //-----Listening and sync with db -------//
