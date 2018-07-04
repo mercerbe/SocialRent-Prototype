@@ -18,6 +18,8 @@ module.exports = {
       //create seed data
 
           {
+            userId: 1,
+            advertiserId: 1,
             title: 'This is a title.',
             category: 'Technology',
             body: 'I am a body',
@@ -31,6 +33,9 @@ module.exports = {
             // }]
           },
           {
+            
+            userId: 2,
+            advertiserId: 2,
             title: 'This is a title 2.',
             category: 'Entertainment',
             body: 'I am a body 2',
@@ -44,6 +49,9 @@ module.exports = {
             // }]
           },
           {
+            
+            userId: 3,
+            advertiserId: 3,
             title: 'This is a title 3.',
             category: 'Products',
             body: 'I am a body 3',
@@ -57,6 +65,8 @@ module.exports = {
             // }]
           },
           {
+            userId: 4,
+            advertiserId: 4,
             title: 'This is a title 4.',
             category: 'Finance',
             body: 'I am a body 4',
@@ -70,6 +80,8 @@ module.exports = {
             // }]
           },
           {
+            userId: 5,
+            advertiserId: 5,
             title: 'This is a title 5.',
             category: 'Music',
             body: 'I am a body 5',

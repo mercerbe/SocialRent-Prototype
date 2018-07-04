@@ -28,7 +28,7 @@ module.exports = {
           password: 'trumpisajerk2',
           instagram: 'therealdonald2',
           twitter: 'therealdonaldtrump2',
-          createdAt: new Date(),
+          createdAt: new Date (),
           updatedAt: new Date()
         },
         {

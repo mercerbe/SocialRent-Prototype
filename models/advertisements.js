@@ -54,15 +54,6 @@ module.exports = (Sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: false
     },
-  },
-    {
-      classMethods: {
-        associate: function (models) {
-        Ad.belongsTo(models.Advertiser)
-        Ad.hasOne(models.User)
-      },
-      tableName: 'Advertiser'
-    }
   })
 
 return Ad
