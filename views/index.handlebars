@@ -73,25 +73,25 @@
 
       <!-- this div if for one full ad -->
       {{#each Ads}}
-      <div class="box content" id="displayAd">
+      <div class="box content" id="displayAd{{this.id}}" >
         <article class="post">
-          <h4 id="adTitle">{{this.title}}</h4>
+          <h4 id="adTitle{{this.id}}">{{this.title}}</h4>
           <div class="media">
             <div class="media-left">
               <p class="image is-64x64">
-                <img src="http://bulma.io/images/placeholders/128x128.png" id="advertiserLogo">
+                <img src="http://bulma.io/images/placeholders/128x128.png" id="advertiserLogo{{this.companyName}}">
               </p>
             </div>
             <div class="media-content">
               <div class="content">
                 <p>
-                  <a href="/api/advertisers/:id" id="advertiserName">Advertiser Name</a> posted on: {{this.createdAt}}&nbsp;
+                  <a href="/api/advertisers/:id" id="advertiserName{{this.creatorID}}">Advertiser Name</a> posted on: {{this.createdAt}}&nbsp;
                   <span class="tag is-light">{{this.category}}</span>
                 </p>
               </div>
             </div>
             <div class="media-right">
-              <span id="adsRemaining"># remaining: ____</span>
+              <!-- <span id="adsRemaining"># remaining: ____</span> -->
               <a href="/api/users/:id" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
             </div>
           </div>
