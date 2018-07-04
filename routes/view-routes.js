@@ -8,7 +8,7 @@ module.exports = (app) => {
 
   //index aka maketplace page
   app.get('/', (req, res) => {
-    console.log("returning.... " + db.ad);
+    
     db.ad.findAll({
       where: {
         taken: 0,
