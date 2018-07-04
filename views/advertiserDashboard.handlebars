@@ -219,20 +219,17 @@
                       Open Ads
                     </p>
                       <tbody>
+                        {{#each Ads}}
+                        {{#unless taken}}
                           <tr>
                               <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
-                              <td>Ad 3</td>
+                              <td>{{this.title}}</td>
                               <td># left</td>
                               <td><a class="button is-small is-primary" href="#">edit</a></td>
                               <td><a class="button is-small is-danger" href="#">delete</a></td>
                           </tr>
-                          <tr>
-                              <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
-                              <td>Ad 4</td>
-                              <td># left</td>
-                              <td><a class="button is-small is-primary" href="#">edit</a></td>
-                              <td><a class="button is-small is-danger" href="#">delete</a></td>
-                          </tr>
+                          {{/unless}}
+                          {{/each}}
                       </tbody>
                   </table>
             </div>
@@ -246,18 +243,16 @@
                       Taken Ads
                     </p>
                       <tbody>
+                        {{#each Ads}}
+                        {{#if taken}}
                           <tr>
                               <td width="5%"><i data-vi="check" data-vi-size="28"></i></td>
-                              <td>Ad 1</td>
-                              <td><a class="is-small is-primary" href="#">Link to user</a></td>
+                              <td>{{this.title}}</td>
+                              <td><a class="is-small is-primary" href="/api/users/{{this.takenID}}">Link to user</a></td>
                               <td><a class="button is-small is-danger" href="#">delete</a></td>
                           </tr>
-                          <tr>
-                              <td width="5%"><i data-vi="check" data-vi-size="28"></i></td>
-                              <td>Ad 2</td>
-                              <td><a class="is-small is-primary" href="#">Link to user</a></td>
-                              <td><a class="button is-small is-danger" href="#">delete</a></td>
-                          </tr>
+                          {{/if}}
+                          {{/each}}
                       </tbody>
                   </table>
             </div>
