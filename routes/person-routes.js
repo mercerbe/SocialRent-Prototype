@@ -86,10 +86,10 @@ app.get('/advertiser', (req, res) => {
            res.send("User not found")
          }
          console.log("advertiser");
-         res.send('/advertiser/' + data.id)
+         res.send('/api/advertisers/' + data.id)
        })
      } else {
-       res.send('/user/' + data.id)
+       res.send('/api/users/' + data.id)
      }
    })
  })
