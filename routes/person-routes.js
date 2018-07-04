@@ -20,7 +20,7 @@ app.get('/advertiser', (req, res) => {
 
   //single user dashboard
   app.get('/api/users/:id', (req, res) => {
-    db.user.findOne(
+    db.User.findOne(
       {
         where: {
           id: req.params.id
@@ -35,7 +35,7 @@ app.get('/advertiser', (req, res) => {
 
   //single advertiser dashboard
   app.get('/api/advertisers/:id', (req, res) => {
-    db.advertiser.findOne(
+    db.Advertiser.findOne(
       {
         where: {
           id: req.params.id
@@ -49,16 +49,15 @@ app.get('/advertiser', (req, res) => {
 
   //show all users on site
   app.get('/api/users', (req, res) => {
-    db.user.findAll(
+    db.User.findAll(
       {
       //possibly include ads
-      }
     })
   })
 
   //show all advertisers on site
   app.get('/api/advertisers', (req, res) => {
-    db.advertiser.findAll(
+    db.Advertiser.findAll(
       {
         //possibly include
       }
@@ -69,14 +68,14 @@ app.get('/advertiser', (req, res) => {
 
   //login
   app.post('/api/users/', (req, res) => {
-   db.user.findOne({
+   db.User.findOne({
      where: {
        email: req.body.email,
        password: req.body.password
      }
    }).then((data) => {
      if (!data) {
-       db.advertiser.findOne({
+       db.Advertiser.findOne({
          where: {
            email: req.body.email,
            password: req.body.password
@@ -99,13 +98,13 @@ app.post('/api/:role', (req, res) => {
 
   if(req.params.role === "User"){
     //route to users--set up query
-    db.user.create(req.params).then(data => {
+    db.User.create(req.params).then(data => {
       console.log(data);
       res.json(data)
     })
   } else{
     //route to advertisers--set up query
-    db.advertiser.create(req.params).then(data => {
+    db.Advertiser.create(req.params).then(data => {
       res.json(data)
     })
   }
@@ -119,7 +118,7 @@ app.post('/api/:role', (req, res) => {
   //remove user if account deleted
   app.delete('/api/users/:id', (req, res) => {
 
-    db.user.destroy({
+    db.User.destroy({
       where: {
         id: req.params.id
       }
@@ -131,7 +130,7 @@ app.post('/api/:role', (req, res) => {
   //remove advertiser if account deleted
   app.delete('/api/advertisers/:id', (req, res) => {
 
-    db.advertiser.destroy({
+    db.Advertiser.destroy({
       where: {
         id: req.params.id
       }
