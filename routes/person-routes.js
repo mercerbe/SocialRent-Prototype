@@ -25,7 +25,7 @@ app.get('/advertiser', (req, res) => {
         where: {
           id: req.params.id
         },
-        include: [db.Ad]
+        include: [db.ad]
       }
     ).then((user) => {
       res.json(user)
@@ -41,7 +41,7 @@ app.get('/advertiser', (req, res) => {
         where: {
           id: req.params.id
         },
-        include: [db.Ad]
+        include: [db.ad]
       }
     ).then((advertiser) => {
       res.json(advertiser)
@@ -97,6 +97,11 @@ app.get('/advertiser', (req, res) => {
    })
  })
 
+//signup
+app.post('/api/users/', (req, res) => {
+
+
+})
 
 
 

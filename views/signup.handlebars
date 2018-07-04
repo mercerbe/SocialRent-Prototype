@@ -46,7 +46,6 @@
     </div>
 </nav>
 
-
 <!-- signup section -->
 <section class="hero is-success is-fullheight">
   <div class="hero-body">
@@ -62,20 +61,20 @@
             <div class="field">
               <label class="label">Email</label>
               <div class="control">
-                <input class="input is-large required" type="email" id="email_input" placeholder="123@gmail.com" autofocus="">
+                <input name= "Email" class="input is-large required" type="email" id="email_input" placeholder="123@gmail.com" autofocus="">
               </div>
             </div>
 
             <div class="field">
               <label class="label">Password</label>
               <div class="control">
-                <input class="input is-large required" id="password" type="password_input" placeholder="··········">
+                <input name= "Password"  class="input is-large required" id="password" type="password_input" placeholder="··········">
               </div>
             </div>
             <div class="field">
               <label class="label">Repeat Password</label>
               <div class="control">
-                <input class="input is-large required" id="repeat_password" type="password" placeholder="··········">
+                <input name="Repeat Password" class="input is-large required" id="repeat_password" type="password" placeholder="··········">
               </div>
             </div>
             <div class="field">
@@ -84,8 +83,8 @@
                 <div class="select is-large is-link required">
                   <select id=roleSelect onchange="showFields()">
                     <option diabled>Select Role</option>
-                    <option>User</option>
-                    <option>Advertiser</option>
+                    <option name="user" id="user">User</option>
+                    <option name="advertiser" id="advertiser">Advertiser</option>
                   </select>
                 </div>
               </div>
@@ -95,13 +94,13 @@
             <div class="field">
               <label class="label">Company Name</label>
               <div class="control">
-                <input class="input is-large required" id="company_name" type="text" placeholder="Company Name">
+                <input name="Company Name" class="input is-large " id="company_name" type="text" placeholder="Company Name">
               </div>
             </div>
             <div class="field">
               <label class="label">Description</label>
               <div class="control">
-                <textarea class="textarea is-large required" id="description" type="text" placeholder="Tell everyone a little about your company..."></textarea>
+                <textarea name="Description" class="textarea is-large " id="description" type="text" placeholder="Tell everyone a little about your company..."></textarea>
               </div>
             </div>
             </div>
@@ -110,13 +109,13 @@
               <div class="field">
                 <label class="label">Twitter Handle</label>
                 <div class="control">
-                  <input class="input is-large required" id="twitter_handle" type="text" placeholder="@Social_Rent">
+                  <input name="twitter_handle" class="input is-large" id="twitter_handle" type="text" placeholder="@Social_Rent">
                 </div>
               </div>
               <div class="field">
                 <label class="label">Instagram Handle</label>
                 <div class="control">
-                  <input class="input is-large required" id="insta_handle" type="text" placeholder="@SocialRent">
+                  <input name="insta_handle" class="input is-large" id="insta_handle" type="text" placeholder="@SocialRent">
                 </div>
               </div>
             </div>
@@ -137,7 +136,7 @@
           </form>
         </div>
         <p class="has-text-grey">
-          <a href="./">About</a> &nbsp;·&nbsp; <a href="./index">Market</a>
+          <a href="./">Need Help?</a> &nbsp;·&nbsp; <a href="./index">Market</a>
         </p>
       </div>
     </div>
