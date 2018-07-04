@@ -25,7 +25,7 @@ require("./routes/ad-routes.js")(app);
 require("./routes/person-routes.js")(app);
 
 //-----Listening and sync with db -------//
-db.sequelize.sync({force: true})
+db.sequelize.sync()
   .then(() =>{
     app.listen(PORT, () => {
       console.log("app listening on port:", PORT);
