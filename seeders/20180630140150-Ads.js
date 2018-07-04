@@ -1,4 +1,5 @@
 'use strict';
+let date = new Date()
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -22,8 +23,9 @@ module.exports = {
             body: 'I am a body',
             taken: false,
             public: true,
-            createdAt: new Date(),
-            updatedAt: new Date()
+            payment: 1.00,
+            createdAt: date.toLocaleString(),
+            updatedAt: date.toLocaleString()
             // include: [{
             //   association: Ad.Advertiser
             // }]
@@ -34,8 +36,9 @@ module.exports = {
             body: 'I am a body 2',
             taken: false,
             public: true,
-            createdAt: new Date(),
-            updatedAt: new Date()
+            payment: 1.25,
+            createdAt: date.toLocaleString(),
+            updatedAt: date.toLocaleString()
             // include: [{
             //   association: Ad.Advertiser
             // }]
@@ -46,8 +49,9 @@ module.exports = {
             body: 'I am a body 3',
             taken: false,
             public: true,
-            createdAt: new Date(),
-            updatedAt: new Date()
+            payment: 1.50,
+            createdAt: date.toLocaleString(),
+            updatedAt: date.toLocaleString()
             // include: [{
             //   association: Ad.Advertiser
             // }]
@@ -58,8 +62,9 @@ module.exports = {
             body: 'I am a body 4',
             taken: false,
             public: true,
-            createdAt: new Date(),
-            updatedAt: new Date()
+            payment: 0.50,
+            createdAt: date.toLocaleString(),
+            updatedAt: date.toLocaleString()
             // include: [{
             //   association: Ad.Advertiser
             // }]
@@ -70,8 +75,9 @@ module.exports = {
             body: 'I am a body 5',
             taken: false,
             public: true,
-            createdAt: new Date(),
-            updatedAt: new Date()
+            payment: 0.10,
+            createdAt: date.toLocaleString(),
+            updatedAt: date.toLocaleString()
             // include: [{
             //   association: Ad.Advertiser
             // }]

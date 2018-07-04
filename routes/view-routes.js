@@ -9,7 +9,8 @@ module.exports = (app) => {
 
   //index aka maketplace page
   app.get('/', (req, res) => {
-    db.Ad.findAll({
+
+    db.ad.findAll({
       where: {
         taken: 0,
         public: 1
@@ -17,7 +18,6 @@ module.exports = (app) => {
     }).then(data => {
       res.render('index', { Ads: data })
     })
-    // res.redirect('/index')
   })
 
   //reroute for index
@@ -33,5 +33,6 @@ module.exports = (app) => {
   app.get('/login', (req, res) => {
     res.render('login')
   })
+
 
 }

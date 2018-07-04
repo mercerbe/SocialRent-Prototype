@@ -2,7 +2,7 @@ var User = require('./user')
 
 module.exports = (Sequelize, DataTypes) => {
 
-  var Ad = Sequelize.define("Ad", {
+  let Ad = Sequelize.define("ad", {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -28,7 +28,7 @@ module.exports = (Sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       validate: {
         isBoolean: (val) => {
-          return (typeof(val) == 'boolean')
+          return (typeof (val) == 'boolean')
         }
       }
     },
@@ -36,8 +36,14 @@ module.exports = (Sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       validate: {
         isBoolean: (val) => {
-          return (typeof(val) == 'boolean')
+          return (typeof (val) == 'boolean')
         }
+      }
+    },
+    payment: {
+      type: DataTypes.DECIMAL(5, 2),
+      validate: {
+        isDecimal: true
       }
     },
     createdAt: {
@@ -47,28 +53,17 @@ module.exports = (Sequelize, DataTypes) => {
     updatedAt: {
       type: DataTypes.DATE,
       allowNull: false
+    },
+  },
+    {
+      classMethods: {
+        associate: function (models) {
+        Ad.belongsTo(models.Advertiser)
+        Ad.hasOne(models.User)
+      },
+      tableName: 'Advertiser'
     }
-
   })
-
-  //association
-  //need to identify and associate each ad with an owner/advertiser and a sharer/user...
-
-  // Ad.associate = (models) => {
-  //
-  //   Ad.hasOne(models.User, {
-  //     foreignKey: {
-  //       allowNull: true
-  //     }
-  //   })
-  //
-  //   Ad.hasOne(models.Advertiser, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   })
-  //
-  // }
 
   return Ad
 }

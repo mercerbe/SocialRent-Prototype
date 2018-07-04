@@ -37,13 +37,15 @@ module.exports = (Sequelize, DataTypes) => {
           type: DataTypes.DATE,
           allowNull: false
         }
+      },
+      {
+        classMethods: {
+          associate: function (models) {
+          Advertiser.hasMany(models.Ad)
+        },
+        tableName: 'Ad'
+      }
     })
-
-
-    //associations
-    // Advertiser.associate = (models) => {
-    //     Advertiser.hasMany(models.Ad)
-    //   }
 
     return Advertiser
 }

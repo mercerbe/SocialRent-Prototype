@@ -4,47 +4,141 @@ const db = require('../models')
 //export all routes
 module.exports = (app) => {
 
-// login function
-  app.post('/api/users/', (req, res) => {
-    db.User.findOne({
-      where: {
-        email: req.body.email,
-        password: req.body.password
+  //++++++++++++++++++test routes+++++++++++++++++//
+  //single user dashboard
+app.get('/user', (req, res) => {
+  console.log("redirect user");
+  res.render('userDashboard');
+})
+
+// single advertiser dashboard
+app.get('/advertiser', (req, res) => {
+  res.render('advertiserDashboard');
+})
+//++++++++++++++++++++++++++++++++++++++++++++++++++//
+
+
+  //single user dashboard
+  app.get('/api/users/:id', (req, res) => {
+    db.user.findOne(
+      {
+        where: {
+          id: req.params.id
+        },
+        include: [db.ad]
       }
-    }).then((data) => {
-      if (!data) {
-        db.Advertiser.findOne({
-          where: {
-            email: req.body.email,
-            password: req.body.password
-          }
-        }).then((data) => {
-          if (!data) {
-            res.send("User not found")
-          }
-          console.log("advertiser");
-          res.send('/advertiser/' + data.id)
-        })
-      } else {
-        res.send('/user/' + data.id)
+    ).then((user) => {
+      res.json(user)
+      //res.redirect('/user')
+    })
+  })
+
+  //single advertiser dashboard
+  app.get('/api/advertisers/:id', (req, res) => {
+    db.advertiser.findOne(
+      {
+        where: {
+          id: req.params.id
+        },
+        include: [db.ad]
+      }
+    ).then((advertiser) => {
+      res.json(advertiser)
+    })
+  })
+
+  //show all users on site
+  app.get('/api/users', (req, res) => {
+    db.user.findAll(
+      {
+      //possibly include ads
       }
     })
   })
 
-  //single user dashboard
-  app.get('/user', (req, res) => {
-    console.log("redirect user");
-    res.render('userDashboard');
+  //show all advertisers on site
+  app.get('/api/advertisers', (req, res) => {
+    db.advertiser.findAll(
+      {
+        //possibly include
+      }
+    ).then((advertisers) => {
+      res.json(advertisers)
+    })
   })
 
-// single advertiser dashboard
-  app.get('/advertiser', (req, res) => {
-    res.render('advertiserDashboard');
-  })
+  //login
+  app.post('/api/users/', (req, res) => {
+   db.user.findOne({
+     where: {
+       email: req.body.email,
+       password: req.body.password
+     }
+   }).then((data) => {
+     if (!data) {
+       db.advertiser.findOne({
+         where: {
+           email: req.body.email,
+           password: req.body.password
+         }
+       }).then((data) => {
+         if (!data) {
+           res.send("User not found")
+         }
+         console.log("advertiser");
+         res.send('/advertiser/' + data.id)
+       })
+     } else {
+       res.send('/user/' + data.id)
+     }
+   })
+ })
 
-  //show all users on site
+//signup
+app.post('/api/:role', (req, res) => {
 
-  //post new user after signup
+  if(req.params.role === "User"){
+    //route to users--set up query
+    db.user.create(req.params).then(data => {
+      console.log(data);
+      res.json(data)
+    })
+  } else{
+    //route to advertisers--set up query
+    db.advertiser.create(req.params).then(data => {
+      res.json(data)
+    })
+  }
+
+})
+
+
+
+//++++++++++++++++++++++ need to be completed++++++++++++++++++//
 
   //remove user if account deleted
+  app.delete('/api/users/:id', (req, res) => {
+
+    db.user.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then((removedUser) => {
+      res.json(removedUser)
+    })
+  })
+
+  //remove advertiser if account deleted
+  app.delete('/api/advertisers/:id', (req, res) => {
+
+    db.advertiser.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then((removedAdvertiser) => {
+      res.json(removedAdvertiser)
+    })
+  })
+
+
 }
