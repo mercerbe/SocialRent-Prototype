@@ -97,8 +97,20 @@ app.get('/advertiser', (req, res) => {
  })
 
 //signup
-app.post('/api/users/', (req, res) => {
+app.post('/api/:role', (req, res) => {
 
+  if(req.params.role === "User"){
+    //route to users--set up query
+    db.user.create(req.params).then(data => {
+      console.log(data);
+      res.json(data)
+    })
+  } else{
+    //route to advertisers--set up query
+    db.advertiser.create(req.params).then(data => {
+      res.json(data)
+    })
+  }
 
 })
 
