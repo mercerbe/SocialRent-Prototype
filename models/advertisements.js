@@ -63,22 +63,13 @@ module.exports = (Sequelize, DataTypes) => {
     },
     createdAt: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: false,
     },
     updatedAt: {
       type: DataTypes.DATE,
       allowNull: false
     },
-  },
-    {
-      classMethods: {
-        associate: function (models) {
-        Ad.belongsTo(models.Advertiser)
-        Ad.hasOne(models.User)
-      },
-      tableName: 'Advertiser'
-    }
   })
 
-  return Ad
+return Ad
 }

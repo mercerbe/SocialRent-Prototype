@@ -31,6 +31,7 @@ app.get('/advertiser', (req, res) => {
       res.json(user)
       //res.redirect('/user')
     })
+
   })
 
   //single advertiser dashboard
