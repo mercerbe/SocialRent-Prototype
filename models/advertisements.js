@@ -70,6 +70,10 @@ module.exports = (Sequelize, DataTypes) => {
       allowNull: false
     },
   })
+  Ad.associate = function(models) {
+    Ad.belongsTo(models.Advertiser)//,
+    // Ad.hasOne(models.User)
+  }
 
 return Ad
 }

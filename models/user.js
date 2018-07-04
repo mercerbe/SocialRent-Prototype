@@ -48,7 +48,7 @@ module.exports = (Sequelize, DataTypes) => {
     }*/)
 
     User.associate = function(models) {
-      User.hasMany(models.ad)
+      User.hasMany(models.Ad)
     }
 
 

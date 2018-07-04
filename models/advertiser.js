@@ -39,7 +39,7 @@ module.exports = (Sequelize, DataTypes) => {
         }
       })
         Advertiser.associate = function (models) {
-        Advertiser.hasMany(models.ad)
+        Advertiser.hasMany(models.Ad)
     }
 
     return Advertiser
