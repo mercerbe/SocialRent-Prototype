@@ -2,7 +2,7 @@ var User = require('./user')
 
 module.exports = (Sequelize, DataTypes) => {
 
-  let Ad = Sequelize.define("ad", {
+  let Ad = Sequelize.define("Ad", {
     title: {
       type: DataTypes.STRING,
       allowNull: false,

@@ -10,7 +10,7 @@ module.exports = (app) => {
   //index aka maketplace page
   app.get('/', (req, res) => {
 
-    db.ad.findAll({
+    db.Ad.findAll({
       where: {
         taken: 0,
         public: 1
