@@ -24,6 +24,17 @@ module.exports = (Sequelize, DataTypes) => {
         len: [10, 280]
       }
     },
+    creatorID: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    company_name: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [0, 100]
+      }
+    },
     taken: {
       type: DataTypes.BOOLEAN,
       validate: {
@@ -31,6 +42,10 @@ module.exports = (Sequelize, DataTypes) => {
           return (typeof (val) == 'boolean')
         }
       }
+    },
+    takenID: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
     },
     public: {
       type: DataTypes.BOOLEAN,
