@@ -1,5 +1,4 @@
 'use strict';
-let date = new Date()
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -24,8 +23,8 @@ module.exports = {
             taken: false,
             public: true,
             payment: 1.00,
-            createdAt: date.toLocaleString(),
-            updatedAt: date.toLocaleString()
+            createdAt: new Date(),
+            updatedAt: new Date()
             // include: [{
             //   association: Ad.Advertiser
             // }]
@@ -37,8 +36,8 @@ module.exports = {
             taken: false,
             public: true,
             payment: 1.25,
-            createdAt: date.toLocaleString(),
-            updatedAt: date.toLocaleString()
+            createdAt: new Date(),
+            updatedAt: new Date()
             // include: [{
             //   association: Ad.Advertiser
             // }]
@@ -50,8 +49,8 @@ module.exports = {
             taken: false,
             public: true,
             payment: 1.50,
-            createdAt: date.toLocaleString(),
-            updatedAt: date.toLocaleString()
+            createdAt: new Date(),
+            updatedAt: new Date()
             // include: [{
             //   association: Ad.Advertiser
             // }]
@@ -63,8 +62,8 @@ module.exports = {
             taken: false,
             public: true,
             payment: 0.50,
-            createdAt: date.toLocaleString(),
-            updatedAt: date.toLocaleString()
+            createdAt: new Date(),
+            updatedAt: new Date()
             // include: [{
             //   association: Ad.Advertiser
             // }]
@@ -76,8 +75,8 @@ module.exports = {
             taken: false,
             public: true,
             payment: 0.10,
-            createdAt: date.toLocaleString(),
-            updatedAt: date.toLocaleString()
+            createdAt: new Date(),
+            updatedAt: new Date()
             // include: [{
             //   association: Ad.Advertiser
             // }]
