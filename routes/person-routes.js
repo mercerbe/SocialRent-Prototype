@@ -36,15 +36,15 @@ app.get('/advertiser', (req, res) => {
 
   //single advertiser dashboard
   app.get('/api/advertisers/:id', (req, res) => {
-    db.Advertiser.findOne(
+    db.Ad.findAll(
       {
         where: {
-          id: req.params.id
+          creatorID: req.params.id
         },
-        include: [db.Ad]
+        include: [db.Advertiser]
       }
     ).then((advertiser) => {
-      res.json(advertiser)
+      res.render('advertiserDashboard', {Ads: advertiser})
     })
   })
 
