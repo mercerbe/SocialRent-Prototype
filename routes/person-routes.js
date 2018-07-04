@@ -25,7 +25,7 @@ app.get('/advertiser', (req, res) => {
         where: {
           id: req.params.id
         },
-        include: [db.ad]
+        include: [db.Ad]
       }
     ).then((user) => {
       res.json(user)
@@ -40,7 +40,7 @@ app.get('/advertiser', (req, res) => {
         where: {
           id: req.params.id
         },
-        include: [db.ad]
+        include: [db.Ad]
       }
     ).then((advertiser) => {
       res.json(advertiser)
