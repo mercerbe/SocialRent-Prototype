@@ -18,9 +18,6 @@ $(document).ready(function() {
     var check_form = function() {
       var flag = true;
       $.each($('form .required'), function(index, field) {
-        // console.log($(this).val());
-        // console.log(field);
-        // console.log(field.innerHTML);
         if ($(this).val() == "") {
           alert('Please enter a value for ' + $(this).attr('name'));
           flag = false;
@@ -56,14 +53,10 @@ $(document).ready(function() {
         }
       }
       return flag;
-
-
-
     }
 
-    //}
     if (check_form()) {
-      alert("Successfully signed up!");
+      console.log("form fully filled out...");
     }
     let signupData = {
       email: email.val(),
@@ -75,9 +68,17 @@ $(document).ready(function() {
       instagram: instagram.val()
 
     }
-    console.log(signupData);
-    $.get('/api/users', signupData).then(
-        //push to database
-    )
+
+    console.log(signupData.role);
+
+    let postUrl = '/api/' + signupData.role.toLowerCase() + 's'
+
+    console.log(postUrl);
+
+    $.post(postUrl, signupData).done( ()=>{
+      console.log(signupData);
+      alert("Successfully signed up!")
+    })
+
   })
 })
