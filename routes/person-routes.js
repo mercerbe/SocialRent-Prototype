@@ -19,7 +19,7 @@ app.get('/advertiser', (req, res) => {
 
 
   //single user dashboard
-  app.get('/api/users/:id', (req, res) => {
+  app.get('/users/:id', (req, res) => {
     db.user.findOne(
       {
         where: {
@@ -29,13 +29,13 @@ app.get('/advertiser', (req, res) => {
       }
     ).then((user) => {
       res.json(user)
-      //res.redirect('/user')
+      //res.redirect('/user/:id')
     })
 
   })
 
   //single advertiser dashboard
-  app.get('/api/advertisers/:id', (req, res) => {
+  app.get('/advertisers/:id', (req, res) => {
     db.advertiser.findOne(
       {
         where: {
@@ -45,6 +45,7 @@ app.get('/advertiser', (req, res) => {
       }
     ).then((advertiser) => {
       res.json(advertiser)
+      //res.redirect('/advertiser/:id')
     })
   })
 
@@ -70,8 +71,8 @@ app.get('/advertiser', (req, res) => {
     })
   })
 
-  //login
-  app.post('/api/users/', (req, res) => {
+  //login (changed post to get!!!!!!)
+  app.get('/api/users/', (req, res) => {
    db.user.findOne({
      where: {
        email: req.body.email,
@@ -100,18 +101,20 @@ app.get('/advertiser', (req, res) => {
 //signup
 app.post('/api/:role', (req, res) => {
 
-  if(req.params.role === "User"){
-    //route to users--set up query
-    db.user.create(req.params).then(data => {
-      console.log(data);
-      res.json(data)
+  console.log(req.params);
+  if(req.params.role === 'users') {
+    db.user.create(req.body).then((newUser) => {
+      res.json(newUser)
+      //res.redirect('/user/' + newUser.id)
     })
-  } else{
-    //route to advertisers--set up query
-    db.advertiser.create(req.params).then(data => {
-      res.json(data)
+
+  } else {
+    db.advertiser.create(req.body).then((newAdvertiser) => {
+      res.json(newAdvertiser)
+      //res.redirect('/advertiser/' + newAdvertiser.id)
     })
   }
+
 
 })
 
