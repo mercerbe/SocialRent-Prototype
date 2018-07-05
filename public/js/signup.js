@@ -2,7 +2,7 @@ $(document).ready(function() {
   let email = $('#email_input')
   let password = $('#password')
   let passwordTwo = $('#password2')
-  let role = $('#role')
+  let role = $('#role').find(':selected')
   let company = $('#company_name')
   let description = $('#description')
   let twitter = $('#twitter_handle')
@@ -12,17 +12,15 @@ $(document).ready(function() {
 
   let signupBtn = $('#signup-btn')
 
-  console.log("log something")
-
   signupBtn.on('click', (event) => {
-    console.log('this is a log');
+
     event.preventDefault()
     var check_form = function() {
       var flag = true;
       $.each($('form .required'), function(index, field) {
-        console.log($(this).val());
-        console.log(field);
-        console.log(field.innerHTML);
+        // console.log($(this).val());
+        // console.log(field);
+        // console.log(field.innerHTML);
         if ($(this).val() == "") {
           alert('Please enter a value for ' + $(this).attr('name'));
           flag = false;
@@ -65,7 +63,21 @@ $(document).ready(function() {
 
     //}
     if (check_form()) {
-      alert("check_form returned true");
+      alert("Successfully signed up!");
     }
+    let signupData = {
+      email: email.val(),
+      password: password.val(),
+      role: roleSelect.options[roleSelect.selectedIndex].value,
+      company_name: company.val(),
+      description: description.val(),
+      twitter: twitter.val(),
+      instagram: instagram.val()
+
+    }
+    console.log(signupData);
+    $.get('/api/users', signupData).then(
+        //push to database
+    )
   })
 })
