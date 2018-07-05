@@ -16,11 +16,11 @@ $(document).ready(function() {
     }
     $.post('/api/login/', loginData, (info) => {
       console.log(info);
-      // if (info = "User not found") {
-      //   alert("User not found")
-      // } else {
+      if (info === "User not found") {
+        alert("User not found")
+      } else {
       document.location.href = info
-      // }
+      }
     })
 
   })
