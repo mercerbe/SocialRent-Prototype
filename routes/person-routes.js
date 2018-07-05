@@ -20,7 +20,7 @@ app.get('/advertiser', (req, res) => {
 
   //single user dashboard
   app.get('/users/:id', (req, res) => {
-    db.user.findOne(
+    db.User.findOne(
       {
         where: {
           id: req.params.id
@@ -36,7 +36,7 @@ app.get('/advertiser', (req, res) => {
 
   //single advertiser dashboard
   app.get('/advertisers/:id', (req, res) => {
-    db.advertiser.findOne(
+    db.Advertiser.findOne(
       {
         where: {
           creatorID: req.params.id
@@ -99,13 +99,13 @@ app.post('/api/:role', (req, res) => {
 
   console.log(req.params);
   if(req.params.role === 'users') {
-    db.user.create(req.body).then((newUser) => {
+    db.User.create(req.body).then((newUser) => {
       res.json(newUser)
       //res.redirect('/user/' + newUser.id)
     })
 
   } else {
-    db.advertiser.create(req.body).then((newAdvertiser) => {
+    db.Advertiser.create(req.body).then((newAdvertiser) => {
       res.json(newAdvertiser)
       //res.redirect('/advertiser/' + newAdvertiser.id)
     })
