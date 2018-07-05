@@ -8,7 +8,7 @@ module.exports = (app) => {
 
   //index aka maketplace page
   app.get('/', (req, res) => {
-    
+
     db.ad.findAll({
       where: {
         taken: 0,
@@ -19,10 +19,27 @@ module.exports = (app) => {
     })
   })
 
+  //all users page
+  app.get('/users', (req, res) => {
+
+    db.user.findAll({}).then(data => {
+      res.render('allUsers', {Users: data})
+    })
+  })
+
+  //all advertisers page
+  app.get('/advertisers', (req, res) => {
+
+    db.advertiser.findAll({}).then(data => {
+      res.render('allAdvertisers', {Advertisers: data})
+    })
+  })
+
   //reroute for index
   app.get('/index', (req, res) => {
     res.redirect('/')
   })
+
   //signup page
   app.get('/signup', (req, res) => {
     res.render('signup')

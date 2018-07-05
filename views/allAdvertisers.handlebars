@@ -1,4 +1,5 @@
-<section class="hero is-info is-medium is-bold" style="background-image: linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);">
+<!-- nav/hero -->
+<section class="hero is-info is-medium is-bold" style="background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);">
     <div class="hero-head">
         <nav class="navbar">
             <div class="container">
@@ -6,7 +7,7 @@
                     <a class="navbar-item" href="/">
                         Social Rent
                     </a>
-                    <span class="navbar-burger burger" data-target="navbarMenu">
+                    <span class="navbar-burger burger" data-target="navbarMenu" style="background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -17,10 +18,7 @@
                         <div class="tabs is-right">
                             <ul>
                                 <li><a href="/">Market</a></li>
-                                <li><a href="/:role/:id">Dashboard</a></li>
-                                <li><a href="/advertisers">All Advertisers</a></li>
                                 <li><a href="/users">All Users</a></li>
-                                <li><a href="/help">Help</a></li>
                             </ul>
                         </div>
                     </div>
@@ -53,53 +51,48 @@
     <div class="hero-body">
         <div class="container has-text-centered">
             <h1 class="title is-1">
-            Social Rent
+            Registered Businesses Currently Advertising
             </h1>
-            <h2 class="subtitle is-3">
-            Businesses: Hire social media users to share your ads <br>
-            Users: Get paid to share ads from the companies you support
-            </h2>
         </div>
     </div>
 </section>
+
 <br>
-<section class="container">
+<!-- table -->
+<div class="container">
   <div class="columns">
     <div class="column is-12">
-      <h1 class="subtitle is-3">Current Available Ads</h1>
-
-      <!-- this div if for one full ad -->
-      {{#each Ads}}
-      <div class="box content" id="displayAd">
-        <article class="post">
-          <h4 id="adTitle">{{this.title}}</h4>
-          <div class="media">
-            <div class="media-left">
-              <p class="image is-64x64">
-                <img src="http://bulma.io/images/placeholders/128x128.png" id="advertiserLogo">
-              </p>
-            </div>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <a href="/api/advertisers/:id" id="advertiserName">Advertiser Name</a> posted on: {{this.createdAt}}&nbsp;
-                  <span class="tag is-light">{{this.category}}</span>
-                </p>
-              </div>
-            </div>
-            <div class="media-right">
-              <span id="adsRemaining"># remaining: ____</span>
-              <a href="/api/users/:id" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
-            </div>
+      <div class="card events-card">
+        <div class="card-table" id="allUsers">
+          <div class="content">
+            <table class="table is-bordered is-fullwidth is-striped is-hoverable">
+              <thead>
+                <tr>
+                  <th>Company Name</th>
+                  <th>About</th>
+                  <th>Joined On</th>
+                  <th>Message</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each Advertisers}}
+                  <tr>
+                    <td>{{this.company_name}}</td>
+                    <td>{{this.description}}</td>
+                    <td>{{this.createdAt}}</td>
+                    <td><a class="button is-small is-primary" href="#"><i data-vi="message" data-vi-size="18"></i>Message</a></td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
           </div>
-        </article>
-        <hr>
-        <p id="adBody">{{this.body}}</p>
+        </div>
+        <footer class="card-footer">
+          <a href="/" class="card-footer-item">Marketplace</a>
+        </footer>
       </div>
-      <!-- end of Ad -->
-      {{/each}}
     </div>
   </div>
-</section>
+</div>
 
 <br>
