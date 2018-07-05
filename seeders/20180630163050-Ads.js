@@ -17,7 +17,6 @@ module.exports = {
       //create seed data
 
           {
-            userId: 1,
             advertiserId: 1,
             title: 'This is a title.',
             category: 'Technology',
@@ -32,8 +31,7 @@ module.exports = {
             // }]
           },
           {
-            
-            userId: 2,
+
             advertiserId: 2,
             title: 'This is a title 2.',
             category: 'Entertainment',
@@ -48,8 +46,7 @@ module.exports = {
             // }]
           },
           {
-            
-            userId: 3,
+
             advertiserId: 3,
             title: 'This is a title 3.',
             category: 'Products',
@@ -64,7 +61,6 @@ module.exports = {
             // }]
           },
           {
-            userId: 4,
             advertiserId: 4,
             title: 'This is a title 4.',
             category: 'Finance',
@@ -79,7 +75,6 @@ module.exports = {
             // }]
           },
           {
-            userId: 5,
             advertiserId: 5,
             title: 'This is a title 5.',
             category: 'Music',
