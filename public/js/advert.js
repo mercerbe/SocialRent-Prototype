@@ -1,9 +1,11 @@
 $(document).ready(function() {
 //grab data from form
 let adTitle = $("#adTitle")
-let adCategory = $("adCategory").find(":selected")
+//let adCategory = $("adCategory")
 let adBody = $("#adBody")
 let numUsers = $("#numUsers")
+
+let createAdBtn = $("#createAdBtn")
 
   createAdBtn.on('click', (event) => {
     event.preventDefault();
@@ -19,6 +21,27 @@ let numUsers = $("#numUsers")
         }
       });
 
+      return flag;
     }
+
+    if(check_adForm()) {
+      console.log("ad form fully filled out...");
+    }
+
+    let newAdData = {
+      title: adTitle.val(),
+      category: adCategory.options[adCategory.selectedIndex].value,
+      body: adBody.val(),
+      taken: false,
+      public: true,
+    }
+
+    console.log(numUsers.val());
+
+    $.post('/api/ads', newAdData).done( () => {
+      console.log(newAdData);
+      alert("Successfully created your new ad!")
+    })
+
   })
 })
