@@ -104,21 +104,21 @@
             <!-- make new post/ad -->
             <section>
 
-              <div class="card">
+              <div class="card adCard">
                 <p class="card-header-title">Create New Ad</p>
                 <div class="column is-9">
                 <div class="field">
                   <label class="label">Ad Title</label>
                   <p class="control">
-                    <input class="input required" id='adTitle' type="text" placeholder="Title">
+                    <input name="title" class="input required" type="text" placeholder="Title" id="adTitle">
                   </p>
                 </div>
                 <div class="field">
                   <label class="label">Category</label>
                   <div class="control">
-                    <div class="select required">
-                      <select id='adCategory'>
-                        <option disabled>Select A Category</option>
+                    <div class="select">
+                      <select name="category" class="select required" id="adCategory">
+                        <option diabled>Select A Category</option>
                         <option>Finance</option>
                         <option>Entertainment</option>
                         <option>Events</option>
@@ -132,18 +132,18 @@
                 <div class="field">
                   <label class="label">Ad Body</label>
                   <p class="control">
-                    <textarea id='adBody' class="textarea required" type="text" placeholder="The body of the ad you want users to post..."></textarea>
+                    <textarea name="Ad Body" class="textarea required" id="adBody" type="text" placeholder="The body of the ad you want users to post..."></textarea>
                   </p>
                 </div>
                 <div class="field">
                   <label class="label"># Of Users</label>
                   <p class="control">
-                    <input id='userCount' class="input required" type="text" placeholder="eg. '100'">
+                    <input name=" # of Users" class="input required" id="numUsers" type="tesxt" placeholder="eg. '100'">
                   </p>
                 </div>
                 <div class="field">
                   <p class="control">
-                    <button id='btnSubmit' class="button is-primary">
+                    <button class="button is-primary" id="createAdBtn">
                       Create Ad
                     </button>
                   </p>
@@ -263,3 +263,5 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="./js/user.js"></script>
+<script type="text/javascript" src="./js/advert.js"></script>

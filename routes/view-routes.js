@@ -14,7 +14,8 @@ module.exports = (app) => {
       where: {
         taken: 0,
         public: 1
-      }
+      },
+      order: [['updatedAt', 'DESC']]
     }).then(data => {
       res.render('index', { Ads: data })
     })
