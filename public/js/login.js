@@ -14,7 +14,7 @@ $(document).ready(function() {
       email: emailInput.val().trim(),
       password: passwordInput.val()
     }
-    $.post('/api/users/', loginData, (info) => {
+    $.post('/api/login/', loginData, (info) => {
       if (info="User not found") {
         alert("User not found")
       } else {

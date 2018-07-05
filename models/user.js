@@ -1,6 +1,6 @@
 module.exports = (Sequelize, DataTypes) => {
 
-    let User = Sequelize.define('user', {
+    let User = Sequelize.define('User', {
         email: {
           type: DataTypes.STRING,
           allowNull: false,
@@ -48,7 +48,7 @@ module.exports = (Sequelize, DataTypes) => {
     }*/)
 
     User.associate = function(models) {
-      User.hasMany(models.ad)
+      User.hasMany(models.Ad)
     }
 
 

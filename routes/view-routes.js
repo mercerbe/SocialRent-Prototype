@@ -1,7 +1,8 @@
 //dependencies
 const path = require('path');
 
-const db = require('../models')
+var db = require('../models')
+
 
 //export all handlebars routes
 module.exports = (app) => {
@@ -9,7 +10,7 @@ module.exports = (app) => {
   //index aka maketplace page
   app.get('/', (req, res) => {
 
-    db.ad.findAll({
+    db.Ad.findAll({
       where: {
         taken: 0,
         public: 1
@@ -23,7 +24,7 @@ module.exports = (app) => {
   //all users page
   app.get('/users', (req, res) => {
 
-    db.user.findAll({}).then(data => {
+    db.User.findAll({}).then(data => {
       res.render('allUsers', {Users: data})
     })
   })
@@ -31,7 +32,7 @@ module.exports = (app) => {
   //all advertisers page
   app.get('/advertisers', (req, res) => {
 
-    db.advertiser.findAll({}).then(data => {
+    db.Advertiser.findAll({}).then(data => {
       res.render('allAdvertisers', {Advertisers: data})
     })
   })

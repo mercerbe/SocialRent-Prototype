@@ -25,7 +25,7 @@ app.get('/advertiser', (req, res) => {
         where: {
           id: req.params.id
         },
-        include: [db.ad]
+        include: [db.Ad]
       }
     ).then((user) => {
       res.json(user)
@@ -39,30 +39,26 @@ app.get('/advertiser', (req, res) => {
     db.advertiser.findOne(
       {
         where: {
-          id: req.params.id
+          creatorID: req.params.id
         },
-        include: [db.ad]
+        include: [db.Advertiser]
       }
     ).then((advertiser) => {
-      res.json(advertiser)
-      //res.redirect('/advertiser/:id')
+      res.render('advertiserDashboard', {Ads: advertiser})
     })
   })
 
   //show all users on site
   app.get('/api/users', (req, res) => {
-    db.user.findAll(
+    db.User.findAll(
       {
       //possibly include ads
-      }
-    ).then((users) => {
-      res.json(users)
     })
   })
 
   //show all advertisers on site
   app.get('/api/advertisers', (req, res) => {
-    db.advertiser.findAll(
+    db.Advertiser.findAll(
       {
         //possibly include
       }
@@ -71,16 +67,16 @@ app.get('/advertiser', (req, res) => {
     })
   })
 
-  //login (changed post to get!!!!!!)
-  app.get('/api/users/', (req, res) => {
-   db.user.findOne({
+  //login
+  app.post('/api/login/', (req, res) => {
+   db.User.findOne({
      where: {
        email: req.body.email,
        password: req.body.password
      }
    }).then((data) => {
      if (!data) {
-       db.advertiser.findOne({
+       db.Advertiser.findOne({
          where: {
            email: req.body.email,
            password: req.body.password
@@ -90,10 +86,10 @@ app.get('/advertiser', (req, res) => {
            res.send("User not found")
          }
          console.log("advertiser");
-         res.send('/advertiser/' + data.id)
+         res.send('/api/advertisers/' + data.id)
        })
      } else {
-       res.send('/user/' + data.id)
+       res.send('/api/users/' + data.id)
      }
    })
  })
@@ -125,7 +121,7 @@ app.post('/api/:role', (req, res) => {
   //remove user if account deleted
   app.delete('/api/users/:id', (req, res) => {
 
-    db.user.destroy({
+    db.User.destroy({
       where: {
         id: req.params.id
       }
@@ -137,7 +133,7 @@ app.post('/api/:role', (req, res) => {
   //remove advertiser if account deleted
   app.delete('/api/advertisers/:id', (req, res) => {
 
-    db.advertiser.destroy({
+    db.Advertiser.destroy({
       where: {
         id: req.params.id
       }

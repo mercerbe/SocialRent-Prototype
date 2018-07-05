@@ -1,12 +1,12 @@
 <section class="hero is-info is-medium is-bold" style="background-image: linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);">
-    <div class="hero-head">
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="/">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
                         Social Rent
                     </a>
-                    <span class="navbar-burger burger" data-target="navbarMenu">
+          <span class="navbar-burger burger" data-target="navbarMenu">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -26,10 +26,13 @@
                     </div>
                 </div>
             </div>
-            <div class="navbar-item logButtons">
-              <div class="field is-grouped">
-                <p class="control">
-                  <a class="button is-outlined is-white" href="/signup">
+          </div>
+        </div>
+      </div>
+      <div class="navbar-item logButtons">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="button is-outlined is-white" href="/signup">
                     <span class="icon">
                       <i class="fa fa-user-plus"></i>
                     </span>
@@ -37,9 +40,9 @@
                       Sign Up
                     </span>
                   </a>
-                </p>
-                <p class="control">
-                  <a class="button is-white is-outlined" href="/login">
+          </p>
+          <p class="control">
+            <a class="button is-white is-outlined" href="/login">
                     <span class="icon">
                       <i class="fa fa-user"></i>
                     </span>
@@ -59,8 +62,8 @@
             Businesses: Hire social media users to share your ads <br>
             Users: Get paid to share ads from the companies you support
             </h2>
-        </div>
     </div>
+  </div>
 </section>
 <br>
 <section class="container">
@@ -70,25 +73,25 @@
 
       <!-- this div if for one full ad -->
       {{#each Ads}}
-      <div class="box content" id="displayAd">
+      <div class="box content" id="displayAd{{this.id}}" >
         <article class="post">
-          <h4 id="adTitle">{{this.title}}</h4>
+          <h4 id="adTitle{{this.id}}">{{this.title}}</h4>
           <div class="media">
             <div class="media-left">
-              <p class="image is-64x64">
-                <img src="http://bulma.io/images/placeholders/128x128.png" id="advertiserLogo">
-              </p>
+              <!-- <p class="image is-64x64">
+                <img src="http://bulma.io/images/placeholders/128x128.png" id="advertiserLogo{{this.company_name}}">
+              </p> -->
             </div>
             <div class="media-content">
               <div class="content">
                 <p>
-                  <a href="/api/advertisers/:id" id="advertiserName">Advertiser Name</a> posted on: {{this.createdAt}}&nbsp;
+                  <a href="/api/advertisers/:id" id="advertiserName{{this.creatorID}}">{{this.company_name}}</a> posted on: {{this.createdAt}}&nbsp;
                   <span class="tag is-light">{{this.category}}</span>
                 </p>
               </div>
             </div>
             <div class="media-right">
-              <span id="adsRemaining"># remaining: ____</span>
+              <!-- <span id="adsRemaining"># remaining: ____</span> -->
               <a href="/api/users/:id" class="has-text-grey-light"><i data-vi="star" data-vi-size="28"></i></a>
             </div>
           </div>
