@@ -1,0 +1,102 @@
+<!-- nav/hero -->
+<section class="hero is-info is-medium is-bold" style="background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/">
+                        Social Rent
+                    </a>
+                    <span class="navbar-burger burger" data-target="navbarMenu" style="background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="tabs is-right">
+                            <ul>
+                                <li><a href="/">Market</a></li>
+                                <li><a href="/advertisers">All Advertisers</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-item logButtons">
+              <div class="field is-grouped">
+                <p class="control">
+                  <a class="button is-outlined is-white" href="/signup">
+                    <span class="icon">
+                      <i class="fa fa-user-plus"></i>
+                    </span>
+                    <span>
+                      Sign Up
+                    </span>
+                  </a>
+                </p>
+                <p class="control">
+                  <a class="button is-white is-outlined" href="/login">
+                    <span class="icon">
+                      <i class="fa fa-user"></i>
+                    </span>
+                    <span>Login</span>
+                  </a>
+                </p>
+              </div>
+            </div>
+        </nav>
+    </div>
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title is-1">
+            Registered Users Posting Ads From Social Rent
+            </h1>
+        </div>
+    </div>
+</section>
+
+<br>
+
+<div class="container">
+  <div class="columns">
+    <div class="column is-12">
+      <div class="card events-card">
+        <header class="card-header">
+          <p class="card-header-title">All Participating Users</p>
+          <a href="#" class="card-header-icon" aria-label="more options"></a>
+        </header>
+        <div class="card-table" id="allUsers">
+          <div class="content">
+            <table class="table is-bordered is-fullwidth is-striped is-hoverable">
+              <thead>
+                <tr>
+                  <th>Instagram</th>
+                  <th>Twitter Handle</th>
+                  <th>Joined On</th>
+                  <th>Message</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each Users}}
+                  <tr>
+                    <td>{{this.twitter}}</td>
+                    <td>{{this.instagram}}</td>
+                    <td>{{this.createdAt}}</td>
+                    <td><a class="button is-small is-link" href="#"><i data-vi="message" data-vi-size="18"></i>Message</a></td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <footer class="card-footer">
+          <a href="/" class="card-footer-item">Marketplace</a>
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
