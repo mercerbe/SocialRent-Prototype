@@ -15,11 +15,12 @@ $(document).ready(function() {
       password: passwordInput.val()
     }
     $.post('/api/login/', loginData, (info) => {
-      if (info="User not found") {
-        alert("User not found")
-      } else {
-        document.location.href = info
-      }
+      console.log(info);
+      // if (info = "User not found") {
+      //   alert("User not found")
+      // } else {
+      document.location.href = info
+      // }
     })
 
   })

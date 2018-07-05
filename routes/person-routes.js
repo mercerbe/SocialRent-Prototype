@@ -36,10 +36,10 @@ app.get('/advertiser', (req, res) => {
 
   //single advertiser dashboard
   app.get('/advertisers/:id', (req, res) => {
-    db.Advertiser.findOne(
+    db.Ad.findAll(
       {
         where: {
-          creatorID: req.params.id
+          advertiserID: req.params.id
         },
         include: [db.Advertiser]
       }
@@ -84,12 +84,15 @@ app.get('/advertiser', (req, res) => {
        }).then((data) => {
          if (!data) {
            res.send("User not found")
+           return;
          }
+
          console.log("advertiser");
-         res.send('/api/advertisers/' + data.id)
+         res.send('/advertisers/' + data.id)
        })
      } else {
-       res.send('/api/users/' + data.id)
+       console.log("user");
+       res.send('/users/' + data.id)
      }
    })
  })
