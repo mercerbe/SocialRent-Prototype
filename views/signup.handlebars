@@ -4,10 +4,10 @@
 </head>
 
 <!-- nav for signup page -->
-<nav class="navbar userNav signupNav" id="top">
+<nav class="navbar userNav signupNav is-white" id="top">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item brand-text" href="/">Social Rent</a>
+            <a href="/"><img src="/images/socialRentLogo.png" class="image is-64x64"alt=""></a>
             <div class="navbar-burger burger" data-target="navMenu">
                 <span></span>
                 <span></span>
@@ -68,7 +68,7 @@
             <div class="field">
               <label class="label">Password</label>
               <div class="control">
-                <input name= "Password"  class="input is-large required" id="password" type="password_input" placeholder="··········">
+                <input name= "Password"  class="input is-large required" id="password" type="password" placeholder="··········">
               </div>
             </div>
             <div class="field">
@@ -107,6 +107,12 @@
             <!-- user options -->
             <div class="is-invisible" id="userFields">
               <div class="field">
+                <label class="label">Username</label>
+                <div class="control">
+                  <input name="Username" class="input is-large" id="Username" type="text" placeholder="Social Rent">
+                </div>
+              </div>
+              <div class="field">
                 <label class="label">Twitter Handle</label>
                 <div class="control">
                   <input name="twitter_handle" class="input is-large" id="twitter_handle" type="text" placeholder="@Social_Rent">
@@ -119,7 +125,7 @@
                 </div>
               </div>
             </div>
-
+            <br>
             <div class="field">
                 <label class="checkbox">
                   <input type="checkbox" id="terms">
@@ -136,7 +142,7 @@
           </form>
         </div>
         <p class="has-text-grey">
-          <a href="./">Need Help?</a> &nbsp;·&nbsp; <a href="./index">Market</a>
+          <a href="/login">Login</a> &nbsp;·&nbsp; <a href="./index">Market</a>
         </p>
       </div>
     </div>

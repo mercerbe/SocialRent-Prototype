@@ -24,7 +24,9 @@ module.exports = (app) => {
   //all users page
   app.get('/users', (req, res) => {
 
-    db.User.findAll({}).then(data => {
+    db.User.findAll({
+      order: [['updatedAt', 'DESC']]
+    }).then(data => {
       res.render('allUsers', {Users: data})
     })
   })
@@ -32,7 +34,9 @@ module.exports = (app) => {
   //all advertisers page
   app.get('/advertisers', (req, res) => {
 
-    db.Advertiser.findAll({}).then(data => {
+    db.Advertiser.findAll({
+      order: [['updatedAt', 'DESC']]
+    }).then(data => {
       res.render('allAdvertisers', {Advertisers: data})
     })
   })
