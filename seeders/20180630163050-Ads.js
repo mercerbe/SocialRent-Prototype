@@ -31,7 +31,17 @@ module.exports = {
             // }]
           },
           {
-
+            advertiserId: 1,
+            title: 'Tesla Model S',
+            category: 'Products',
+            body: 'Advertise our new Tesla Model S, boasting 0 to 60 in 2.4 seconds!',
+            taken: false,
+            public: true,
+            payment: 1.00,
+            createdAt: new Date(),
+            updatedAt: new Date()
+          },
+          {
             advertiserId: 2,
             title: 'Amazon',
             category: 'Products',
@@ -46,7 +56,17 @@ module.exports = {
             // }]
           },
           {
-
+            advertiserId: 2,
+            title: 'Amazon Echo',
+            category: 'Products',
+            body: 'Do you want everything you say to be recorded?  Advertise our amazing surveillance product disguised as a bluetooth speaker!',
+            taken: false,
+            public: true,
+            payment: 1.20,
+            createdAt: new Date(),
+            updatedAt: new Date()
+          },
+          {
             advertiserId: 3,
             title: 'Spotify Music Streaming',
             category: 'Music',
@@ -61,10 +81,32 @@ module.exports = {
             // }]
           },
           {
+            advertiserId: 3,
+            title: 'Spotify Music Streaming',
+            category: 'Events',
+            body: 'Advertise for a special subscription offer, free for the first three months!',
+            taken: false,
+            public: true,
+            payment: 1.75,
+            createdAt: new Date(),
+            updatedAt: new Date()
+          },
+          {
+            advertiserId: 4,
+            title: 'Apple',
+            category: 'Technology',
+            body: 'Want to see the demise of Microsoft?  Advertise our products!',
+            taken: false,
+            public: true,
+            payment: 0.50,
+            createdAt: new Date(),
+            updatedAt: new Date()
+          },
+          {
             advertiserId: 4,
             title: 'Apple',
             category: 'Products',
-            body: 'Want to see the demise of Microsoft?  Advertise our products!',
+            body: 'New Apple iPhone X-S available now!',
             taken: false,
             public: true,
             payment: 0.50,
@@ -79,6 +121,17 @@ module.exports = {
             title: 'Nintendo',
             category: 'Entertainment',
             body: "Advertise our video games!  Now you're playing with power.",
+            taken: false,
+            public: true,
+            payment: 0.10,
+            createdAt: new Date(),
+            updatedAt: new Date()
+          },
+          {
+            advertiserId: 5,
+            title: 'Nintendo',
+            category: 'Products',
+            body: "Nintendo Switch available in stores everywhere!",
             taken: false,
             public: true,
             payment: 0.10,
