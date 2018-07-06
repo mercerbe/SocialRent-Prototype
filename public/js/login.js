@@ -19,6 +19,8 @@ $(document).ready(function() {
       if (info === "User not found") {
         alert("User not found")
       } else {
+        let userID = info.match(/\d/)
+        localStorage.setItem('id', userID[0])
       document.location.href = info
       }
     })
