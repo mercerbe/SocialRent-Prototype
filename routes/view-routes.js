@@ -1,7 +1,9 @@
 //dependencies
-const path = require('path');
+const path = require('path')
 
 var db = require('../models')
+
+var sequelize = require('sequelize')
 
 
 //export all handlebars routes
@@ -10,12 +12,15 @@ module.exports = (app) => {
   //index aka maketplace page
   app.get('/', (req, res) => {
 
-    db.Ad.findAll({
+    return db.Ad.findAll({
       where: {
         taken: 0,
         public: 1
       },
-      order: [['updatedAt', 'DESC']]
+      order: [['updatedAt', 'DESC']],
+      //attributes: ['title', [sequelize.fn('count', sequelize.col( 'Ad.title')), 'titleCount']],
+      //include: [{attributes: ['category', 'body', 'company_name', 'createdAt'], db.Ad}],
+      group: ['title']
     }).then(data => {
       res.render('index', { Ads: data })
     })

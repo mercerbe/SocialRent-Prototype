@@ -16,6 +16,9 @@ html,body {
 .navbar-menu .navbar-item {
   padding: 0 2rem;
 }
+#compName {
+  color: black;
+}
 .media-left img {
   border-radius: 50%;
 }
