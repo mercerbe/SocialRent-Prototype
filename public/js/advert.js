@@ -49,7 +49,7 @@ $(document).ready(function() {
   //Delete advertisers jQuery portion
   deleteAdBtn.on('click', (event) => {
     $.ajax({
-      url: '/api/ads/' + deleteAdBtn.data('id'),
+      url: '/api/ads/' + $(event.target).data('id'),
       type: 'DELETE',
       success: function(result) {
         alert('This has been deleted!')
