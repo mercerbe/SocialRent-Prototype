@@ -53,13 +53,13 @@ module.exports = (Sequelize, DataTypes) => {
         isDecimal: true
       }
     },
-    advertiserID {
+    advertiserID: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    userID {
+    userID: {
       type: DataTypes.INTEGER
-    }
+    },
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
