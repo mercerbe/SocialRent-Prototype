@@ -1,5 +1,7 @@
 <head>
-  <link rel="stylesheet" href="./css/dashboard.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <script type="text/javascript" src="/js/user.js"></script>
+  <script type="text/javascript" src="/js/advert.js"></script>
 </head>
 <!-- START NAV -->
 <nav class="navbar is-white" id="top">
@@ -68,7 +70,7 @@
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title">
-                            Hello, {{Ads.Advertiser.company_name}}
+                            Hello, {{Advertiser.company_name}}
                         </h1>
                         <h2 class="subtitle">
                             Manage your activity!
@@ -82,19 +84,19 @@
                 <div class="tile is-ancestor has-text-centered">
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">35</p>
+                            <p class="title">{{Ads.length}}</p>
                             <p class="subtitle">Ads Posted</p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">25</p>
+                            <p class="title">0</p>
                             <p class="subtitle">Messages</p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">5</p>
+                            <p class="title">0</p>
                             <p class="subtitle">Payments</p>
                         </article>
                     </div>
@@ -263,5 +265,3 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="./js/user.js"></script>
-<script type="text/javascript" src="./js/advert.js"></script>
