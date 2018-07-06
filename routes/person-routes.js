@@ -43,9 +43,9 @@ app.get('/advertiser', (req, res) => {
         },
         include: [db.Advertiser]
       }
-    ).then((advertiser) => {
-      
-      res.render('advertiserDashboard', {Ads: advertiser})
+    ).then((ads) => {
+
+      res.render('advertiserDashboard', {Ads: ads, Advertiser: ads[0].Advertiser})
     })
   })
 
