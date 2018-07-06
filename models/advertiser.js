@@ -1,6 +1,6 @@
 module.exports = (Sequelize, DataTypes) => {
 
-    let Advertiser = Sequelize.define('advertiser', {
+    let Advertiser = Sequelize.define('Advertiser', {
         email: {
           type: DataTypes.STRING,
           allowNull: false,
@@ -37,15 +37,10 @@ module.exports = (Sequelize, DataTypes) => {
           type: DataTypes.DATE,
           allowNull: false
         }
-      },
-      {
-        classMethods: {
-          associate: function (models) {
-          Advertiser.hasMany(models.Ad)
-        },
-        tableName: 'Ad'
-      }
-    })
+      })
+        Advertiser.associate = function (models) {
+        Advertiser.hasMany(models.Ad)
+    }
 
     return Advertiser
 }

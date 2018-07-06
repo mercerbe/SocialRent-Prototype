@@ -1,5 +1,7 @@
 <head>
-  <link rel="stylesheet" href="./css/dashboard.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <script type="text/javascript" src="/js/user.js"></script>
+  <script type="text/javascript" src="/js/advert.js"></script>
 </head>
 <!-- START NAV -->
 <nav class="navbar is-white" id="top">
@@ -68,7 +70,7 @@
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title">
-                            Hello, 'Advertiser.title'
+                            Hello, {{Advertiser.company_name}}
                         </h1>
                         <h2 class="subtitle">
                             Manage your activity!
@@ -82,19 +84,19 @@
                 <div class="tile is-ancestor has-text-centered">
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">35</p>
+                            <p class="title">{{Ads.length}}</p>
                             <p class="subtitle">Ads Posted</p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">25</p>
+                            <p class="title">0</p>
                             <p class="subtitle">Messages</p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">5</p>
+                            <p class="title">0</p>
                             <p class="subtitle">Payments</p>
                         </article>
                     </div>
@@ -104,20 +106,20 @@
             <!-- make new post/ad -->
             <section>
 
-              <div class="card">
+              <div class="card adCard">
                 <p class="card-header-title">Create New Ad</p>
                 <div class="column is-9">
                 <div class="field">
                   <label class="label">Ad Title</label>
                   <p class="control">
-                    <input class="input" type="tesxt" placeholder="Title">
+                    <input name="title" class="input required" type="text" placeholder="Title" id="adTitle">
                   </p>
                 </div>
                 <div class="field">
                   <label class="label">Category</label>
                   <div class="control">
                     <div class="select">
-                      <select>
+                      <select name="category" class="select required" id="adCategory">
                         <option diabled>Select A Category</option>
                         <option>Finance</option>
                         <option>Entertainment</option>
@@ -132,18 +134,18 @@
                 <div class="field">
                   <label class="label">Ad Body</label>
                   <p class="control">
-                    <textarea class="textarea" type="text" placeholder="The body of the ad you want users to post..."></textarea>
+                    <textarea name="Ad Body" class="textarea required" id="adBody" type="text" placeholder="The body of the ad you want users to post..."></textarea>
                   </p>
                 </div>
                 <div class="field">
                   <label class="label"># Of Users</label>
                   <p class="control">
-                    <input class="input" type="tesxt" placeholder="eg. '100'">
+                    <input name=" # of Users" class="input required" id="numUsers" type="tesxt" placeholder="eg. '100'">
                   </p>
                 </div>
                 <div class="field">
                   <p class="control">
-                    <button class="button is-primary">
+                    <button class="button is-primary" id="createAdBtn">
                       Create Ad
                     </button>
                   </p>
@@ -219,20 +221,17 @@
                       Open Ads
                     </p>
                       <tbody>
+                        {{#each Ads}}
+                        {{#unless taken}}
                           <tr>
                               <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
-                              <td>Ad 3</td>
+                              <td>{{this.title}}</td>
                               <td># left</td>
                               <td><a class="button is-small is-primary" href="#">edit</a></td>
                               <td><a class="button is-small is-danger" href="#">delete</a></td>
                           </tr>
-                          <tr>
-                              <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
-                              <td>Ad 4</td>
-                              <td># left</td>
-                              <td><a class="button is-small is-primary" href="#">edit</a></td>
-                              <td><a class="button is-small is-danger" href="#">delete</a></td>
-                          </tr>
+                          {{/unless}}
+                          {{/each}}
                       </tbody>
                   </table>
             </div>
@@ -246,18 +245,16 @@
                       Taken Ads
                     </p>
                       <tbody>
+                        {{#each Ads}}
+                        {{#if taken}}
                           <tr>
                               <td width="5%"><i data-vi="check" data-vi-size="28"></i></td>
-                              <td>Ad 1</td>
-                              <td><a class="is-small is-primary" href="#">Link to user</a></td>
+                              <td>{{this.title}}</td>
+                              <td><a class="is-small is-primary" href="/api/users/{{this.userID}}">Link to user</a></td>
                               <td><a class="button is-small is-danger" href="#">delete</a></td>
                           </tr>
-                          <tr>
-                              <td width="5%"><i data-vi="check" data-vi-size="28"></i></td>
-                              <td>Ad 2</td>
-                              <td><a class="is-small is-primary" href="#">Link to user</a></td>
-                              <td><a class="button is-small is-danger" href="#">delete</a></td>
-                          </tr>
+                          {{/if}}
+                          {{/each}}
                       </tbody>
                   </table>
             </div>

@@ -1,8 +1,8 @@
-let User = require('./user')
+var User = require('./user')
 
 module.exports = (Sequelize, DataTypes) => {
 
-  let Ad = Sequelize.define("ad", {
+  let Ad = Sequelize.define("Ad", {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -24,11 +24,18 @@ module.exports = (Sequelize, DataTypes) => {
         len: [10, 280]
       }
     },
+    company_name: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [0, 100]
+      }
+    },
     taken: {
       type: DataTypes.BOOLEAN,
       validate: {
         isBoolean: (val) => {
-          return (typeof (val) == 'boolean')
+          return (typeof(val) == 'boolean')
         }
       }
     },
@@ -36,7 +43,7 @@ module.exports = (Sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       validate: {
         isBoolean: (val) => {
-          return (typeof (val) == 'boolean')
+          return (typeof(val) == 'boolean')
         }
       }
     },
@@ -48,22 +55,17 @@ module.exports = (Sequelize, DataTypes) => {
     },
     createdAt: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: false,
     },
     updatedAt: {
       type: DataTypes.DATE,
       allowNull: false
     },
-  },
-    {
-      classMethods: {
-        associate: function (models) {
-        Ad.belongsTo(models.Advertiser)
-        Ad.hasOne(models.User)
-      },
-      tableName: 'Advertiser'
-    }
   })
+  Ad.associate = function(models) {
+    Ad.belongsTo(models.Advertiser) //,
+    // Ad.hasOne(models.User)
+  }
 
   return Ad
 }

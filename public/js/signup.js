@@ -1,10 +1,8 @@
 $(document).ready(function() {
-
-  //grab elements
   let email = $('#email_input')
   let password = $('#password')
   let passwordTwo = $('#password2')
-  let role = $('#role')
+  let role = $('#role').find(':selected')
   let company = $('#company_name')
   let description = $('#description')
   let twitter = $('#twitter_handle')
@@ -14,32 +12,73 @@ $(document).ready(function() {
 
   let signupBtn = $('#signup-btn')
 
-  console.log("log something")
-
-  // signup button click
   signupBtn.on('click', (event) => {
 
-    console.log('click');
     event.preventDefault()
-    //function check_form {
-    var flag = true;
-    $.each($('form .required'), function(index, field) {
-      console.log($(this).val());
-      console.log(field);
-      console.log(field.innerHTML);
-      // //if ($(field).val() == "") {
-      //   //  alert('Please enter a value for ' + $(this).attr('name'));
-      //   //  flag = false;
-      //   //  return false;
-      //   //  console.log(this);
-      // }
-    });
+    var check_form = function() {
+      var flag = true;
+      $.each($('form .required'), function(index, field) {
+        if ($(this).val() == "") {
+          alert('Please enter a value for ' + $(this).attr('name'));
+          flag = false;
+          return false;
 
-    return flag;
-    //}
-    if (check_form()) {
-      alert("check_form returned true");
+        }
+
+      });
+      if ($("#roleSelect").val() == "Advertiser") {
+        if ($('#company_name').val() == "") {
+          alert('Please enter a value for ' + $('#company_name').attr('name'));
+          flag = false;
+          return false;
+        }
+        if ($('#description').val() == "") {
+          alert('Please enter a value for ' + $('#description').attr('name'));
+          flag = false;
+          return false;
+        }
+
+      } else {
+        if ($('#insta_handle').val() == "") {
+          alert('Please enter a value for ' + $('#insta_handle').attr('name'));
+          flag = false;
+          return false;
+        }
+        if ($('#twitter_handle').val() == "") {
+          alert('Please enter a value for ' + $('#twitter_handle').attr('name'));
+          flag = false;
+          return false;
+
+
+        }
+      }
+      return flag;
     }
-  })
 
+    if (check_form()) {
+      console.log("form fully filled out...");
+    }
+    let signupData = {
+      email: email.val(),
+      password: password.val(),
+      role: roleSelect.options[roleSelect.selectedIndex].value,
+      company_name: company.val(),
+      description: description.val(),
+      twitter: twitter.val(),
+      instagram: instagram.val()
+
+    }
+
+    console.log(signupData.role);
+
+    let postUrl = '/api/' + signupData.role.toLowerCase() + 's'
+
+    console.log(postUrl);
+
+    $.post(postUrl, signupData).done( ()=>{
+      console.log(signupData);
+      alert("Successfully signed up!")
+    })
+
+  })
 })

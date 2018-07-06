@@ -1,5 +1,4 @@
 'use strict';
-let date = new Date()
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -18,66 +17,73 @@ module.exports = {
       //create seed data
 
           {
+            advertiserId: 1,
             title: 'This is a title.',
             category: 'Technology',
             body: 'I am a body',
             taken: false,
             public: true,
             payment: 1.00,
-            createdAt: date.toLocaleString(),
-            updatedAt: date.toLocaleString()
+            createdAt: new Date(),
+            updatedAt: new Date()
             // include: [{
             //   association: Ad.Advertiser
             // }]
           },
           {
+
+            advertiserId: 2,
             title: 'This is a title 2.',
             category: 'Entertainment',
             body: 'I am a body 2',
             taken: false,
             public: true,
             payment: 1.25,
-            createdAt: date.toLocaleString(),
-            updatedAt: date.toLocaleString()
+            createdAt: new Date(),
+            updatedAt: new Date()
             // include: [{
             //   association: Ad.Advertiser
             // }]
           },
           {
+
+            advertiserId: 3,
             title: 'This is a title 3.',
             category: 'Products',
             body: 'I am a body 3',
             taken: false,
             public: true,
             payment: 1.50,
-            createdAt: date.toLocaleString(),
-            updatedAt: date.toLocaleString()
+            createdAt: new Date(),
+            updatedAt: new Date()
             // include: [{
             //   association: Ad.Advertiser
             // }]
           },
           {
+            advertiserId: 4,
             title: 'This is a title 4.',
             category: 'Finance',
             body: 'I am a body 4',
             taken: false,
             public: true,
             payment: 0.50,
-            createdAt: date.toLocaleString(),
-            updatedAt: date.toLocaleString()
+            createdAt: new Date(),
+            updatedAt: new Date()
             // include: [{
             //   association: Ad.Advertiser
             // }]
           },
           {
+            advertiserId: 5,
             title: 'This is a title 5.',
             category: 'Music',
             body: 'I am a body 5',
             taken: false,
             public: true,
             payment: 0.10,
-            createdAt: date.toLocaleString(),
-            updatedAt: date.toLocaleString()
+            createdAt: new Date(),
+            updatedAt: new Date()
             // include: [{
             //   association: Ad.Advertiser
             // }]

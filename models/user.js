@@ -1,6 +1,6 @@
 module.exports = (Sequelize, DataTypes) => {
 
-    let User = Sequelize.define('user', {
+    let User = Sequelize.define('User', {
         email: {
           type: DataTypes.STRING,
           allowNull: false,
@@ -37,7 +37,7 @@ module.exports = (Sequelize, DataTypes) => {
           type: DataTypes.DATE,
           allowNull: false
         }
-      },
+    }/*,
       {
         classMethods: {
           associate: function (models) {
@@ -45,7 +45,11 @@ module.exports = (Sequelize, DataTypes) => {
         },
         tableName: 'Ad'
       }
-    })
+    }*/)
+
+    User.associate = function(models) {
+      User.hasMany(models.Ad)
+    }
 
 
     return User
