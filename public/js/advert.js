@@ -6,7 +6,7 @@ $(document).ready(function() {
   let numUsers = $("#numUsers")
 
   let createAdBtn = $("#createAdBtn")
-  let deleteAdBtn = $('#deleteAdBtn')
+  let deleteAdBtn = $('.deleteAdBtn')
 
   createAdBtn.on('click', (event) => {
     event.preventDefault();
