@@ -7,7 +7,7 @@ $(document).ready(function() {
 
   //buttons
   let createAdBtn = $("#createAdBtn")
-  let deleteAdBtn = $('#deleteAdBtn')
+  let deleteAdBtn = $('.deleteAdBtn')
 
   //click event for creating an ad
   createAdBtn.on('click', (event) => {
@@ -59,10 +59,11 @@ $(document).ready(function() {
         })
       }
       alert("Successfully created your new ad!")
-      location.reload()
+    }).then(() => {
+      location.reload();
     })
 
-  })
+  })//end of click event 
 
 
   //Delete single ad jQuery portion

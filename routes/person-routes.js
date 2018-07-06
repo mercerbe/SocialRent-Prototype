@@ -83,6 +83,21 @@ app.get('/advertiser', (req, res) => {
 
   })
 
+  //single user with associated ads
+  app.get('/api/users/:id', (req, res) => {
+    db.User.findOne(
+      {
+        where: {
+          id: req.params.id
+        },
+        include: [db.Ad]
+      }
+    ).then((singleUser) => {
+      res.json(singleUser)
+    })
+
+  })
+
   //login
   app.post('/api/login/', (req, res) => {
    db.User.findOne({

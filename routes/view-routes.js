@@ -18,8 +18,9 @@ module.exports = (app) => {
         public: 1
       },
       order: [['updatedAt', 'DESC']],
+      //include attributes to render ad count based on title
       //attributes: ['title', [sequelize.fn('count', sequelize.col( 'Ad.title')), 'titleCount']],
-      //include: [{attributes: ['category', 'body', 'company_name', 'createdAt'], db.Ad}],
+      //include: [{attributes: ['category', 'body', 'company_name', 'createdAt', 'updatedAt'], model: db.Ad}],
       group: ['title']
     }).then(data => {
       res.render('index', { Ads: data })

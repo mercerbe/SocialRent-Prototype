@@ -224,7 +224,7 @@
                               <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
                               <td>{{this.title}}</td>
                               <td><a class="button is-small is-primary" href="#">edit</a></td>
-                              <td><a id="deleteAdBtn" class="button is-small is-danger" data-id="{{this.id}}" href="#">delete</a></td>
+                              <td><a class="button is-small is-danger deleteAdBtn" data-id="{{this.id}}" href="#">delete</a></td>
                           </tr>
                           {{/unless}}
                           {{/each}}
@@ -248,7 +248,7 @@
                               <td>{{this.title}}</td>
                               <td>user: <a href="/api/users/{{this.UserId}}">{{this.UserId}}</a></td>
                               <td><a class="is-small is-primary" href="/api/users/{{this.userID}}">Link to user</a></td>
-                              <td><a id="deleteAdBtn" class="button is-small is-danger" data-id="{{this.id}}" href="#">delete</a></td>
+                              <td><a class="button is-small is-danger deleteAdBtn" data-id="{{this.id}}" href="#">delete</a></td>
                           </tr>
                           {{/if}}
                           {{/each}}
