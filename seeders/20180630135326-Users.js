@@ -16,10 +16,10 @@ module.exports = {
     return queryInterface.bulkInsert('users', [
 
         {
-          email: 'jerkface1@gmail.com',
-          password: 'trumpisajerk1',
-          instagram: 'therealdonald1',
-          twitter: 'therealdonaldtrump1',
+          email: 'johndoe1@gmail.com  ',
+          password: 'password1',
+          instagram: 'johndoecodes',
+          twitter: 'johndoecodes',
           createdAt: new Date(),
           updatedAt: new Date()
         },
