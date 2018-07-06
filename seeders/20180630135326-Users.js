@@ -24,26 +24,26 @@ module.exports = {
           updatedAt: new Date()
         },
         {
-          email: 'tomsmith1@gmail.com',
+          email: 'lfouts1@gmail.com',
           password: 'password1',
-          instagram: 'goldsmithtom',
-          twitter: '@goldsmithtom',
+          instagram: 'lfouts',
+          twitter: '@lfouts',
           createdAt: new Date (),
           updatedAt: new Date()
         },
         {
-          email: 'elonmusk1@gmail.com',
+          email: 'mercerbe1@gmail.com',
           password: 'password1',
-          instagram: 'imaketeslas',
-          twitter: '@imaketeslas',
+          instagram: 'bencodes',
+          twitter: '@bencodes',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          email: 'jeffbezos1@gmail.com',
+          email: 'romeokilo25@gmail.com',
           password: 'password1',
-          instagram: 'iselleverything',
-          twitter: '@isellevertyhing',
+          instagram: 'romeokilo25',
+          twitter: '@romeokilo25',
           createdAt: new Date(),
           updatedAt: new Date()
         },
