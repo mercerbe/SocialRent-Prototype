@@ -32,11 +32,15 @@ $(document).ready(function() {
         alert("User not found")
       } else {
         let userID = info.match(/\d/)
+        let role = info.match(/(user|advertiser)/)
+        sessionStorage.setItem('role', role[0])
         sessionStorage.setItem('id', userID[0])
         if (remember) {
-          document.cookie = "id=" + userID[0] + "; expires=" + tomorrow + ";"
+          document.cookie = "id=" + userID[0] + ";"
+          document.cookie = "role=" + role[0] + ";"
+          document.cookie = "expires=" + tomorrow + ";"
         } else {
-          document.cookie = "id=; expires=Thu, 01 Jan 1970 00:00:00 UTC"
+          document.cookie = "id=; role=; expires=Thu, 01 Jan 1970 00:00:00 UTC"
         }
         document.location.href = info
       }
