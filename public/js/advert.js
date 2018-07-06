@@ -72,11 +72,10 @@ $(document).ready(function() {
       type: 'DELETE',
       success: function(result) {
         alert('This has been deleted!')
-        setTimeout(() => {
-          location.reload()
-        }, 2000)
       }
-    });
+    }).then(() => {
+      location.reload();
+    })
   })
 
 });

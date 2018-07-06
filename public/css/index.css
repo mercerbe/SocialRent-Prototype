@@ -19,6 +19,9 @@ html,body {
 #compName {
   color: black;
 }
+.logoImage{
+  max-width: 500px;
+}
 .media-left img {
   border-radius: 50%;
 }
