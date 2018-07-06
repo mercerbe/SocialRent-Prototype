@@ -28,7 +28,7 @@ app.get('/advertiser', (req, res) => {
         include: [db.Ad]
       }
     ).then((user) => {
-      res.json(user)
+      res.render('userDashboard', {Ads: user})
       //res.redirect('/user/:id')
     })
 

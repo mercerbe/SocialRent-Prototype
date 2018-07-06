@@ -35,7 +35,7 @@ module.exports = (Sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       validate: {
         isBoolean: (val) => {
-          return (typeof (val) == 'boolean')
+          return (typeof(val) == 'boolean')
         }
       }
     },
@@ -43,7 +43,7 @@ module.exports = (Sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       validate: {
         isBoolean: (val) => {
-          return (typeof (val) == 'boolean')
+          return (typeof(val) == 'boolean')
         }
       }
     },
@@ -63,9 +63,9 @@ module.exports = (Sequelize, DataTypes) => {
     },
   })
   Ad.associate = function(models) {
-    Ad.belongsTo(models.Advertiser)//,
+    Ad.belongsTo(models.Advertiser) //,
     // Ad.hasOne(models.User)
   }
 
-return Ad
+  return Ad
 }
