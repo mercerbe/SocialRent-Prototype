@@ -18,9 +18,9 @@ module.exports = {
 
           {
             advertiserId: 1,
-            title: 'This is a title.',
+            title: 'Tesla 3',
             category: 'Technology',
-            body: 'I am a body',
+            body: 'Advertise our new Tesla Model 3, a version of the Tesla that is accessible to everyone!',
             taken: false,
             public: true,
             payment: 1.00,
@@ -33,9 +33,9 @@ module.exports = {
           {
 
             advertiserId: 2,
-            title: 'This is a title 2.',
-            category: 'Entertainment',
-            body: 'I am a body 2',
+            title: 'Amazon',
+            category: 'Products',
+            body: 'Want Amazon to be THE only place to shop on the Internet?  This is the ad for you!',
             taken: false,
             public: true,
             payment: 1.25,
@@ -48,9 +48,9 @@ module.exports = {
           {
 
             advertiserId: 3,
-            title: 'This is a title 3.',
-            category: 'Products',
-            body: 'I am a body 3',
+            title: 'Spotify Music Streaming',
+            category: 'Music',
+            body: 'Advertise for Spotify!',
             taken: false,
             public: true,
             payment: 1.50,
@@ -62,9 +62,9 @@ module.exports = {
           },
           {
             advertiserId: 4,
-            title: 'This is a title 4.',
-            category: 'Finance',
-            body: 'I am a body 4',
+            title: 'Apple',
+            category: 'Products',
+            body: 'Want to see the demise of Microsoft?  Advertise our products!',
             taken: false,
             public: true,
             payment: 0.50,
@@ -76,9 +76,9 @@ module.exports = {
           },
           {
             advertiserId: 5,
-            title: 'This is a title 5.',
-            category: 'Music',
-            body: 'I am a body 5',
+            title: 'Nintendo',
+            category: 'Entertainment',
+            body: "Advertise our video games!  Now you're playing with power.",
             taken: false,
             public: true,
             payment: 0.10,
