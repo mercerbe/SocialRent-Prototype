@@ -1,11 +1,12 @@
 $(document).ready(function() {
-//grab data from form
-let adTitle = $("#adTitle")
-//let adCategory = $("adCategory")
-let adBody = $("#adBody")
-let numUsers = $("#numUsers")
+  //grab data from form
+  let adTitle = $("#adTitle")
+  //let adCategory = $("adCategory")
+  let adBody = $("#adBody")
+  let numUsers = $("#numUsers")
 
-let createAdBtn = $("#createAdBtn")
+  let createAdBtn = $("#createAdBtn")
+  let deleteAdBtn = $('#deleteAdBtn')
 
   createAdBtn.on('click', (event) => {
     event.preventDefault();
@@ -13,8 +14,8 @@ let createAdBtn = $("#createAdBtn")
     var check_adForm = function() {
       //check all fields
       var flag = true;
-      $.each($("section .required"), function(index, field){
-        if($(this).val() == ""){
+      $.each($("section .required"), function(index, field) {
+        if ($(this).val() == "") {
           alert('Please enter a value for ' + $(this).attr('name'));
           flag = false;
           return false;
@@ -24,7 +25,7 @@ let createAdBtn = $("#createAdBtn")
       return flag;
     }
 
-    if(check_adForm()) {
+    if (check_adForm()) {
       console.log("ad form fully filled out...");
     }
 
@@ -38,10 +39,21 @@ let createAdBtn = $("#createAdBtn")
 
     console.log(numUsers.val());
 
-    $.post('/api/ads', newAdData).done( () => {
+    $.post('/api/ads', newAdData).done(() => {
       console.log(newAdData);
       alert("Successfully created your new ad!")
     })
 
   })
-})
+
+  //Delete advertisers jQuery portion
+  deleteAdBtn.on('click', (event) => {
+    $.ajax({
+      url: '/api/ads/' + deleteAdBtn.data('id'),
+      type: 'DELETE',
+      success: function(result) {
+        alert('This has been deleted!')
+      }
+    });
+  })
+});

@@ -1,5 +1,6 @@
 <head>
   <link rel="stylesheet" href="./css/login.css">
+  <script type="text/javascript" src="./js/user.js"></script>
   <script type="text/javascript" src="./js/signup.js"></script>
 </head>
 
@@ -23,12 +24,12 @@
               </div>
               <div class="navbar-item">
                 <p class="control">
-                  <a href="/">All Users</a>
+                  <a href="/users">All Users</a>
                 </p>
               </div>
               <div class="navbar-item">
                 <p class="control">
-                  <a href="/">All Advertisers</a>
+                  <a href="/advertisers">All Advertisers</a>
                 </p>
               </div>
               <div class="navbar-item">
@@ -80,7 +81,7 @@
             <div class="field">
               <label class="label">Select Role</label>
               <div class="control">
-                <div class="select is-large is-link required">
+                <div class="select is-large is-link">
                   <select id=roleSelect onchange="showFields()">
                     <option diabled>Select Role</option>
                     <option name="user" id="user">User</option>
@@ -122,7 +123,7 @@
 
             <div class="field">
                 <label class="checkbox">
-                  <input type="checkbox required" id="terms">
+                  <input type="checkbox" id="terms">
                   I agree to the <a href="#" class="has-text-link">terms and conditions</a>
                 </label>
             </div>
@@ -164,5 +165,4 @@ function showFields() {
     advertiserFields.classList.add('is-invisible')
   }
 }
-
 </script>
