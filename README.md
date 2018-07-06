@@ -77,13 +77,11 @@ Copyright (c) 2016 TeamLondon. Released under the [MIT License](https://github.c
 
 
 ###TODO
-
-
-New seed data
-Polish front end (all routes and redirect)
-Remove unnecessary elements
-User dashboard
-Advertisers can delete
-Storing logged in state (in local storage or cookies)
---if you go to a specific dashboard and you’re not logged in you should be redirected to the login screen
---Users can take an ad (update function)
+New seed data (Matt)
+Polish front end (all routes and redirect) (Ben)
+Remove unnecessary elements (Ben)
+User dashboard (Matt)
+Advertisers can delete (Loren)
+Storing logged in state (in local storage or cookies) (Ross)
+--if you go to a specific dashboard and you’re not logged in you should be redirected to the login screen (Ross)
+--Users can take an ad (update function) (Ross)
