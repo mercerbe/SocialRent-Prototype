@@ -16,42 +16,42 @@ module.exports = {
     return queryInterface.bulkInsert('users', [
 
         {
-          email: 'johndoe1@gmail.com  ',
+          email: 'johndoe1@gmail.com',
           password: 'password1',
-          instagram: 'johndoecodes',
-          twitter: 'johndoecodes',
+          instagram: 'johnrocks',
+          twitter: '@johnrocks',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          email: 'jerkface2@gmail.com',
-          password: 'trumpisajerk2',
-          instagram: 'therealdonald2',
-          twitter: 'therealdonaldtrump2',
+          email: 'tomsmith1@gmail.com',
+          password: 'password1',
+          instagram: 'goldsmithtom',
+          twitter: '@goldsmithtom',
           createdAt: new Date (),
           updatedAt: new Date()
         },
         {
-          email: 'jerkface3@gmail.com',
-          password: 'trumpisajerk3',
-          instagram: 'therealdonald20',
-          twitter: 'therealdonaldtrump20',
+          email: 'elonmusk1@gmail.com',
+          password: 'password1',
+          instagram: 'imaketeslas',
+          twitter: '@imaketeslas',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          email: 'jerkface4@gmail.com',
-          password: 'trumpisajerk4',
-          instagram: 'therealdonald30',
-          twitter: 'therealdonaldtrump30',
+          email: 'jeffbezos1@gmail.com',
+          password: 'password1',
+          instagram: 'iselleverything',
+          twitter: '@isellevertyhing',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          email: 'jerkface5@gmail.com',
-          password: 'trumpisajerk5',
-          instagram: 'therealdonald40',
-          twitter: 'therealdonaldtrump40',
+          email: 'mjtedder@gmail.com',
+          password: 'password1',
+          instagram: 'fully_coded',
+          twitter: '@fully_coded',
           createdAt: new Date(),
           updatedAt: new Date()
         }
