@@ -17,6 +17,7 @@ module.exports = {
 
         {
           email: 'johndoe1@gmail.com',
+          username: 'johndoe1',
           password: 'password1',
           instagram: 'johnrocks',
           twitter: '@johnrocks',
@@ -25,6 +26,7 @@ module.exports = {
         },
         {
           email: 'lfouts1@gmail.com',
+          username: 'lfouts1',
           password: 'password1',
           instagram: 'lfouts',
           twitter: '@lfouts',
@@ -33,6 +35,7 @@ module.exports = {
         },
         {
           email: 'mercerbe1@gmail.com',
+          username: 'mercerbe1',
           password: 'password1',
           instagram: 'bencodes',
           twitter: '@bencodes',
@@ -41,6 +44,7 @@ module.exports = {
         },
         {
           email: 'romeokilo25@gmail.com',
+          username: 'romeokilo25',
           password: 'password1',
           instagram: 'romeokilo25',
           twitter: '@romeokilo25',
@@ -49,6 +53,7 @@ module.exports = {
         },
         {
           email: 'mjtedder@gmail.com',
+          username: 'mjtedder',
           password: 'password1',
           instagram: 'fully_coded',
           twitter: '@fully_coded',

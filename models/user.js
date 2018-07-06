@@ -8,6 +8,13 @@ module.exports = (Sequelize, DataTypes) => {
             isEmail: true
           }
         },
+        username: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          validate: {
+            len: [8, 32]
+          }
+        },
         password: {
           type: DataTypes.STRING,
           allowNull: false,
