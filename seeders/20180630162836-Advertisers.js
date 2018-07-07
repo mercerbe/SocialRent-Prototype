@@ -12,7 +12,7 @@ module.exports = {
       }], {});
     */
 
-    return queryInterface.bulkInsert('advertisers', [
+    return queryInterface.bulkInsert('Advertisers', [
       //create seed data
 
         {
