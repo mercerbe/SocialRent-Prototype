@@ -13,7 +13,7 @@ Social Rent is a marketplace designed to connect social media users with busines
 
 ## Demo
 
-You can demo this web app on heroku at:  [SocialRent](https://tbd.herokuapp.com/).
+You can demo this web app on heroku at:  [SocialRent](https://radiant-basin-27158.herokuapp.com/).
 
 ## Installation
 
