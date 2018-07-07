@@ -34,6 +34,14 @@ $(document).ready(function() {
   let instagram = $('#insta_handle')
   let terms = $('#terms')
   let remember = $('#remember')
+  let btnLogout = $('#btnLogout')
+
+  btnLogout.on('click', (event) => {
+    event.preventDefault()
+    document.cookie = "id=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
+    document.cookie = "role=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
+    window.location.href = '/index'
+  })
 
   //handlebars
     //email
