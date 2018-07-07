@@ -1,13 +1,15 @@
 <!-- nav/hero -->
-<section class="hero is-info is-medium is-bold" style="background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);">
+<section class="hero is-info is-medium is-bold" style="background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);">
     <div class="hero-head">
         <nav class="navbar">
             <div class="container">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="/">
-                        Social Rent
-                    </a>
-                    <span class="navbar-burger burger" data-target="navbarMenu" style="background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);">
+                  <a class="" href="/">
+                    <figure class="image is-128x128">
+                      <img src="/images/socialRentLogo.png" alt="">
+                    </figure>
+                  </a>
+                    <span class="navbar-burger burger" data-target="navbarMenu" style="background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -65,19 +67,19 @@
       <div class="card events-card">
         <div class="card-table" id="allUsers">
           <div class="content">
-            <table class="table is-bordered is-fullwidth is-striped is-hoverable">
+            <table class="table is-bordered is-narrow is-striped is-hoverable">
               <thead>
                 <tr>
-                  <th>Company Name</th>
-                  <th>About</th>
-                  <th>Joined On</th>
-                  <th>Message</th>
+                  <th><strong>Company Name</strong></th>
+                  <th><strong>About</strong></th>
+                  <th><strong>Joined On</strong></th>
+                  <th><strong>Message</strong></th>
                 </tr>
               </thead>
               <tbody>
                 {{#each Advertisers}}
                   <tr>
-                    <td>{{this.company_name}}</td>
+                    <td><a href="/api/advertisers/{{this.id}}">{{this.company_name}}</a></td>
                     <td>{{this.description}}</td>
                     <td>{{this.createdAt}}</td>
                     <td><a class="button is-small is-primary" href="#"><i data-vi="message" data-vi-size="18"></i>Message</a></td>

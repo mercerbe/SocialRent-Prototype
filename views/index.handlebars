@@ -4,8 +4,10 @@
         <nav class="navbar">
             <div class="container">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="/">
-                        Social Rent
+                    <a class="" href="/">
+                      <figure class="image is-128x128">
+                        <img src="/images/socialRentLogo.png" alt="">
+                      </figure>
                     </a>
                     <span class="navbar-burger burger" data-target="navbarMenu">
                         <span></span>
@@ -56,7 +58,7 @@
             <h1 class="title is-1">
             Social Rent
             </h1>
-            <h2 class="subtitle is-3">
+            <h2 class="subtitle is-3" id="sub">
             Businesses: Hire social media users to share your ads <br>
             Users: Get paid to share ads from the companies you support
             </h2>
@@ -83,7 +85,7 @@
             <div class="media-content">
               <div class="content">
                 <p>
-                  <a href="/api/advertisers/:id" id="advertiserName{{this.advertiserID}}">{{this.company_name}}</a> posted on: {{this.createdAt}}&nbsp;
+                  <a id="compName" href="/api/advertisers/{{this.AdvertiserId}}" id="advertiserName{{this.advertiserID}}">{{this.company_name}}</a> posted on: {{this.createdAt}}&nbsp;
                   <span class="tag is-light">{{this.category}}</span>
                 </p>
               </div>

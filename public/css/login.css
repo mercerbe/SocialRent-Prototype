@@ -4,7 +4,7 @@ html,body {
   font-weight: 300;
 }
 .signupNav {
-  background-color: rgb(80,207,127);
+  border-top: 5px solid rgb(80,207,127);
 }
 .loginNav {
   background-color: rgb(48,169,152);
@@ -15,7 +15,7 @@ html,body {
   font-weight: 800;
 }
 .signupNav a {
-  color: white;
+  color: black;
 }
 .loginNav a {
   color: white;

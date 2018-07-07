@@ -74,3 +74,14 @@ Your patches are welcome! Here's our suggested workflow:
 ## Copyright and attribution
 
 Copyright (c) 2016 TeamLondon. Released under the [MIT License](https://github.com/mercerbe/SocialRent/LICENSE).
+
+
+###TODO
+New seed data (Matt)
+Polish front end (all routes and redirect) (Ben)
+Remove unnecessary elements (Ben)
+User dashboard (Matt)
+Advertisers can delete (Loren)
+Storing logged in state (in local storage or cookies) (Ross)
+--if you go to a specific dashboard and you’re not logged in you should be redirected to the login screen (Ross)
+--Users can take an ad (update function) (Ross)

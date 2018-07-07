@@ -1,3 +1,4 @@
+
 module.exports = (Sequelize, DataTypes) => {
 
     let User = Sequelize.define('User', {
@@ -13,6 +14,7 @@ module.exports = (Sequelize, DataTypes) => {
           allowNull: true,
           validate: {
             len: [8, 32]
+
           }
         },
         password: {
