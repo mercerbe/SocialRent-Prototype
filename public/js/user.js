@@ -1,7 +1,7 @@
 //different ids for users/advertisers
 function bouncer() {
   if (!document.cookie) {
-    alert("no cookie redirect")
+    //alert("no cookie redirect")
     window.location.href = '/login'
     return
   }
