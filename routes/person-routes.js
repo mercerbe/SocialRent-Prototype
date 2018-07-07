@@ -29,7 +29,7 @@ app.get('/advertiser', (req, res) => {
       }
     ).then((ads) => {
 
-      res.render('advertiserDashboard', {Ads: ads, User: ads[0].User})
+      res.render('userDashboard', {Ads: ads, User: ads[0].User})
     })
 
   })
