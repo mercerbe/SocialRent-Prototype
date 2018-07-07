@@ -56,9 +56,9 @@ module.exports = (Sequelize, DataTypes) => {
       }
     }*/)
 
-    User.associate = function(models) {
-      User.hasMany(models.Ad)
-    }
+    // User.associate = function(models) {
+    //   User.hasMany(models.Ad)
+    // }
 
 
     return User

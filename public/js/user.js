@@ -1,4 +1,27 @@
 //different ids for users/advertisers
+function bouncer() {
+  if (!document.cookie) {
+    alert("no cookie redirect")
+    window.location.href = '/login'
+    return
+  }
+
+  let url = window.location.toString()
+  let ident = url.match(/\/(\w+)s\/(\d+$)/)
+  let userRole = ident[1]
+  let userID = ident[2]
+
+  let cookieData = document.cookie.match(/id=(\d+); role=(\w+)/)
+  let cookieRole = cookieData[2]
+  let cookieID = cookieData[1]
+
+  if (userRole !== cookieRole || userID !== cookieID) {
+    window.location.href = '/login'
+    return
+  }
+}
+
+bouncer()
 
 $(document).ready(function() {
   let email = $('#email_input')
@@ -11,6 +34,14 @@ $(document).ready(function() {
   let instagram = $('#insta_handle')
   let terms = $('#terms')
   let remember = $('#remember')
+  let btnLogout = $('#btnLogout')
+
+  btnLogout.on('click', (event) => {
+    event.preventDefault()
+    document.cookie = "id=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
+    document.cookie = "role=;expires=Thu, 01 Jan 1970 00:00:00 UTC"
+    window.location.href = '/index'
+  })
 
   //handlebars
     //email

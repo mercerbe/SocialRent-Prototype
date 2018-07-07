@@ -17,7 +17,7 @@
             <div class="navbar-end">
               <div class="navbar-item">
                 <p class="control">
-                  <a class="button is-link is-outlined" href="/">
+                  <a id="btnlogout" class="button is-link is-outlined">
                     <span class="icon">
                       <i class="fa fa-user"></i>
                     </span>
@@ -65,7 +65,7 @@
             <section class="hero is-info welcome is-small" id="userHero">
                 <div class="hero-body">
                     <div class="container">
-                        <h1 class="title">
+                        <h1 class="title" id="userEmail">
                             Hello, {{User.username}}
                         </h1>
                         <h2 class="subtitle">
@@ -80,19 +80,19 @@
                 <div class="tile is-ancestor has-text-centered">
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">35</p>
+                            <p class="title">{{Ads.length}}</p>
                             <p class="subtitle" id="userAdsTaken">Ads Taken</p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">25</p>
+                            <p class="title">0</p>
                             <p class="subtitle">Messages</p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">20</p>
+                            <p class="title">0</p>
                             <p class="subtitle">Payouts</p>
                         </article>
                     </div>
@@ -149,20 +149,15 @@
                       All Current Ads
                     </p>
                       <tbody>
+                        {{#each ads}}
                           <tr>
                               <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
-                              <td>Ad 3</td>
-                              <td>Id</td>
-                              <td>Title</td>
-                              <td><a class="button is-small is-link" href="#">View Ad</a></td>
+                              <td>{{this.company_name}}</td>
+                              <td>{{this.title}}</td>
+                              <td>{{this.body}}</td>
+                              <td><a class="button is-small is-link withdrawBtn" href="#">Withdraw</a></td>
                           </tr>
-                          <tr>
-                              <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
-                              <td>Ad 4</td>
-                              <td>Id</td>
-                              <td>Title</td>
-                              <td><a class="button is-small is-link" href="#">View Ad</a></td>
-                          </tr>
+                          {{/each}}
                       </tbody>
                   </table>
             </div>
