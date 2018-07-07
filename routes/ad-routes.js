@@ -14,7 +14,7 @@ module.exports = (app) => {
     db.Ad.findAll(
       {
         where: query,
-        include: [db.User]
+        include: [db.Advertiser]
       }).then( (ad) => {
         res.json(ad)
       })
@@ -28,7 +28,7 @@ module.exports = (app) => {
         where:{
           id: req.params.id
         },
-        include: [db.User]
+        include: [db.Advertiser]
       }
     ).then((ad) => {
       res.json(ad)
@@ -56,7 +56,7 @@ module.exports = (app) => {
   })
 
   //update an ad -- todo: logic for only letting this happen if it's owned by an advertiser
-  app.put('/api/ads', (req, res) => {
+  app.put('/api/ads/:id', (req, res) => {
     db.Ad.update(
       {
         where: {
@@ -67,4 +67,18 @@ module.exports = (app) => {
       res.json(updatedAd)
     })
   })
+
+  //delete an ad
+  app.delete('/api/ads/:id', (req, res) => {
+    db.Ad.destroy(
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    ).then((removedAd) => {
+      res.json(removedAd)
+    })
+  })
+  
 }

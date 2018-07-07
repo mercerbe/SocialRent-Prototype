@@ -1,7 +1,9 @@
 //dependencies
-const path = require('path');
+const path = require('path')
 
 var db = require('../models')
+
+var sequelize = require('sequelize')
 
 
 //export all handlebars routes
@@ -10,12 +12,16 @@ module.exports = (app) => {
   //index aka maketplace page
   app.get('/', (req, res) => {
 
-    db.Ad.findAll({
+    return db.Ad.findAll({
       where: {
         taken: 0,
         public: 1
       },
-      order: [['updatedAt', 'DESC']]
+      order: [['updatedAt', 'DESC']],
+      //include attributes to render ad count based on title
+      //attributes: ['title', [sequelize.fn('count', sequelize.col( 'Ad.title')), 'titleCount']],
+      //include: [{attributes: ['category', 'body', 'company_name', 'createdAt', 'updatedAt'], model: db.Ad}],
+      group: ['title']
     }).then(data => {
       res.render('index', { Ads: data })
     })
@@ -24,7 +30,9 @@ module.exports = (app) => {
   //all users page
   app.get('/users', (req, res) => {
 
-    db.User.findAll({}).then(data => {
+    db.User.findAll({
+      order: [['updatedAt', 'DESC']]
+    }).then(data => {
       res.render('allUsers', {Users: data})
     })
   })
@@ -32,7 +40,9 @@ module.exports = (app) => {
   //all advertisers page
   app.get('/advertisers', (req, res) => {
 
-    db.Advertiser.findAll({}).then(data => {
+    db.Advertiser.findAll({
+      order: [['updatedAt', 'DESC']]
+    }).then(data => {
       res.render('allAdvertisers', {Advertisers: data})
     })
   })
