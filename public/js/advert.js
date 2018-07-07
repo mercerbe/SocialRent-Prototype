@@ -1,9 +1,11 @@
 $(document).ready(function() {
 
+
   //grab data from form
   let adTitle = $("#adTitle")
   let adBody = $("#adBody")
   let numUsers = $("#numUsers")
+
 
   //buttons
   let createAdBtn = $("#createAdBtn")
@@ -27,7 +29,9 @@ $(document).ready(function() {
       return flag;
     }
 
+
     //call check form
+
     if (check_adForm()) {
       console.log("ad form fully filled out...");
     }
@@ -48,6 +52,7 @@ $(document).ready(function() {
     }
 
 
+
     //create multiple ads ajax post
     let numCreated = numUsers.val();
     console.log(numCreated);
@@ -58,6 +63,7 @@ $(document).ready(function() {
           console.log(newAdData);
         })
       }
+
       alert("Successfully created your new ad!")
     }).then(() => {
       location.reload();
@@ -78,5 +84,7 @@ $(document).ready(function() {
       location.reload();
     })
   })
+
+
 
 });
