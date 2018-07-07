@@ -21,7 +21,7 @@
             <div class="navbar-end">
               <div class="navbar-item">
                 <p class="control">
-                  <a class="button is-primary is-outlined" href="./index">
+                  <a id="btnLogout" class="button is-primary is-outlined">
                     <span class="icon">
                       <i class="fa fa-user"></i>
                     </span>
@@ -226,6 +226,7 @@
                           <tr>
                               <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
                               <td>{{this.title}}</td>
+                              <td>{{this.body}}</td>
                               <td># left</td>
                               <td><a class="button is-small is-primary" href="#">edit</a></td>
                               <td><a class="button is-small is-danger" href="#">delete</a></td>
@@ -250,6 +251,7 @@
                           <tr>
                               <td width="5%"><i data-vi="check" data-vi-size="28"></i></td>
                               <td>{{this.title}}</td>
+                              <td>{{this.body}}</td>
                               <td><a class="is-small is-primary" href="/api/users/{{this.userID}}">Link to user</a></td>
                               <td><a id="deleteAdBtn" class="button is-small is-danger" data-id="{{this.id}}" href="#">delete</a></td>
                           </tr>
