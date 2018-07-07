@@ -5,7 +5,6 @@ module.exports = {
     /*
       Add altering commands here.
       Return a promise to correctly handle asynchronicity.
-
       Example:
       return queryInterface.bulkInsert('Person', [{
         name: 'John Doe',
@@ -17,42 +16,42 @@ module.exports = {
       //create seed data
 
         {
-          email: 'jerkface6@gmail.com',
-          password: 'trumpisajerk6',
-          company_name: 'MERICA10',
-          description: 'make murica great10.',
+          email: 'elonmusk1@gmail.com',
+          password: 'password1',
+          company_name: 'The Boring Company',
+          description: 'Advertise the future with me.',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          email: 'jerkface7@gmail.com',
-          password: 'trumpisajerk7',
-          company_name: 'MERICA30',
-          description: 'make murica great30.',
+          email: 'jeffbezos1@gmail.com',
+          password: 'password1',
+          company_name: 'Amazon Web Services',
+          description: 'Advertise for Amazon!',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          email: 'jerkface8@gmail.com',
-          password: 'trumpisajerk8',
-          company_name: 'MERICA3',
-          description: 'make murica great1.',
+          email: 'spotify1@gmail.com',
+          password: 'password1',
+          company_name: 'Spotify Music',
+          description: 'Do you love music?  Advertise our streaming services!',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          email: 'jerkface9@gmail.com',
-          password: 'trumpisajerk9',
-          company_name: 'MERICA4',
-          description: 'make murica great2.',
+          email: 'apple1@gmail.com',
+          password: 'password1',
+          company_name: 'Apple Corporation',
+          description: 'iPhone rules and Android drools?  Advertise with us!',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          email: 'jerkface10@gmail.com',
-          password: 'trumpisajerk10',
-          company_name: 'MERICA5',
-          description: 'make murica great3.',
+          email: 'nintendo1@gmail.com',
+          password: 'password1',
+          company_name: 'Nintendo',
+          description: "Now you're playing with power.",
           createdAt: new Date(),
           updatedAt: new Date()
         }
@@ -63,7 +62,6 @@ module.exports = {
     /*
       Add reverting commands here.
       Return a promise to correctly handle asynchronicity.
-
       Example:
       return queryInterface.bulkDelete('Person', null, {});
     */

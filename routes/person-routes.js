@@ -44,7 +44,7 @@ app.get('/advertiser', (req, res) => {
         include: [db.Advertiser]
       }
     ).then((ads) => {
-
+      console.log("ads" + ads);
       res.render('advertiserDashboard', {Ads: ads, Advertiser: ads[0].Advertiser})
     })
   })
@@ -66,6 +66,36 @@ app.get('/advertiser', (req, res) => {
     ).then((advertisers) => {
       res.json(advertisers)
     })
+  })
+
+  //single advertiser with associated ads
+  app.get('/api/advertisers/:id', (req, res) => {
+    db.Advertiser.findOne(
+      {
+        where: {
+          id: req.params.id
+        },
+        include: [db.Ad]
+      }
+    ).then((singleAdvertiser) => {
+      res.json(singleAdvertiser)
+    })
+
+  })
+
+  //single user with associated ads
+  app.get('/api/users/:id', (req, res) => {
+    db.User.findOne(
+      {
+        where: {
+          id: req.params.id
+        },
+        include: [db.Ad]
+      }
+    ).then((singleUser) => {
+      res.json(singleUser)
+    })
+
   })
 
   //login
@@ -105,13 +135,14 @@ app.post('/api/:role', (req, res) => {
   if(req.params.role === 'users') {
     db.User.create(req.body).then((newUser) => {
       res.json(newUser)
-      //res.redirect('/user/' + newUser.id)
+      //res.render('userDashboard', {Ads: ads, User: ads[0].Advertiser})
     })
 
   } else {
     db.Advertiser.create(req.body).then((newAdvertiser) => {
       res.json(newAdvertiser)
-      //res.redirect('/advertiser/' + newAdvertiser.id)
+      console.log(newAdvertiser);
+      //res.render('advertiserDashboard', {Ads: newAdvertiser, Advertiser: newAdvertiser[0].Advertiser})
     })
   }
 
