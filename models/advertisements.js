@@ -63,9 +63,9 @@ module.exports = (Sequelize, DataTypes) => {
     },
   })
   Ad.associate = function(models) {
-    Ad.belongsTo(models.Advertiser) //,
-    // Ad.hasOne(models.User)
-  }
+    Ad.belongsTo(models.Advertiser),
+    Ad.belongsTo(models.User)
+}
 
   return Ad
 }
