@@ -8,7 +8,7 @@ $(document).ready(function() {
 
   let today = new Date()
   let tomorrow = new Date()
-  tomorrow.setDate(today.getDate() + 1)
+  tomorrow.setDate(today.getDate() + 7)
 
   cbxRememberMe.on('change', function(event) {
     remember = $('#cbxRememberMe').prop('checked')
@@ -33,14 +33,12 @@ $(document).ready(function() {
       } else {
         let userID = info.match(/\d/)
         let role = info.match(/(user|advertiser)/)
-        sessionStorage.setItem('role', role[0])
-        sessionStorage.setItem('id', userID[0])
         if (remember) {
+          document.cookie = "id=" + userID[0] + ";expires=" + tomorrow + ";"
+          document.cookie = "role=" + role[0] + ";expires=" + tomorrow + ";"
+        } else {
           document.cookie = "id=" + userID[0] + ";"
           document.cookie = "role=" + role[0] + ";"
-          document.cookie = "expires=" + tomorrow + ";"
-        } else {
-          document.cookie = "id=; role=; expires=Thu, 01 Jan 1970 00:00:00 UTC"
         }
         document.location.href = info
       }
