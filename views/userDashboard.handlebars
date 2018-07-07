@@ -6,7 +6,7 @@
 <nav class="navbar is-white userNav" id="top">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item brand-text" href="/">Social Rent</a>
+            <a href="/"><img src="/images/socialRentLogo.png" class="image is-64x64"alt=""></a>
             <div class="navbar-burger burger" data-target="navMenu">
                 <span></span>
                 <span></span>
@@ -57,8 +57,8 @@
             <nav class="breadcrumb" aria-label="breadcrumbs">
                 <ul>
                     <li><a href="/">Marketplace</a></li>
-                    <li><a href="/api/users">View All Users</a></li>
-                    <li><a href="/api/advertisers">View All Advertisers</a></li>
+                    <li><a href="/users">View All Users</a></li>
+                    <li><a href="/advertisers">View All Advertisers</a></li>
                     <li class="is-active"><a href="#" aria-current="page">Dashboard</a></li>
                 </ul>
             </nav>
@@ -66,7 +66,7 @@
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title" id="userEmail">
-                            Hello, 'User.title'
+                            Hello, {{User.username}}
                         </h1>
                         <h2 class="subtitle">
                             Manage your activity!
@@ -80,19 +80,19 @@
                 <div class="tile is-ancestor has-text-centered">
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">35</p>
+                            <p class="title">{{Ads.length}}</p>
                             <p class="subtitle" id="userAdsTaken">Ads Taken</p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">25</p>
+                            <p class="title">0</p>
                             <p class="subtitle">Messages</p>
                         </article>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child box">
-                            <p class="title">20</p>
+                            <p class="title">0</p>
                             <p class="subtitle">Payouts</p>
                         </article>
                     </div>
@@ -113,17 +113,17 @@
                                     <tbody>
                                         <tr>
                                             <td width="5%"><i data-vi="message" data-vi-size="28"></i></td>
-                                            <td>Lorum ipsum dolem aire</td>
+                                            <td>We'd like to have you advertise our product!</td>
                                             <td><a class="button is-small is-link" href="#">Reply</a></td>
                                         </tr>
                                         <tr>
                                             <td width="5%"><i data-vi="message" data-vi-size="28"></i></td>
-                                            <td>Lorum ipsum dolem aire</td>
+                                            <td>Please responed if you're intereseted in posting about us.</td>
                                             <td><a class="button is-small is-link" href="#">Reply</a></td>
                                         </tr>
                                         <tr>
                                             <td width="5%"><i data-vi="message" data-vi-size="28"></i></td>
-                                            <td>Lorum ipsum dolem aire</td>
+                                            <td>Help promote our new Album!</td>
                                             <td><a class="button is-small is-link" href="#">Reply</a></td>
                                         </tr>
                                     </tbody>
@@ -149,20 +149,17 @@
                       All Current Ads
                     </p>
                       <tbody>
+                        {{#each Ads}}
+                        <!-- {{#unless finished}} -->
                           <tr>
                               <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
-                              <td>Ad 3</td>
-                              <td>Id</td>
-                              <td>Title</td>
-                              <td><a class="button is-small is-link" href="#">View Ad</a></td>
+                              <td>{{this.title}}</td>
+                              <td>{{this.company_name}}</td>
+                              <td>{{this.description}}</td>
+                              <td><a class="button is-small is-link" href="/api/ads/{{this.id}}">View Ad</a></td>
                           </tr>
-                          <tr>
-                              <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
-                              <td>Ad 4</td>
-                              <td>Id</td>
-                              <td>Title</td>
-                              <td><a class="button is-small is-link" href="#">View Ad</a></td>
-                          </tr>
+                          <!-- {{/unless}} -->
+                          {{/each}}
                       </tbody>
                   </table>
             </div>
@@ -184,17 +181,10 @@
                       <tbody>
                           <tr>
                               <td width="5%"><i data-vi="check" data-vi-size="28"></i></td>
-                              <td>Ad 1</td>
-                              <td>Id</td>
-                              <td>Title</td>
-                              <td><a class="button is-small is-link" href="#">View Ad</a></td>
-                          </tr>
-                          <tr>
-                              <td width="5%"><i data-vi="check" data-vi-size="28"></i></td>
-                              <td>Ad 2</td>
-                              <td>Id</td>
-                              <td>Title</td>
-                              <td><a class="button is-small is-link" href="#">View Ad</a></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td><a class="button is-small is-link" href="/api/ads/{{this.id}}">View Ad</a></td>
                           </tr>
                       </tbody>
                   </table>

@@ -20,16 +20,15 @@ app.get('/advertiser', (req, res) => {
 
   //single user dashboard
   app.get('/users/:id', (req, res) => {
-    db.User.findOne(
+    db.Ad.findAll(
       {
         where: {
-          id: req.params.id
+          userID: req.params.id
         },
-        include: [db.Ad]
+        include: [db.User]
       }
-    ).then((user) => {
-      res.render('userDashboard', {Ads: user})
-      //res.redirect('/user/:id')
+    ).then((ads) => {
+      res.render('userDashboard', {Ads: ads, User: ads[0].User})
     })
 
   })
