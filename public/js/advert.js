@@ -101,7 +101,7 @@ $(document).ready(function() {
       location.reload();
     })
 
-  })//end of click event
+  })//end of click
 
 
   //Delete single ad jQuery portion
