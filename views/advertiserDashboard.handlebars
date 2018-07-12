@@ -5,118 +5,118 @@
 </head>
 <!-- START NAV -->
 <nav class="navbar is-white" id="top">
-    <div class="container">
-        <div class="navbar-brand">
-            <a href="/"><img src="/images/socialRentLogo.png" class="image is-64x64"alt=""></a>
-            <div class="navbar-burger burger" data-target="navMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <div id="navMenu" class="navbar-menu">
-            <div class="navbar-end">
-              <div class="navbar-item">
-                <p class="control">
-                  <a id="btnLogout" class="button is-primary is-outlined">
+  <div class="container">
+    <div class="navbar-brand">
+      <a href="/"><img src="/images/socialRentLogo.png" class="image is-64x64"alt=""></a>
+      <div class="navbar-burger burger" data-target="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <p class="control">
+            <a id="btnLogout" class="button is-primary is-outlined">
                     <span class="icon">
                       <i class="fa fa-user"></i>
                     </span>
                     <span>Logout</span>
                   </a>
-                </p>
-              </div>
-            </div>
+          </p>
         </div>
+      </div>
     </div>
+  </div>
 </nav>
 <!-- END NAV -->
 <div class="container">
-    <div class="columns">
-        <div class="column is-3 sidemenu">
-            <aside class="menu">
-                <p class="menu-label">General</p>
-                <ul class="menu-list">
-                    <li><a class="is-active" href="#top">Dashboard</a></li>
-                    <li><a href="#manage">Manage Ads</a></li>
-                </ul>
-                <p class="menu-label">
-                    Administration
-                </p>
-                <ul class="menu-list">
-                  <li><a href="#messages">Messages</a></li>
-                </ul>
-                <p class="menu-label">
-                    Transactions
-                </p>
-                <ul class="menu-list">
-                    <li><a>Payments</a></li>
-                </ul>
-            </aside>
-        </div>
-        <div class="column is-9">
-            <nav class="breadcrumb" aria-label="breadcrumbs">
-                <ul>
-                    <li><a href="/">Marketplace</a></li>
-                    <li><a href="/users">View All Users</a></li>
-                    <li><a href="/advertisers">View All Advertisers</a></li>
-                    <li class="is-active"><a href="" aria-current="page">Dashboard</a></li>
-                </ul>
-            </nav>
-            <section class="hero is-info welcome is-small">
-                <div class="hero-body">
-                    <div class="container">
-                        <h1 class="title">
+  <div class="columns">
+    <div class="column is-3 sidemenu">
+      <aside class="menu">
+        <p class="menu-label">General</p>
+        <ul class="menu-list">
+          <li><a class="is-active" href="#top">Dashboard</a></li>
+          <li><a href="#manage">Manage Ads</a></li>
+        </ul>
+        <p class="menu-label">
+          Administration
+        </p>
+        <ul class="menu-list">
+          <li><a href="#messages">Messages</a></li>
+        </ul>
+        <p class="menu-label">
+          Transactions
+        </p>
+        <ul class="menu-list">
+          <li><a>Payments</a></li>
+        </ul>
+      </aside>
+    </div>
+    <div class="column is-9">
+      <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+          <li><a href="/">Marketplace</a></li>
+          <li><a href="/users">View All Users</a></li>
+          <li><a href="/advertisers">View All Advertisers</a></li>
+          <li class="is-active"><a href="" aria-current="page">Dashboard</a></li>
+        </ul>
+      </nav>
+      <section class="hero is-info welcome is-small">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">
                             Hello, {{Advertiser.company_name}}
                         </h1>
-                        <h2 class="subtitle">
+            <h2 class="subtitle">
                             Manage your activity!
                         </h2>
-                    </div>
-                </div>
-            </section>
+          </div>
+        </div>
+      </section>
 
-            <!-- info from user printed to tiles -->
-            <section class="info-tiles">
-                <div class="tile is-ancestor has-text-centered">
-                    <div class="tile is-parent">
-                        <article class="tile is-child box">
-                            <p class="title">{{Ads.length}}</p>
-                            <p class="subtitle">Ads Posted</p>
-                        </article>
-                    </div>
-                    <div class="tile is-parent">
-                        <article class="tile is-child box">
-                            <p class="title">0</p>
-                            <p class="subtitle">Messages</p>
-                        </article>
-                    </div>
-                    <div class="tile is-parent">
-                        <article class="tile is-child box">
-                            <p class="title">0</p>
-                            <p class="subtitle">Payments</p>
-                        </article>
-                    </div>
-                </div>
-            </section>
+      <!-- info from user printed to tiles -->
+      <section class="info-tiles">
+        <div class="tile is-ancestor has-text-centered">
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title">{{Ads.length}}</p>
+              <p class="subtitle">Ads Posted</p>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title">0</p>
+              <p class="subtitle">Messages</p>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title">0</p>
+              <p class="subtitle">Payments</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-            <!-- make new post/ad -->
-            <section>
+      <!-- make new post/ad -->
+      <section>
 
-              <div class="card adCard">
-                <p class="card-header-title">Create New Ad</p>
-                <div class="column is-9">
-                <div class="field">
-                  <label class="label">Ad Title</label>
-                  <p class="control">
-                    <input name="title" class="input required" type="text" placeholder="Title" id="adTitle">
-                  </p>
-                </div>
-                <div class="field">
-                  <label class="label">Category</label>
-                  <div class="control">
-                    <div class="select">
-                      <select name="category" class="select required" id="adCategory">
+        <div class="card adCard">
+          <p class="card-header-title">Create New Ad</p>
+          <div class="column is-9">
+            <div class="field">
+              <label class="label">Ad Title</label>
+              <p class="control">
+                <input name="title" class="input required" type="text" placeholder="Title" id="adTitle">
+              </p>
+            </div>
+            <div class="field">
+              <label class="label">Category</label>
+              <div class="control">
+                <div class="select">
+                  <select name="category" class="select required" id="adCategory">
                         <option diabled>Select A Category</option>
                         <option>Finance</option>
                         <option>Entertainment</option>
@@ -125,143 +125,143 @@
                         <option>Products</option>
                         <option>Technology</option>
                       </select>
-                    </div>
-                  </div>
                 </div>
-                <div class="field">
-                  <label class="label">Ad Body</label>
-                  <p class="control">
-                    <textarea name="Ad Body" class="textarea required" id="adBody" type="text" placeholder="The body of the ad you want users to post..."></textarea>
-                  </p>
-                </div>
-                <div class="field">
-                  <label class="label"># Of Users</label>
-                  <p class="control">
-                    <input name=" # of Users" class="input required" id="numUsers" type="tesxt" placeholder="eg. '100'">
-                  </p>
-                </div>
-                <div class="field">
-                  <p class="control">
-                    <button class="button is-primary" id="createAdBtn">
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Ad Body</label>
+              <p class="control">
+                <textarea name="Ad Body" class="textarea required" id="adBody" type="text" placeholder="The body of the ad you want users to post..."></textarea>
+              </p>
+            </div>
+            <div class="field">
+              <label class="label"># Of Users</label>
+              <p class="control">
+                <input name=" # of Users" class="input required" id="numUsers" type="tesxt" placeholder="eg. '100'">
+              </p>
+            </div>
+            <div class="field">
+              <p class="control">
+                <button class="button is-primary" id="createAdBtn">
                       Create Ad
                     </button>
-                  </p>
-                </div>
-                </div>
-              </div>
-            </section>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <!-- show messages/ user search option (maybe by location?) -->
-            <div class="columns is-variable is-1">
-                <div class="column is-6">
-                    <div class="card events-card">
-                        <header class="card-header">
-                            <p class="card-header-title">Messages</p>
-                            <a href="#" class="card-header-icon" aria-label="more options"></a>
-                        </header>
-                        <div class="card-table" id="messages">
-                            <div class="content">
-                                <table class="table is-fullwidth is-striped">
-                                    <tbody>
-                                        <tr>
-                                            <td width="5%"><i data-vi="message" data-vi-size="28"></i></td>
-                                            <td>Message from user 1 about ad 3</td>
-                                            <td><a class="button is-small is-primary" href="#">Reply</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td width="5%"><i data-vi="message" data-vi-size="28"></i></td>
-                                            <td>Wording on ad 5</td>
-                                            <td><a class="button is-small is-primary" href="#">Reply</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td width="5%"><i data-vi="message" data-vi-size="28"></i></td>
-                                            <td>Requesting payment for ad 7</td>
-                                            <td><a class="button is-small is-primary" href="#">Reply</a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <footer class="card-footer">
-                            <a href="#" class="card-footer-item">View All</a>
-                        </footer>
-                    </div>
-                </div>
-                <div class="column is-6">
-                    <div class="card">
-                        <header class="card-header">
-                            <p class="card-header-title">User Search</p>
-                            <a href="#" class="card-header-icon" aria-label="more options"></a>
-                        </header>
-                        <div class="card-content">
-                            <div class="content">
-                                <div class="control has-icons-left has-icons-right">
-                                    <input class="input is-large" type="text" placeholder="">
-                                    <span class="icon is-medium is-left">
+      <!-- show messages/ user search option (maybe by location?) -->
+      <div class="columns is-variable is-1">
+        <div class="column is-6">
+          <div class="card events-card">
+            <header class="card-header">
+              <p class="card-header-title">Messages</p>
+              <a href="#" class="card-header-icon" aria-label="more options"></a>
+            </header>
+            <div class="card-table" id="messages">
+              <div class="content">
+                <table class="table is-fullwidth is-striped">
+                  <tbody>
+                    <tr>
+                      <td width="5%"><i data-vi="message" data-vi-size="28"></i></td>
+                      <td>Message from user 1 about ad 3</td>
+                      <td><a class="button is-small is-primary" href="#">Reply</a></td>
+                    </tr>
+                    <tr>
+                      <td width="5%"><i data-vi="message" data-vi-size="28"></i></td>
+                      <td>Wording on ad 5</td>
+                      <td><a class="button is-small is-primary" href="#">Reply</a></td>
+                    </tr>
+                    <tr>
+                      <td width="5%"><i data-vi="message" data-vi-size="28"></i></td>
+                      <td>Requesting payment for ad 7</td>
+                      <td><a class="button is-small is-primary" href="#">Reply</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item">View All</a>
+            </footer>
+          </div>
+        </div>
+        <div class="column is-6">
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">User Search</p>
+              <a href="#" class="card-header-icon" aria-label="more options"></a>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input is-large" type="text" placeholder="">
+                  <span class="icon is-medium is-left">
                                       <i class="fa fa-search"></i>
                                     </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+              </div>
             </div>
-            <!-- manage ads -->
-            <section id="manage">
-              <p class="title">Manage Ads</p>
-              <div class="columns is-variable is-1">
-              <div class="column is-6">
-              <div class="card">
-                <div class="content">
-                  <table class="table is-fullwidth is-striped">
-                    <p class="card-header-title">
-                      Open Ads
-                    </p>
-                      <tbody>
-                        {{#each Ads}}
-                        {{#unless taken}}
-                          <tr>
-                              <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
-                              <td>{{this.title}}</td>
-                              <td>{{this.body}}</td>
-                              <td># left</td>
-                              <td><a class="button is-small is-primary" href="#">edit</a></td>
-                              <td><a class="button is-small is-danger deleteAdBtn" data-id="{{this.id}}" href="#">delete</a></td>
-                          </tr>
-                          {{/unless}}
-                          {{/each}}
-                      </tbody>
-                  </table>
-            </div>
-              </div>
-              </div>
-              <div class="column is-6">
-              <div class="card">
-                <div class="content">
-                  <table class="table is-fullwidth is-striped">
-                    <p class="card-header-title">
-                      Taken Ads
-                    </p>
-                      <tbody>
-                        {{#each Ads}}
-                        {{#if taken}}
-                          <tr>
-                              <td width="5%"><i data-vi="check" data-vi-size="28"></i></td>
-                              <td>{{this.title}}</td>
-                              <td>{{this.body}}</td>
-                              <td>user: <a href="/api/users/{{this.UserId}}">{{this.UserId}}</a></td>
-                              <td><a class="is-small is-primary" href="/api/users/{{this.userID}}">Link to user</a></td>
-                              <td><a class="button is-small is-danger deleteAdBtn" data-id="{{this.id}}" href="#">delete</a></td>
-                          </tr>
-                          {{/if}}
-                          {{/each}}
-                      </tbody>
-                  </table>
-            </div>
-              </div>
-              </div>
-              </div>
-            </section>
+          </div>
         </div>
+      </div>
+      <!-- manage ads -->
+      <section id="manage">
+        <p class="title">Manage Ads</p>
+        <div class="columns is-variable is-1">
+          <div class="column is-6">
+            <div class="card">
+              <div class="content">
+                <table class="table is-fullwidth is-striped">
+                  <p class="card-header-title">
+                    Open Ads
+                  </p>
+                  <tbody>
+                    {{#each Ads}}
+                      {{#unless taken}}
+                        <tr>
+                          <td width="5%"><i data-vi="activity" data-vi-size="28"></i></td>
+                          <td>{{this.title}}</td>
+                          <td>{{this.body}}</td>
+                          <td># left</td>
+                          <td><a class="button is-small is-primary" href="#">edit</a></td>
+                          <td><a class="button is-small is-danger deleteAdBtn" data-id="{{this.id}}" href="#">delete</a></td>
+                        </tr>
+                      {{/unless}}
+                    {{/each}}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="column is-6">
+            <div class="card">
+              <div class="content">
+                <table class="table is-fullwidth is-striped">
+                  <p class="card-header-title">
+                    Taken Ads
+                  </p>
+                  <tbody>
+                    {{#each Ads}}
+                      {{#if taken}}
+                        <tr>
+                          <td width="5%"><i data-vi="check" data-vi-size="28"></i></td>
+                          <td>{{this.title}}</td>
+                          <td>{{this.body}}</td>
+                          <td>user: <a href="/api/users/{{this.UserId}}">{{this.UserId}}</a></td>
+                          <td><a class="is-small is-primary" href="/api/users/{{this.userID}}">Link to user</a></td>
+                          <td><a class="button is-small is-danger deleteAdBtn" data-id="{{this.id}}" href="#">delete</a></td>
+                        </tr>
+                      {{/if}}
+                    {{/each}}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
+  </div>
 </div>
